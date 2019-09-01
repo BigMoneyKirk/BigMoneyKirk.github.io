@@ -10,6 +10,8 @@ import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
+import { HomeComponent } from './main-content/home/home.component';
+import { MainContentComponent } from './main-content/main-content.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MainNavbarComponent } from './main-navbar/main-navbar.component';
     WarningAlertComponent,
     SuccessAlertComponent,
     LoginPageComponent,
-    MainNavbarComponent
+    MainNavbarComponent,
+    HomeComponent,
+    MainContentComponent
   ],
   imports: [
     BrowserModule,
