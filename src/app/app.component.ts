@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'messing-around-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
