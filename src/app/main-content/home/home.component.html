@@ -1,5 +1,12 @@
-<h1>WELCOME TO KIRKLAND ENTERPRISES!</h1>
+<div [@divState]="state" style="width: 100px; height: 100px">
+    <h1>WELCOME TO KIRKLAND ENTERPRISES!</h1>
+</div>
+<div [@wildState]="wildState" style="width: 100px; height: 100px">
+    <h2>Where we make sites!</h2>
+</div>
+<br><br><br><br><br><br><br><br>
+<button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
+<button class="btn btn-primary" (click)="onShrink()">Shrink!</button>
 
-<h2>Where we make sites!</h2>
 
 <h3>And love people!</h3>
