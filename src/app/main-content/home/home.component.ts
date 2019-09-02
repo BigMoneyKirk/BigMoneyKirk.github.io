@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
@@ -47,27 +47,38 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
         opacity: 1,
         transform: 'translateX(0)'
       })),
-      transition('void => *', [style({ opacity: 0, transform: 'translateX(-100px)' }) , animate(1000, keyframes([
-        style({
-          transform: 'translateX(-100px)',
-          opacity: 0,
-          offset: 0
-        }),
-        style({
-          transform: 'translateX(-50px)',
-          opacity: 0.5,
-          offset: 0.3
-        }),
-        style({
-          transform: 'translateX(-20px)',
-          opacity: 1,
-          offset: 0.8
-        }),
-        style({
-          transform: 'translateX(0)',
-          offset: 1
-        }),
-      ]))]),
+      transition('void => *', [ 
+        style({ opacity: 0, transform: 'translateX(-100px)', color: 'blue' }) , 
+        group([
+          animate(1000, keyframes([
+            style({
+              transform: 'translateX(-100px)',
+              opacity: 0,
+              offset: 0
+            }),
+            style({
+              transform: 'translateX(-50px)',
+              opacity: 0.5,
+              offset: 0.3,
+              color: 'red'
+            }),
+            style({
+              transform: 'translateX(-20px)',
+              opacity: 1,
+              offset: 0.8,
+              color: 'green'
+            }),
+            style({
+              transform: 'translateX(0)',
+              offset: 1,
+              color: 'pink'
+            }),
+          ])),
+          animate(300, style({
+            // color: 'red'
+          }))
+        ]),
+        ]),
 
       transition('* => void', animate(300, style({ transform: 'translateX(100px)', opacity: 0 })))
     ])
@@ -92,11 +103,23 @@ export class HomeComponent implements OnInit {
   }
 
   public onShrink(){
-    this.wildState = 'shrunken';
+    if (this.wildState == 'normal')
+      this.wildState = 'shrunken';
+    else{
+      this.wildState = 'normal'
+    }
   }
 
   public onDelete(){
     this.list1 = 'void';
+  }
+
+  public animationStarted(event){
+    console.log(event);
+  }
+
+  public animationEnded(event){
+    console.log(event);
   }
 
 }

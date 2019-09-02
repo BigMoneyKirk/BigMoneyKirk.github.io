@@ -1,4 +1,4 @@
-<div [@divState]="state" style="width: 100px; height: 100px">
+<div [@divState]="state" style="width: 100px; height: 100px" (@divState.start)="animationStarted($event)" (@divState.done)="animationEnded($event)">
     <h1>WELCOME TO KIRKLAND ENTERPRISES!</h1>
 </div>
 <br>
@@ -7,7 +7,7 @@
 </div>
 <br><br><br><br>
 
-<div [@list1]="list1" (click)="onDelete()">
+<div [@list1]="list1" (click)="onDelete()" style="color: blue">
     <h3>And love people!</h3>
 </div>
 
