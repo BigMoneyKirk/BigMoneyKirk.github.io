@@ -13,6 +13,7 @@ import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { HomeComponent } from './main-content/home/home.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { AboutComponent } from './main-content/about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AboutComponent } from './main-content/about/about.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,18 @@
-<h1>WELCOME TO KIRKLAND ENTERPRISES!</h1>
+<div [@divState]="state" style="width: 100px; height: 100px" (@divState.start)="animationStarted($event)" (@divState.done)="animationEnded($event)">
+    <h1>WELCOME TO KIRKLAND ENTERPRISES!</h1>
+</div>
+<br>
+<div [@wildState]="wildState" style="width: 100px; height: 100px">
+    <h2>Where we make sites!</h2>
+</div>
+<br><br><br><br>
 
-<h2>Where we make sites!</h2>
+<div [@list1]="list1" (click)="onDelete()" style="color: blue">
+    <h3>And love people!</h3>
+</div>
 
-<h3>And love people!</h3>
+<br><br><br><br>
+<button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
+<button class="btn btn-primary" (click)="onShrink()">Shrink!</button>
+<button class="btn btn-primary" (click)="onDelete()">Slide Out!</button>
+
