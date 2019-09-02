@@ -1,12 +1,18 @@
 <div [@divState]="state" style="width: 100px; height: 100px">
     <h1>WELCOME TO KIRKLAND ENTERPRISES!</h1>
 </div>
+<br>
 <div [@wildState]="wildState" style="width: 100px; height: 100px">
     <h2>Where we make sites!</h2>
 </div>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br>
+
+<div [@list1]="list1" (click)="onDelete()">
+    <h3>And love people!</h3>
+</div>
+
+<br><br><br><br>
 <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
 <button class="btn btn-primary" (click)="onShrink()">Shrink!</button>
+<button class="btn btn-primary" (click)="onDelete()">Slide Out!</button>
 
-
-<h3>And love people!</h3>
