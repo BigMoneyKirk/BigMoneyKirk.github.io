@@ -39,9 +39,9 @@ export class LoginPageComponent implements OnInit {
         { console.log(data);
           // this.error = 'An error occurred!'
           this.isLoading = false; },
-        error => {
-          console.log(error);
-          this.error = 'An error occurred!'
+          errorMessage => {
+          console.log(errorMessage);
+          this.error = errorMessage;
           this.isLoading = false;
         }
       );
