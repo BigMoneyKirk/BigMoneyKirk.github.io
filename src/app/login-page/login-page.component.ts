@@ -12,6 +12,7 @@ export class LoginPageComponent implements OnInit {
 
   public isLoginMode: boolean = true;
   public isLoading: boolean = false;
+  public error: string = null;
 
   constructor(private authService: AuthService) { }
 
@@ -35,9 +36,12 @@ export class LoginPageComponent implements OnInit {
     }
     else {
       this.authService.signup(email, password).subscribe(data => 
-        { console.log(data); this.isLoading = false; },
+        { console.log(data);
+          // this.error = 'An error occurred!'
+          this.isLoading = false; },
         error => {
           console.log(error);
+          this.error = 'An error occurred!'
           this.isLoading = false;
         }
       );
