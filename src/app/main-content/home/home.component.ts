@@ -98,11 +98,11 @@ export class HomeComponent implements OnInit {
   }
 
   public animationEnded(event){
-    console.log(event);
+    // console.log(event);
   }
 
   public animationStarted(event){
-    console.log(event);
+    // console.log(event);
   }
 
   public onAnimate(){
