@@ -9,7 +9,6 @@ import { ServersComponent } from './servers/servers.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { HomeComponent } from './main-content/home/home.component';
-import { MainContentComponent } from './main-content/main-content.component';
 import { AboutComponent } from './main-content/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,7 +22,6 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
     LoginPageComponent,
     MainNavbarComponent,
     HomeComponent,
-    MainContentComponent,
     AboutComponent,
     LoadingSpinnerComponent
   ],
