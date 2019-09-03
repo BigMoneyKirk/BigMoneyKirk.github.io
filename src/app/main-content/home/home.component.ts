@@ -97,9 +97,21 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  public animationEnded(event){
+    // console.log(event);
+  }
+
+  public animationStarted(event){
+    // console.log(event);
+  }
+
   public onAnimate(){
     this.state == 'normal'? this.state = 'highlighted': this.state = 'normal';
     this.wildState == 'normal'? this.wildState = 'highlighted': this.wildState = 'normal';
+  }
+  
+  public onDelete(){
+    this.list1 = 'void';
   }
 
   public onShrink(){
@@ -109,17 +121,4 @@ export class HomeComponent implements OnInit {
       this.wildState = 'normal'
     }
   }
-
-  public onDelete(){
-    this.list1 = 'void';
-  }
-
-  public animationStarted(event){
-    console.log(event);
-  }
-
-  public animationEnded(event){
-    console.log(event);
-  }
-
 }
