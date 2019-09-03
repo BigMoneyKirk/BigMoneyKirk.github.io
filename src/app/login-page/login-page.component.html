@@ -1,5 +1,6 @@
 <div class="row top">
-    <div class="col-xs-12 col-md-12 col-lg-12">
+    <div class="col-lg-4"></div>
+    <div class="col-xs-12 col-md-12 col-lg-4">
         <div class="alert alert-danger" *ngIf="error"><span>{{ error }}</span></div>
         <div *ngIf="isLoading" class="loading-spinner">
             <messing-around-loading-spinner></messing-around-loading-spinner>
@@ -10,15 +11,15 @@
                 <input type="email" id="email" class="form-control" ngModel name="email" required email>
             </div>
 
-            <!-- TO-DO: Error checking -->
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" class="form-control" ngModel name="password" required minlength="8">
             </div>
             <div>
-                <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">{{ isLoginMode ? 'Login': 'Sign Up'}}</button> | 
-                <button class="btn btn-primary" type="button" (click)="onSwitchMode()">Switch to Login</button>
+                <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">{{ isLoginMode ? 'Login': 'Sign Up' }}</button> | 
+                <button class="btn btn-primary" type="button" (click)="onSwitchMode()">Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}</button>
             </div>
         </form>
     </div>
+    <div class="col-lg-4"></div>
 </div>
