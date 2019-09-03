@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Observable } from 'rxjs';
 import { AuthResponseData } from '../interfaces/auth-response-data'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -16,7 +17,7 @@ export class LoginPageComponent implements OnInit {
   public isLoading: boolean = false;
   public error: string = null;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -44,9 +45,9 @@ export class LoginPageComponent implements OnInit {
 
     authObs.subscribe(data => 
       { 
-        // logging in steps
-
-        this.isLoading = false; },
+        this.isLoading = false; 
+        this.router.navigate(['/home']);
+      },
         errorMessage => {
         this.error = errorMessage;
         this.isLoading = false;
