@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
 
 @Component({
@@ -92,17 +92,21 @@ export class HomeComponent implements OnInit {
   public wildState = 'normal';
   public list1 = '';
 
-  constructor() { }
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
   }
 
   public animationEnded(event){
-    // console.log(event);
+    this.state = 'normal';
   }
 
   public animationStarted(event){
-    // console.log(event);
+    this.state = 'highlighted';
+  }
+
+  public startAnimation(){
+    this.state = 'highlighted';
   }
 
   public onAnimate(){
