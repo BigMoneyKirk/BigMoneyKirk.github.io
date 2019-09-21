@@ -125,6 +125,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "MessingAround"
+    }
+  },
+  "defaultProject": "MessingAround",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "styl"
+    }
+  }
 }
