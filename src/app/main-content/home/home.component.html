@@ -1,8 +1,15 @@
-<div [@divState]="state" class="styledimg"> <!-- (@divState.start)="animationStarted($event)" (@divState.done)="animationEnded($event)"  class="styledimg"> -->
+<div class="row">
+    <div class="col-2"></div>
+    <div [@divState]="state" class="styledimg col-8">
+        <!-- (@divState.start)="animationStarted($event)" (@divState.done)="animationEnded($event)"  class="styledimg"> -->
+    </div>
+    <div class="col-2"></div>
 </div>
 <br>
-<div [@wildState]="wildState">
-    <h2>Where we make sites!</h2>
+<div class="row">
+    <div [@wildState]="wildState" class="header2 col-8">
+        <h2>Where we make sites!</h2>
+    </div>
 </div>
 <br><br><br><br>
 
@@ -11,7 +18,9 @@
 </div>
 
 <br><br><br><br>
-<button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
-<button class="btn btn-primary" (click)="onShrink()">Shrink!</button>
-<button class="btn btn-primary" (click)="onDelete()">Slide Out!</button>
 
+<div class="buttons">
+    <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
+    <button class="btn btn-primary" (click)="onShrink()">Shrink!</button>
+    <button class="btn btn-primary" (click)="onDelete()">Slide Out!</button>
+</div>
