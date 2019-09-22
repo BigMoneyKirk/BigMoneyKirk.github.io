@@ -1,5 +1,8 @@
-<mdb-navbar SideClass="navbar navbar-1 navbar-light amber lighten-2">
-  <a class="navbar-brand" routerLink='/login'>Kirkland Enterprises</a>
+<mdb-navbar SideClass="navbar navbar-2 navbar-light amber lighten-2" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" routerLink='/login'>Kirkland Enterprises</a></mdb-navbar-brand>
+
   <!-- Collapsible content -->
   <links>
 
@@ -20,7 +23,7 @@
   </links>
   <!-- Collapsible content -->
 
-  <form class="form-inline my-2 my-lg-0">
+  <form class="form-inline my-2 my-lg-0 right">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
