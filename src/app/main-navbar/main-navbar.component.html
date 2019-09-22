@@ -1,5 +1,8 @@
-<mdb-navbar SideClass="navbar navbar-1 navbar-light amber lighten-2">
-  <a class="navbar-brand" routerLink='/login'>Kirkland Enterprises</a>
+<mdb-navbar SideClass="navbar navbar-2 navbar-light amber lighten-2" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" routerLink='/login'>Kirkland Enterprises</a></mdb-navbar-brand>
+
   <!-- Collapsible content -->
   <links>
 
@@ -10,11 +13,16 @@
             class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Features</a>
+        <a class="nav-link waves-light" [routerLink]="['/about']" mdbWavesEffect>Membership</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
+        <a class="nav-link waves-light" [routerLink]="['/about']" mdbWavesEffect>About</a>
       </li>
+      <!-- Make this its own dropdown with a list of website I've been working on  ;) -->
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/home']" mdbWavesEffect>Websites</a>
+      </li>
+
     </ul>
     <!-- Links -->
   </links>
