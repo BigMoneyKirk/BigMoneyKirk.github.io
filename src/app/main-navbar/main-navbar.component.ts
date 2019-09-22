@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { GlobalService } from '../global.service';
 import { AuthService } from '../services/auth.service';
 import { Subscription } from 'rxjs';
+import { NavbarModule, WavesModule } from 'angular-bootstrap-md';
 
 @Component({
   selector: 'app-main-navbar',
