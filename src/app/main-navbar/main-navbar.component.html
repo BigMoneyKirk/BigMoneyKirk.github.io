@@ -1,7 +1,12 @@
-<mdb-navbar SideClass="navbar navbar-2 navbar-light amber lighten-2" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-1 navbar-light amber lighten-2" [containerInside]="false">
+  <mdb-navbar-brand>
+    <a class="navbar-brand" routerLink='/login'>Kirkland Enterprises</a>
+  </mdb-navbar-brand>
+
+  <!-- <mdb-navbar SideClass="navbar navbar-1 navbar-light amber lighten-2" [containerInside]="false">
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" routerLink='/login'>Kirkland Enterprises</a></mdb-navbar-brand>
+  <mdb-navbar-brand></mdb-navbar-brand> -->
 
   <!-- Collapsible content -->
   <links>
@@ -9,7 +14,7 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link  waves-light" [routerLink]="['/home']" mdbWavesEffect>Home <span
+        <a class="nav-link waves-light" [routerLink]="['/home']" mdbWavesEffect>Home <span
             class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
