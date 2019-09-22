@@ -1,24 +1,40 @@
-<ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+<mdb-navbar SideClass="navbar navbar-1 navbar-light amber lighten-2" [containerInside]="false">
+  <mdb-navbar-brand>
+    <a class="navbar-brand" routerLink='/login'>Kirkland Enterprises</a>
+  </mdb-navbar-brand>
+
+  <!-- <mdb-navbar SideClass="navbar navbar-1 navbar-light amber lighten-2" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand></mdb-navbar-brand> -->
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" [routerLink]="['/home']" mdbWavesEffect>Home <span
+            class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/about']" *ngIf="isAuthenticated">Membership</a>
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/about']" mdbWavesEffect>Membership</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/about']">About</a>
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/about']" mdbWavesEffect>About</a>
       </li>
-      <li class="nav-item dropdown" *ngIf="isAuthenticated" routerLinkActive="active">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Websites
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <!-- Make this its own dropdown with a list of website I've been working on  ;) -->
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/home']" mdbWavesEffect>Websites</a>
       </li>
-      <li *ngIf="isAuthenticated"><a>Logout</a></li>
+
     </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</mdb-navbar>

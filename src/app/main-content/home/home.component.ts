@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-home',
@@ -125,4 +126,12 @@ export class HomeComponent implements OnInit {
       this.wildState = 'normal'
     }
   }
+
+  ngAfterViewInit(){
+    $(document).ready(function(){
+      $("p").click(function(){
+      $(this).hide();
+      });
+    });
+}
 }
