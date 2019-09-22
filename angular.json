@@ -27,16 +27,17 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/chart.js/dist/Chart.js",
-              "node_modules/hammerjs/hammer.min.js"
-            ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss",
               "node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
               "node_modules/font-awesome/scss/font-awesome.scss"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/hammerjs/hammer.min.js"
             ]
           },
           "configurations": {
