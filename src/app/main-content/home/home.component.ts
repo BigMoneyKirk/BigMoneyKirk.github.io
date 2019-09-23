@@ -8,15 +8,50 @@ import $ from 'jquery';
   styleUrls: ['./home.component.scss'],
   animations: [
     trigger('divState', [
-      state('normal', style({
-        backgroundColor: 'red',
+      state('void', style({
+        opacity: 1,
         transform: 'translateX(0)'
       })),
-      state('highlighted', style({
-        backgroundColor: 'blue',
-        transform: 'translateX(100px)'
-      })),
-      transition('normal <=> highlighted', animate(300)),
+      transition('void => *', [
+        style({ opacity: 0, transform: 'translateX(-1000px)', backgroundColor: 'blue' }),
+        group([
+          animate('4s', keyframes([
+            style({
+              transform: 'translateX(-1000px)',
+              opacity: 0.2,
+              offset: 0
+            }),
+            style({
+              transform: 'translateX(-500px)',
+              opacity: 0.5,
+              offset: 0.5,
+              backgroundColor: 'purple'
+            }),
+            style({
+              transform: 'translateX(-200px)',
+              opacity: 1,
+              offset: 0.8,
+            }),
+            style({
+              transform: 'translateX(0)',
+              offset: 1,
+              backgroundColor: 'black'
+            }),
+          ]))
+        ]),
+      ]),
+
+      transition('* => void', animate(300, style({ transform: 'translateX(100px)', opacity: 0 })))
+      // -------------------------------
+      // state('normal', style({
+      //   backgroundColor: 'black',
+      //   transform: 'translateX(0)'
+      // })),
+      // state('highlighted', style({
+      //   backgroundColor: 'blue',
+      //   transform: 'translateX(100px)'
+      // })),
+      // transition('normal <=> highlighted', animate(300)),
     ]),
 
     trigger('wildState', [
