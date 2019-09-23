@@ -18,7 +18,7 @@ import $ from 'jquery';
       })),
       transition('normal <=> highlighted', animate(300)),
     ]),
-    
+
     trigger('wildState', [
       state('normal', style({
         backgroundColor: 'red',
@@ -35,12 +35,12 @@ import $ from 'jquery';
       transition('normal => highlighted', animate(300)),
       transition('highlighted => normal', animate(800)),
       transition('shrunken <=> *',
-      [style({
-        backgroundColor: 'orange'
-      }),
+        [style({
+          backgroundColor: 'orange'
+        }),
         animate(0, style({ borderRadius: '50px' })),
         animate(700),
-      ])
+        ])
     ]),
 
     trigger('list1', [
@@ -48,8 +48,8 @@ import $ from 'jquery';
         opacity: 1,
         transform: 'translateX(0)'
       })),
-      transition('void => *', [ 
-        style({ opacity: 0, transform: 'translateX(-100px)', color: 'blue' }) , 
+      transition('void => *', [
+        style({ opacity: 0, transform: 'translateX(-100px)', color: 'blue' }),
         group([
           animate(1000, keyframes([
             style({
@@ -79,7 +79,7 @@ import $ from 'jquery';
             // color: 'red'
           }))
         ]),
-        ]),
+      ]),
 
       transition('* => void', animate(300, style({ transform: 'translateX(100px)', opacity: 0 })))
     ])
@@ -98,40 +98,40 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  public animationEnded(event){
+  public animationEnded(event) {
     this.state = 'normal';
   }
 
-  public animationStarted(event){
+  public animationStarted(event) {
     this.state = 'highlighted';
   }
 
-  public startAnimation(){
+  public startAnimation() {
     this.state = 'highlighted';
   }
 
-  public onAnimate(){
-    this.state == 'normal'? this.state = 'highlighted': this.state = 'normal';
-    this.wildState == 'normal'? this.wildState = 'highlighted': this.wildState = 'normal';
+  public onAnimate() {
+    this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal';
+    this.wildState == 'normal' ? this.wildState = 'highlighted' : this.wildState = 'normal';
   }
-  
-  public onDelete(){
+
+  public onDelete() {
     this.list1 = 'void';
   }
 
-  public onShrink(){
+  public onShrink() {
     if (this.wildState == 'normal')
       this.wildState = 'shrunken';
-    else{
+    else {
       this.wildState = 'normal'
     }
   }
 
-  ngAfterViewInit(){
-    $(document).ready(function(){
-      $("p").click(function(){
-      $(this).hide();
+  ngAfterViewInit() {
+    $(document).ready(function () {
+      $("p").click(function () {
+        $(this).hide();
       });
     });
-}
+  }
 }
