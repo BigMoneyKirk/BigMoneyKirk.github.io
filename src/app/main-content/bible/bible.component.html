@@ -1,13 +1,54 @@
 <div class="page-margin">
-    <p>bible works!</p>
+    <div class="row">
+        <!-- Book Dropdown selectable -->
+        <div class="form-group col-4">
+            <div class="cell-center">
+                <label for="bible-book">Book</label>
+            </div>
+            <!-- TO-DO: *ngFor with all the names of bible books. maybe an api -->
+            <select class="form-control" id="bible-book">
+                <option>Genesis</option>
+                <option>Exodus</option>
+                <option>Leviticus</option>
+                <option>Numbers</option>
+            </select>
+        </div>
 
-    <!-- Book Dropdown selectable -->
+        <!-- Chapter Dropdown selectable -->
+        <!-- disabled until Book is selected -->
+        <div class="form-group col-4">
+            <div class="cell-center">
+                <label for="bible-chapter">Chapter</label>
+            </div>
+            <!-- TO-DO: *ngFor with all the chapters in a bible book. maybe an api -->
+            <select class="form-control" id="bible-chapter">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
 
-    <!-- Chapter Dropdown selectable -->
-    <!-- disabled until Book is selected -->
-
-    <!-- (optional) Verse Dropdown selectable -->
-    <!-- disabled until Chapter is selected -->
+        <!-- (optional) Verse Dropdown selectable -->
+        <!-- disabled until Chapter is selected -->
+        <div class="form-group col-4">
+            <div class="cell-center">
+                <label for="bible-verse">Verse</label>
+            </div>
+            <!-- TO-DO: *ngFor with all the verses in a bible book's chapter. maybe an api -->
+            <select class="form-control" id="bible-verse">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
 
     <!-- display of the Scripture -->
+    <div>
+        <p>This is your display.</p>
+    </div>
 </div>
