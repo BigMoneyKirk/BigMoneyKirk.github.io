@@ -32,7 +32,7 @@
               "src/styles.scss",
               "node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/animate.scss/animate.scss"
+              "src/assets/animate.scss/animate.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

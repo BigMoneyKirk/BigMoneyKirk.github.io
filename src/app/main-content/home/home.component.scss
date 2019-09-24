@@ -1,4 +1,4 @@
-@import "../../../../node_modules/animate.scss/animate.scss";
+@import "../../../../src/assets/animate.scss/animate.scss";
 
 @function calc-em($target-px, $context) {
     @return ($target-px / $context) * 1em;
@@ -32,4 +32,14 @@
             @include tada();
         }
         text-align: center;
+    }
+
+    @media(max-width: 500px){
+        .styledimg {
+            background-repeat: no-repeat;
+            background-image: url(../../images/KELogo_Resize_277.png);
+            width: 500px;
+            height: 300px;
+            background-color: black;
+        }
     }
