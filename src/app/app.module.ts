@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,7 +13,7 @@ import { AboutComponent } from './main-content/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-import { NavbarModule, WavesModule } from 'angular-bootstrap-md';
+import { NavbarModule, WavesModule, MDBBootstrapModule  } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -33,8 +33,10 @@ import { NavbarModule, WavesModule } from 'angular-bootstrap-md';
     BrowserAnimationsModule,
     HttpClientModule,
     NavbarModule,
-    WavesModule
+    WavesModule,
+    MDBBootstrapModule.forRoot(),
   ],
+  schemas: [NO_ERRORS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
