@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { NavbarModule, WavesModule, MDBBootstrapModule  } from 'angular-bootstrap-md';
+import { BibleComponent } from './main-content/bible/bible.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NavbarModule, WavesModule, MDBBootstrapModule  } from 'angular-bootstra
     MainNavbarComponent,
     HomeComponent,
     AboutComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    BibleComponent
   ],
   imports: [
     BrowserModule,
