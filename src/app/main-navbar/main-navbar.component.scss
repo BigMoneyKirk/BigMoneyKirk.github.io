@@ -1,3 +1,5 @@
+$han_purple: '#5533ff';
+
 .navbar.navbar-1 .navbar-toggler-icon {
     background-image: url('https://mdbootstrap.com/img/svg/hamburger6.svg?color=000');
     }
@@ -24,4 +26,8 @@
     }
     .navbar.navbar-9 .navbar-toggler-icon {
     background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
+    }
+
+    .nav-color{
+        background-color: $han_purple;
     }
