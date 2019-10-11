@@ -1,5 +1,5 @@
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-color lighten-1">
   <a class="navbar-brand" [routerLink]="['/login']">Kirkland Enterprises</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
     aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,25 +7,27 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/home']">Home
-          <span class="sr-only">(current)</span>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/home']">Home <span><i class="fas fa-home"></i></span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']">Bible</a>
+        <a class="nav-link" [routerLink]="['/bible']">Bible <span><i class="fas fa-bible"></i></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']">Bookmarks</a>
+        <a class="nav-link" [routerLink]="['/bible']">Social Media <span><i class="fas fa-users"></i></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']">Journal</a>
+        <a class="nav-link" [routerLink]="['/about']">Bookmarks <span><i class="fas fa-bookmark"></i></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']">Passions</a>
+        <a class="nav-link" [routerLink]="['/about']">Journal <span><i class="fas fa-book-open"></i></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']">About</a>
+        <a class="nav-link" [routerLink]="['/about']">Passions <span><i class="fas fa-heart"></i></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/about']">About <span><i class="fas fa-question-circle"></i></span></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"

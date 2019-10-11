@@ -1,14 +1,13 @@
 <div class="page-margin">
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <h1>Welcome to</h1>
+        <div class="hey">
+            <!-- <h1>Welcome to</h1> -->
+            <img src="https://fontmeme.com/permalink/191007/2ac185608541058593593bb536036fe6.png" alt="Welcome to">
         </div>
-        <div class="col-4"></div>
-    </div>
+        <br>
     <div class="row">
         <div class="col-2"></div>
-        <div [@divState]="state" class="styledimg col-8">
+        <div [@divState]="state" class="col-8">
+                <img src="/KELogo_Resize.png" alt="Kirkland Enterprises Logo" class="ke_logo">
             <!-- (@divState.start)="animationStarted($event)" (@divState.done)="animationEnded($event)"  class="styledimg"> -->
         </div>
         <div class="col-2"></div>
@@ -16,6 +15,7 @@
     <br>
     <div class="row">
         <div [@wildState]="wildState" class="header2 col-8">
+                <img src="/KingKirk.png" alt="King Kirk" class="ke_logo">
             <h2>Where we make sites!</h2>
         </div>
     </div>
@@ -23,7 +23,6 @@
     <div [@list1]="list1" (click)="onDelete()" style="color: blue">
         <h3>And love people!</h3>
     </div>
-
     <br><br><br><br>
 
     <div class="buttons">
@@ -32,5 +31,4 @@
         <button class="btn btn-primary" (click)="onDelete()">Slide Out!</button>
     </div>
     <p>If you click on me, I will disappear.</p>
-    <span><i class="fas fa-vials"></i></span>
 </div>

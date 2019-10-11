@@ -13,7 +13,7 @@ import $ from 'jquery';
         transform: 'translateX(0)'
       })),
       transition('void => *', [
-        style({ opacity: 0, transform: 'translateX(-1000px)', backgroundColor: 'blue' }),
+        style({ opacity: 0, transform: 'translateX(-1000px)' }),
         group([
           animate('4s', keyframes([
             style({
@@ -24,8 +24,7 @@ import $ from 'jquery';
             style({
               transform: 'translateX(-500px)',
               opacity: 0.5,
-              offset: 0.5,
-              backgroundColor: 'purple'
+              offset: 0.5
             }),
             style({
               transform: 'translateX(-200px)',
@@ -34,8 +33,7 @@ import $ from 'jquery';
             }),
             style({
               transform: 'translateX(0)',
-              offset: 1,
-              backgroundColor: 'black'
+              offset: 1
             }),
           ]))
         ]),
