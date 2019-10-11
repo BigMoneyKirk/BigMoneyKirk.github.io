@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalImageService } from 'src/app/services/global-image.service';
 
 @Component({
   selector: 'messing-around-about',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  public kingUrl = this.globalImage.king;
+
+  constructor(private globalImage: GlobalImageService) { }
 
   ngOnInit() {
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
 import $ from 'jquery';
+import { GlobalImageService } from 'src/app/services/global-image.service';
 
 @Component({
   selector: 'app-home',
@@ -125,10 +126,10 @@ export class HomeComponent implements OnInit {
   public state = 'normal';
   public wildState = 'normal';
   public list1 = '';
-  public logoUrl = 'assets/images/KELogo_Resize.png';
-  public king = 'assets/images/KingKirk.png';
+  public king = this.globalImage.king;
+  public logoUrl = this.globalImage.logoUrl;
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private cdr: ChangeDetectorRef, private globalImage: GlobalImageService) { }
 
   ngOnInit() {
   }
