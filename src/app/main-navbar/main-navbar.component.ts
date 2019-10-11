@@ -19,7 +19,6 @@ export class MainNavbarComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private global: GlobalService, private authService: AuthService) { }
 
   ngOnInit() {
-    console.log('huh');
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user; //!user ? false : true;
       console.log(!user);
