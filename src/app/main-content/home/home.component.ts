@@ -125,6 +125,8 @@ export class HomeComponent implements OnInit {
   public state = 'normal';
   public wildState = 'normal';
   public list1 = '';
+  public logoUrl = 'assets/images/KELogo_Resize.png';
+  public king = 'assets/images/KingKirk.png';
 
   constructor(private cdr: ChangeDetectorRef) { }
 
