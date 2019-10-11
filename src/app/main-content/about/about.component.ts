@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
   }
 
   public story(){
-    return `This is my story. Stephen Michael Kirkland. The Lord came to me when I was being quiet and still before him. He has blessed me exceedingly. I have been on a tough and rough journey. This will be the site that I publish just for myself to prove that I can do it, in the name of Jesus Christ Almighty!`;
+    return `This is my story. Stephen Michael Kirkland. The Lord came to me when I was being quiet and still before him. He has blessed me exceedingly. I have been on a tough and rough journey. This will be the site that I publish just for myself to prove that I can do it, in the name of Jesus Christ Almighty! [Added Thursday, October 10, 2019 10:40 PM EST]`;
   }
 
 }
