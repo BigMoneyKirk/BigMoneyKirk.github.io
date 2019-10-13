@@ -13,8 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { NavbarModule, WavesModule, MDBBootstrapModule  } from 'angular-bootstrap-md';
 import { BibleComponent } from './main-content/bible/bible.component';
-import { BestBuddiesComponent } from './main-content/best-buddies/best-buddies.component';
-import { InteriorDesingComponent } from './main-content/interior-desing/interior-desing.component';
+import { BestBuddiesComponent } from './other-sites/best-buddies/best-buddies.component';
+import { InteriorDesingComponent } from './other-sites/interior-desing/interior-desing.component';
+import { TishasCakesComponent } from './other-sites/tishas-cakes/tishas-cakes.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { InteriorDesingComponent } from './main-content/interior-desing/interior
     LoadingSpinnerComponent,
     BibleComponent,
     BestBuddiesComponent,
-    InteriorDesingComponent
+    InteriorDesingComponent,
+    TishasCakesComponent
   ],
   imports: [
     BrowserModule,
