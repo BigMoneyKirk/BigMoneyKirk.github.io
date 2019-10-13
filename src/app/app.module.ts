@@ -14,6 +14,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { NavbarModule, WavesModule, MDBBootstrapModule  } from 'angular-bootstrap-md';
 import { BibleComponent } from './main-content/bible/bible.component';
 import { BestBuddiesComponent } from './main-content/best-buddies/best-buddies.component';
+import { InteriorDesingComponent } from './main-content/interior-desing/interior-desing.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BestBuddiesComponent } from './main-content/best-buddies/best-buddies.c
     AboutComponent,
     LoadingSpinnerComponent,
     BibleComponent,
-    BestBuddiesComponent
+    BestBuddiesComponent,
+    InteriorDesingComponent
   ],
   imports: [
     BrowserModule,
