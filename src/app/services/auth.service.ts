@@ -5,6 +5,7 @@ import { throwError, onErrorResumeNext, Subject } from 'rxjs';
 import { AuthResponseData } from '../interfaces/auth-response-data';
 import { User } from '../models/user';
 import { removeSummaryDuplicates } from '@angular/compiler';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   public signup(email: string, password: string){
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDVw659-42k5Fp_0J6_7b7x_WAy3tW4JkQ',
+    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseAPIKey,
     {
       email: email,
       password: password,
@@ -25,7 +26,7 @@ export class AuthService {
   }
 
   public login(email: string, password: string) {
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDVw659-42k5Fp_0J6_7b7x_WAy3tW4JkQ',
+    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseAPIKey,
     {
       email: email,
       password: password,
