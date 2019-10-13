@@ -12,8 +12,8 @@ export class TishasCakesComponent implements OnInit {
   ngOnInit() {
   }
 
-  aboutEJ(){
-    return `That boy EJ, he is something else!`;
+  cakedesigns(){
+    return `Wow! Look at these delicious looking cakes! I would KILL for one!! :D`;
   }
 
 }
