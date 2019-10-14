@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ServerComponent } from './server/server.component';
-import { ServersComponent } from './servers/servers.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { HomeComponent } from './main-content/home/home.component';
@@ -15,18 +13,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { NavbarModule, WavesModule, MDBBootstrapModule  } from 'angular-bootstrap-md';
 import { BibleComponent } from './main-content/bible/bible.component';
+import { BestBuddiesComponent } from './other-sites/best-buddies/best-buddies.component';
+import { InteriorDesingComponent } from './other-sites/interior-desing/interior-desing.component';
+import { TishasCakesComponent } from './other-sites/tishas-cakes/tishas-cakes.component';
+import { JournalComponent } from './other-sites/journal/journal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServerComponent,
-    ServersComponent,
     LoginPageComponent,
     MainNavbarComponent,
     HomeComponent,
     AboutComponent,
     LoadingSpinnerComponent,
-    BibleComponent
+    BibleComponent,
+    BestBuddiesComponent,
+    InteriorDesingComponent,
+    TishasCakesComponent,
+    JournalComponent
   ],
   imports: [
     BrowserModule,

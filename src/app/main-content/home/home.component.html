@@ -1,34 +1,45 @@
-<div class="page-margin">
-        <div class="hey">
-            <!-- <h1>Welcome to</h1> -->
-            <img src="https://fontmeme.com/permalink/191007/2ac185608541058593593bb536036fe6.png" alt="Welcome to">
+<div class="border-test page-margin">
+    <div class="row welcome">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <img class="full-width welcome-logo"
+                src="https://fontmeme.com/permalink/191007/2ac185608541058593593bb536036fe6.png" alt="Welcome to">
         </div>
-        <br>
-    <div class="row">
-        <div class="col-2"></div>
-        <div [@divState]="state" class="col-8">
-                <img src="/KELogo_Resize.png" alt="Kirkland Enterprises Logo" class="ke_logo">
-            <!-- (@divState.start)="animationStarted($event)" (@divState.done)="animationEnded($event)"  class="styledimg"> -->
-        </div>
-        <div class="col-2"></div>
+        <div class="col-md-3"></div>
     </div>
     <br>
     <div class="row">
+        <div class="col-md-2"></div>
+        <div [@divState]="state" class="col-md-8">
+            <img src="{{logoUrl}}" alt="Kirkland Enterprises Logo" class="ke_logo">
+            <!-- (@divState.start)="animationStarted($event)" (@divState.done)="animationEnded($event)"  class="styledimg"> -->
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-2"></div>
         <div [@wildState]="wildState" class="header2 col-8">
-                <img src="/KingKirk.png" alt="King Kirk" class="ke_logo">
             <h2>Where we make sites!</h2>
         </div>
+        <div class="col-2"></div>
     </div>
-    <br><br><br><br>
+    <br><br>
     <div [@list1]="list1" (click)="onDelete()" style="color: blue">
         <h3>And love people!</h3>
     </div>
-    <br><br><br><br>
+    <br><br>
 
-    <div class="buttons">
-        <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
-        <button class="btn btn-primary" (click)="onShrink()">Shrink!</button>
-        <button class="btn btn-primary" (click)="onDelete()">Slide Out!</button>
+    <div class="border-test row">
+        <div class="col-xs-4">
+            <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
+        </div>
+        <div class="col-xs-4">
+            <button class="col-xs-4 btn btn-primary" (click)="onShrink()">Shrink!</button>
+        </div>
+        <div class="col-xs-4">
+            <button class="col-xs-4 btn btn-primary" (click)="onDelete()">Slide Out!</button>
+        </div>
     </div>
     <p>If you click on me, I will disappear.</p>
 </div>

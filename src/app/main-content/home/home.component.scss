@@ -4,33 +4,31 @@
     @return ($target-px / $context) * 1em;
 }
 
-.hey{
-    text-align: center;
-}
-
-.buttons{
-    button{
-        margin-left: 30px;
-
-        &:first-child{
-            margin: 0px;
-        }
-    }
-}
-
 .header2{
     color: white;
     border: 5px solid gold;
 }
 
-.row{
-    h1{
-            @include tada();
-        }
-        text-align: center;
-    }
-
 .ke_logo{
     width: 100%;
     background-color: black;
 }
+
+.row{
+    h1{
+        @include tada();
+    }
+    text-align: center;
+    margin: 0px;
+}
+
+.welcome{
+    text-align: center;
+}
+
+// @media(max-width: 700px){
+//     .welcome-logo{
+//         width: 500px;
+//         height: 200px;
+//     }
+// }

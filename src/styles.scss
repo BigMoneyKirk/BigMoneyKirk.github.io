@@ -4,6 +4,27 @@ html, body {
     margin: 0;
 }
 
+.border-test{
+    border-style: solid;
+}
+
+.cell-center{
+    vertical-align: center;
+    text-align: center;
+}
+
+.center-text{
+    text-align: center;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.left-half{
+    width: 50%;
+}
+
 .loading-spinner{
     text-align: center
 }
@@ -12,7 +33,15 @@ html, body {
     margin: 50px;
 }
 
-.cell-center{
-    vertical-align: center;
+.right-half{
+    width: 50%;
+}
+
+.right-img{
+    width: 50%;
     text-align: center;
+}
+
+.top-padding-50px{
+    margin-top: 50px;
 }
