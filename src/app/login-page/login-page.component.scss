@@ -9,23 +9,17 @@
     margin-left: 0px;
 }
 
-// @media(max-width: 600px){
-//     .top {
-//         background-position: 50% 50%;
-//     }
-// }
+@media(min-width: 300px){
+    .top {
+        background-position: 50% 50%;
+    }
+}
 
-// @media(max-width: 1000px){
-//     .top {
-//         background-position: 50% 50%;
-//     }
-// }
-
-// @media(max-width: 1200px){
-//     .top {
-//         background-position: 50% 50%;
-//     }
-// }
+@media(max-width: 1470px){
+    .top {
+        background-position: 50% 50%;
+    }
+}
 
 label{
     font-weight: bold;
