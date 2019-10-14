@@ -1,9 +1,8 @@
-<div class="border-test page-margin">
+<div class="page-margin">
     <div class="row welcome">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <img class="full-width welcome-logo"
-                src="https://fontmeme.com/permalink/191007/2ac185608541058593593bb536036fe6.png" alt="Welcome to">
+            <img alt="Welcome to" class="full-width welcome-logo" src={{welcomeLogoUrl}}>
         </div>
         <div class="col-md-3"></div>
     </div>
@@ -11,11 +10,13 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div [@divState]="state" class="col-md-8">
-            <img src="{{logoUrl}}" alt="Kirkland Enterprises Logo" class="ke_logo">
+            <img alt="Kirkland Enterprises Logo" class="ke_logo" src="{{logoUrl}}">
             <!-- (@divState.start)="animationStarted($event)" (@divState.done)="animationEnded($event)"  class="styledimg"> -->
         </div>
         <div class="col-md-2"></div>
     </div>
+    <br>
+    <p class="satisfy-font">{{luke4_18()}}</p>
     <br>
     <div class="row">
         <div class="col-2"></div>
@@ -30,16 +31,15 @@
     </div>
     <br><br>
 
-    <div class="border-test row">
-        <div class="col-xs-4">
+    <div class="row">
+        <div class="col-lg-4">
             <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
         </div>
-        <div class="col-xs-4">
+        <div class="col-lg-4">
             <button class="col-xs-4 btn btn-primary" (click)="onShrink()">Shrink!</button>
         </div>
-        <div class="col-xs-4">
+        <div class="col-lg-4">
             <button class="col-xs-4 btn btn-primary" (click)="onDelete()">Slide Out!</button>
         </div>
     </div>
-    <p>If you click on me, I will disappear.</p>
 </div>
