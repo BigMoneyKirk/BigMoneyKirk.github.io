@@ -1,6 +1,6 @@
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-color lighten-1">
-  <a class="navbar-brand" [routerLink]="['/login']">Kirkland Enterprises</a>
+  <a class="navbar-brand" [routerLink]="['/home']">Kirkland Enterprises</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
     aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@
         <a class="nav-link" [routerLink]="['/about']">Bookmarks <span><i class="fas fa-bookmark"></i></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']">Journal <span><i class="fas fa-book-open"></i></span></a>
+        <a class="nav-link" [routerLink]="['/journal']">Journal <span><i class="fas fa-book-open"></i></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/about']">Passions <span><i class="fas fa-heart"></i></span></a>
@@ -57,7 +57,7 @@
         <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
           aria-labelledby="navbarDropdownMenuLink-55">
           <a class="dropdown-item" [routerLink]="['/home']">Profile</a>
-          <a class="dropdown-item" [routerLink]="['/home']">Journal</a>
+          <a class="dropdown-item" [routerLink]="['/journal']">Journal</a>
           <a class="dropdown-item" [routerLink]="['/home']">Passions</a>
           <a class="dropdown-item" [routerLink]="['/about']">Settings</a>
           <a class="dropdown-item" [routerLink]="['/login']">Sign Out</a>

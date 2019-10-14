@@ -16,6 +16,7 @@ import { BibleComponent } from './main-content/bible/bible.component';
 import { BestBuddiesComponent } from './other-sites/best-buddies/best-buddies.component';
 import { InteriorDesingComponent } from './other-sites/interior-desing/interior-desing.component';
 import { TishasCakesComponent } from './other-sites/tishas-cakes/tishas-cakes.component';
+import { JournalComponent } from './other-sites/journal/journal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TishasCakesComponent } from './other-sites/tishas-cakes/tishas-cakes.co
     BibleComponent,
     BestBuddiesComponent,
     InteriorDesingComponent,
-    TishasCakesComponent
+    TishasCakesComponent,
+    JournalComponent
   ],
   imports: [
     BrowserModule,

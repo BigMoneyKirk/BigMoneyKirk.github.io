@@ -7,6 +7,7 @@ import { BibleComponent } from './main-content/bible/bible.component';
 import { BestBuddiesComponent } from './other-sites/best-buddies/best-buddies.component';
 import { InteriorDesingComponent } from './other-sites/interior-desing/interior-desing.component';
 import { TishasCakesComponent } from './other-sites/tishas-cakes/tishas-cakes.component';
+import { JournalComponent } from './other-sites/journal/journal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'bible', component: BibleComponent },
   { path: 'home', component: HomeComponent },
   { path: 'interior-design', component: InteriorDesingComponent },
+  { path: 'journal', component: JournalComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'tishas-cupcakes', component: TishasCakesComponent }
 ];
