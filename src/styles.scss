@@ -4,6 +4,10 @@ html, body {
     margin: 0;
 }
 
+.border-test{
+    border-style: solid;
+}
+
 .cell-center{
     vertical-align: center;
     text-align: center;
@@ -36,4 +40,8 @@ html, body {
 .right-img{
     width: 50%;
     text-align: center;
+}
+
+.top-padding-50px{
+    margin-top: 50px;
 }
