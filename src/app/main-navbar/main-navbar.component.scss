@@ -37,8 +37,15 @@ $the-color: #6804A4;
         background-color: $the-color;
     }
 
-    @media(max-width: 1103px){
+    @media(max-width: 1120px){
         .navbar-color{
             background-color: rgb(16, 180, 57);
         }
+        // .navbar .navbar-brand {float:none;display: inline-block;}
+        // .navbar .navbar-nav>.nav-item { float: none; margin-left: .1rem;}
+        // .navbar .navbar-nav {float:none !important;}
+        // .nav-item{width:100%;text-align:left;} 
+        // .navbar-toggler {display: block !important;}
+        .navbar-toggleable-sm.collapse {display:none !important}
+        .navbar-toggleable-sm.collapse.in {display:block !important}        
     }
