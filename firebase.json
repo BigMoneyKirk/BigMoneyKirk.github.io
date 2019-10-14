@@ -2,6 +2,7 @@
   "hosting": {
     "public": "dist/MessingAround",
     "ignore": [
+      "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],

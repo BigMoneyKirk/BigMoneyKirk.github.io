@@ -13,7 +13,11 @@ export class InteriorDesingComponent implements OnInit {
   }
 
   aboutEJ(){
-    return `That boy EJ, he is something else!`;
+    return `EJ, you need to message me what type of bio you would like to put here...`;
+  }
+
+  andHere(){
+    return `And here!!`;
   }
 
 }

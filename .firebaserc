@@ -1,5 +1,6 @@
 {
   "projects": {
-    "messingaround": "messingaround-524ea"
+    "messingaround": "messingaround-524ea",
+    "default": "messingaround-524ea"
   }
 }
