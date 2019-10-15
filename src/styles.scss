@@ -42,6 +42,11 @@ html, body {
     text-align: center;
 }
 
+.right-side{
+    display: flex;
+    justify-content: flex-end;
+}
+
 .top-padding-50px{
     margin-top: 50px;
 }
