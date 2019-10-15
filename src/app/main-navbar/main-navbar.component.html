@@ -15,16 +15,16 @@
         <a class="nav-link" [routerLink]="['/bible']">Bible <span><i class="fas fa-bible"></i></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/bible']">Social Media <span><i class="fas fa-users"></i></span></a>
+        <a class="nav-link" [routerLink]="['/social-media']">Social Media <span><i class="fas fa-users"></i></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']">Bookmarks <span><i class="fas fa-bookmark"></i></span></a>
+        <a class="nav-link" [routerLink]="['/bookmarks']">Bookmarks <span><i class="fas fa-bookmark"></i></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/journal']">Journal <span><i class="fas fa-book-open"></i></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']">Passions <span><i class="fas fa-heart"></i></span></a>
+        <a class="nav-link" [routerLink]="['/passions']">Passions <span><i class="fas fa-heart"></i></span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/about']"><span>About <i class="fas fa-question-circle"></i></span></a>
@@ -36,9 +36,10 @@
         <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
           <a [routerLink]="['/interior-design']" class="dropdown-item">EJ's Interior Designing</a>
           <a [routerLink]="['/tishas-cupcakes']" class="dropdown-item">Tisha's Cupcakes</a>
+          <a [routerLink]="['/sades-fruit']" class="dropdown-item">Sade's Fruitings</a>
           <a [routerLink]="['/best-buddies']" class="dropdown-item">Best Buddies</a>
-          <a href="#" class="dropdown-item" >Keatylin's Beauty</a>
-          <a href="#" class="dropdown-item" >Sandra's Record Keeping</a>
+          <a [routerLink]="['/keatylins-beauty']" class="dropdown-item" >Keatylin's Beauty</a>
+          <a [routerLink]="['/sandras-record-keeping']" class="dropdown-item" >Sandra's Record Keeping</a>
         </div>
       </li>
     </ul>
@@ -58,8 +59,8 @@
           aria-labelledby="navbarDropdownMenuLink-55">
           <a class="dropdown-item" [routerLink]="['/home']">Profile</a>
           <a class="dropdown-item" [routerLink]="['/journal']">Journal</a>
-          <a class="dropdown-item" [routerLink]="['/home']">Passions</a>
-          <a class="dropdown-item" [routerLink]="['/about']">Settings</a>
+          <a class="dropdown-item" [routerLink]="['/passions']">Passions</a>
+          <a class="dropdown-item" [routerLink]="['/settings']">Settings</a>
           <a class="dropdown-item" [routerLink]="['/login']">Sign Out</a>
         </div>
       </li>
