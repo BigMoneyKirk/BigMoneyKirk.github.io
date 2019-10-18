@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JournalEntry } from 'src/app/models/journalentry';
+import * as moment from 'moment';
 
 @Component({
   selector: 'messing-around-journal',
@@ -24,9 +25,9 @@ export class JournalComponent implements OnInit {
   }
 
   public dateformat(date: Date){
-    // var moment = require('moment');
-    // return moment(date).format();
-    return date;
+    var moment = require('moment');
+    return moment(date).format('LL');
+    // return date;
   }
 
   public poem(){
