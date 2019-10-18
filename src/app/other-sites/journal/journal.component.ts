@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JournalEntry } from 'src/app/models/journalentry';
 import * as moment from 'moment';
+import { DateFormatterService } from 'src/app/services/date-formatter.service';
 
 @Component({
   selector: 'messing-around-journal',
@@ -16,7 +17,7 @@ export class JournalComponent implements OnInit {
   public journalEntry1: JournalEntry = new JournalEntry(1, 'Journal Entry 1', true, new Date());
   public journalEntry2: JournalEntry = new JournalEntry(2, 'Journal Entry 2', true, new Date());
 
-  constructor() { }
+  constructor(private dateFormatter: DateFormatterService) { }
 
   ngOnInit() {
     this.journal_entries = new Array<JournalEntry>();
@@ -25,9 +26,8 @@ export class JournalComponent implements OnInit {
   }
 
   public dateformat(date: Date){
-    var moment = require('moment');
-    return moment(date).format('LL');
-    // return date;
+    let huh = this.dateFormatter.shortMonthDayYear(date);
+    return huh;
   }
 
   public poem(){
