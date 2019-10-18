@@ -37,6 +37,19 @@
                     </th>
                 </tr>
         </thead>
+        <tbody>
+            <tr *ngFor="let jouranl_entry of journal_entries">
+                <td>
+                    {{jouranl_entry._JournalID}}
+                </td>
+                <td>
+                    {{jouranl_entry.Name}}
+                </td>
+                <td>
+                    {{dateformat(jouranl_entry.CreatedAt)}}
+                </td>
+            </tr>
+        </tbody>
     </table>
 </div>
 <messing-around-under-construction></messing-around-under-construction>
