@@ -25,17 +25,17 @@
     <!-- Journal Table -->
     <table class="table">
         <thead>
-                <tr>
-                    <th>
-                        <span>Journal ID</span>
-                    </th>
-                    <th>
-                        <span>Name</span>
-                    </th>
-                    <th>
-                        <span>Date Created</span>
-                    </th>
-                </tr>
+            <tr>
+                <th>
+                    <span>Journal ID</span>
+                </th>
+                <th>
+                    <span>Name</span>
+                </th>
+                <th>
+                    <span>Date Created</span>
+                </th>
+            </tr>
         </thead>
         <tbody>
             <tr *ngFor="let jouranl_entry of journal_entries">
@@ -51,5 +51,9 @@
             </tr>
         </tbody>
     </table>
+
+    <div>
+        <p>{{poem()}}</p>
+    </div>
+    <messing-around-under-construction></messing-around-under-construction>
 </div>
-<messing-around-under-construction></messing-around-under-construction>
