@@ -47,3 +47,4 @@ Thumbs.db
 /MessingAround-Backend/.vs
 /MessingAround-Backend/MessingAround.API/obj
 /MessingAround-Backend/MessingAround.DAL/obj
+/MessingAround-Backend/MessingAround.DAL/bin
