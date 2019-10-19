@@ -44,5 +44,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-/MessingAround-DOT/.vs/
-/MessingAround-DOT/MessingAround-API/obj
+/MessingAround-Backend/.vs

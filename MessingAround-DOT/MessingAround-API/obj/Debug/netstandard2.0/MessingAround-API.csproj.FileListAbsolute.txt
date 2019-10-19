@@ -1,5 +1,0 @@
-D:\Projects\Websites\August2019\MessingAround\MessingAround-DOT\MessingAround-API\bin\Debug\netstandard2.0\MessingAround-API.deps.json
-D:\Projects\Websites\August2019\MessingAround\MessingAround-DOT\MessingAround-API\bin\Debug\netstandard2.0\MessingAround-API.dll
-D:\Projects\Websites\August2019\MessingAround\MessingAround-DOT\MessingAround-API\obj\Debug\netstandard2.0\MessingAround-API.csprojAssemblyReference.cache
-D:\Projects\Websites\August2019\MessingAround\MessingAround-DOT\MessingAround-API\obj\Debug\netstandard2.0\MessingAround-API.AssemblyInfoInputs.cache
-D:\Projects\Websites\August2019\MessingAround\MessingAround-DOT\MessingAround-API\obj\Debug\netstandard2.0\MessingAround-API.AssemblyInfo.cs
