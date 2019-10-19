@@ -45,3 +45,4 @@ testem.log
 .DS_Store
 Thumbs.db
 /MessingAround-DOT/.vs/
+/MessingAround-DOT/MessingAround-API/obj
