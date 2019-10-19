@@ -45,3 +45,5 @@ testem.log
 .DS_Store
 Thumbs.db
 /MessingAround-Backend/.vs
+/MessingAround-Backend/MessingAround.API/obj
+/MessingAround-Backend/MessingAround.DAL/obj

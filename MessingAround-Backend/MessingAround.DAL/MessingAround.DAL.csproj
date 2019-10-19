@@ -58,6 +58,7 @@
     <Compile Include="Foundation\BaseEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MAContext.cs" />
+    <Compile Include="UnitOfWork\MAUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

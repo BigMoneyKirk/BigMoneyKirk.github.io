@@ -1,7 +1,7 @@
 using MessingAround_API.Entities;
 using System.Data.Entity;
 
-namespace EF6CodeFirstDemo
+namespace MessingAround.DAL
 {
     public class MAContext : DbContext
     {
