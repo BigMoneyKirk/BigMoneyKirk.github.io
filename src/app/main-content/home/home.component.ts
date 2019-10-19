@@ -128,6 +128,8 @@ export class HomeComponent implements OnInit {
   public list1 = '';
   public king = this.globalImage.king;
   public logoUrl = this.globalImage.logoUrl;
+  public welcomeLogoUrl = "https://fontmeme.com/permalink/191007/2ac185608541058593593bb536036fe6.png";
+  public welcomeLogo2Url = "https://fontmeme.com/permalink/191015/8df3be736d6f57ed67102608a9251e75.png";
 
   constructor(private cdr: ChangeDetectorRef, private globalImage: GlobalImageService) { }
 
@@ -142,8 +144,8 @@ export class HomeComponent implements OnInit {
     this.state = 'highlighted';
   }
 
-  public startAnimation() {
-    this.state = 'highlighted';
+  public luke4_18(){
+    return `Luke 4:18-19 The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free, to proclaim the year of the Lord's favor.`;
   }
 
   public onAnimate() {
@@ -163,11 +165,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  ngAfterViewInit() {
-    $(document).ready(function () {
-      $("p").click(function () {
-        $(this).hide();
-      });
-    });
+  public startAnimation() {
+    this.state = 'highlighted';
   }
 }

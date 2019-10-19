@@ -8,17 +8,33 @@ import { BestBuddiesComponent } from './other-sites/best-buddies/best-buddies.co
 import { InteriorDesingComponent } from './other-sites/interior-desing/interior-desing.component';
 import { TishasCakesComponent } from './other-sites/tishas-cakes/tishas-cakes.component';
 import { JournalComponent } from './other-sites/journal/journal.component';
+import { SocialMediaComponent } from './other-sites/social-media/social-media.component';
+import { BookmarksComponent } from './other-sites/bookmarks/bookmarks.component';
+import { PassionsComponent } from './other-sites/passions/passions.component';
+import { SettingsComponent } from './other-sites/settings/settings.component';
+import { KeatylinsBeautyComponent } from './other-sites/keatylins-beauty/keatylins-beauty.component';
+import { SandrasRecordKeepingComponent } from './other-sites/sandras-record-keeping/sandras-record-keeping.component';
+import { SadesFruitComponent } from './other-sites/sades-fruit/sades-fruit.component';
+import { UnderConstructionComponent } from './other-sites/under-construction/under-construction.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'best-buddies', component: BestBuddiesComponent },
   { path: 'bible', component: BibleComponent },
+  { path: 'bookmarks', component: BookmarksComponent },
   { path: 'home', component: HomeComponent },
   { path: 'interior-design', component: InteriorDesingComponent },
   { path: 'journal', component: JournalComponent },
+  { path: 'keatylins-beauty', component: KeatylinsBeautyComponent},
   { path: 'login', component: LoginPageComponent },
-  { path: 'tishas-cupcakes', component: TishasCakesComponent }
+  { path: 'passions', component: PassionsComponent },
+  { path: 'sades-fruit', component: SadesFruitComponent },
+  { path: 'sandras-record-keeping', component: SandrasRecordKeepingComponent},
+  { path: 'settings', component: SettingsComponent },
+  { path: 'social-media', component: SocialMediaComponent },
+  { path: 'tishas-cupcakes', component: TishasCakesComponent },
+  { path: 'under-construction', component: UnderConstructionComponent}
 ];
 
 @NgModule({

@@ -15,7 +15,7 @@
 }
 
 .row{
-    h1{
+    .welcome-logo{
         @include tada();
     }
     text-align: center;
