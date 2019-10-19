@@ -44,3 +44,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/MessingAround-DOT/.vs/MessingAround-DOT/v16/Server/sqlite3
