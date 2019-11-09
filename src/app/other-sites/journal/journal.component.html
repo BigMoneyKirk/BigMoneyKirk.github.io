@@ -12,15 +12,7 @@
         <div class="col-lg-3"></div>
     </div>
 
-    <!-- Write here -->
-    <div>
-        <p>Write here what you want to say:</p>
-        <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
-        <br>
-        <div class="right-side">
-            <button class="btn btn-success">Submit</button>
-        </div>
-    </div>
+    
 
     <!-- Journal Table -->
     <table class="table">
@@ -52,9 +44,9 @@
         </tbody>
     </table>
 
-    <div>
+    <!-- <div>
         <p>{{poem()}}</p>
-    </div>
-    <button (click)="ngxSmartModalService.getModal('myModal').open()">Open myModal</button>
+    </div> -->
+    <button (click)="createNewModal()">Create New Journal Entry</button>
     <messing-around-under-construction></messing-around-under-construction>
 </div>

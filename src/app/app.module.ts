@@ -25,6 +25,7 @@ import { SandrasRecordKeepingComponent } from './other-sites/sandras-record-keep
 import { SadesFruitComponent } from './other-sites/sades-fruit/sades-fruit.component';
 import { UnderConstructionComponent } from './other-sites/under-construction/under-construction.component';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { NewEntryComponent } from './other-sites/journal/new-entry/new-entry.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,11 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
     KeatylinsBeautyComponent,
     SandrasRecordKeepingComponent,
     SadesFruitComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
+    NewEntryComponent
+  ],
+  entryComponents: [
+    NewEntryComponent
   ],
   imports: [
     BrowserModule,
