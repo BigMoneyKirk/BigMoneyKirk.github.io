@@ -26,6 +26,7 @@ import { SadesFruitComponent } from './other-sites/sades-fruit/sades-fruit.compo
 import { UnderConstructionComponent } from './other-sites/under-construction/under-construction.component';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { NewEntryComponent } from './other-sites/journal/new-entry/new-entry.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { NewEntryComponent } from './other-sites/journal/new-entry/new-entry.com
     NavbarModule,
     WavesModule,
     MDBBootstrapModule.forRoot(),
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],
