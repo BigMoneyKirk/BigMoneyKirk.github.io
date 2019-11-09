@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -25,6 +24,7 @@ import { KeatylinsBeautyComponent } from './other-sites/keatylins-beauty/keatyli
 import { SandrasRecordKeepingComponent } from './other-sites/sandras-record-keeping/sandras-record-keeping.component';
 import { SadesFruitComponent } from './other-sites/sades-fruit/sades-fruit.component';
 import { UnderConstructionComponent } from './other-sites/under-construction/under-construction.component';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 @NgModule({
   declarations: [
@@ -57,6 +57,7 @@ import { UnderConstructionComponent } from './other-sites/under-construction/und
     NavbarModule,
     WavesModule,
     MDBBootstrapModule.forRoot(),
+    NgxSmartModalModule.forRoot()
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],

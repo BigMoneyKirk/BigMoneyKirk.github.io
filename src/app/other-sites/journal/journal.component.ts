@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JournalEntry } from 'src/app/models/journalentry';
 import * as moment from 'moment';
 import { DateFormatterService } from 'src/app/services/date-formatter.service';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'messing-around-journal',
@@ -17,12 +18,13 @@ export class JournalComponent implements OnInit {
   public journalEntry1: JournalEntry = new JournalEntry(1, 'Journal Entry 1', true, new Date());
   public journalEntry2: JournalEntry = new JournalEntry(2, 'Journal Entry 2', true, new Date());
 
-  constructor(private dateFormatter: DateFormatterService) { }
+  constructor(private dateFormatter: DateFormatterService, public ngxSmartModalService: NgxSmartModalService) { }
 
   ngOnInit() {
     this.journal_entries = new Array<JournalEntry>();
     this.journal_entries.push(this.journalEntry1);
     this.journal_entries.push(this.journalEntry2);
+    this.ngxSmartModalService.create('myModal', 'content').open();
   }
 
   public dateformat(date: Date){
