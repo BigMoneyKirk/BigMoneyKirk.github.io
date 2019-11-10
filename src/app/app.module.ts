@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -27,6 +27,8 @@ import { UnderConstructionComponent } from './other-sites/under-construction/und
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { NewEntryComponent } from './other-sites/journal/new-entry/new-entry.component';
 import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -58,12 +60,15 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NavbarModule,
     WavesModule,
     MDBBootstrapModule.forRoot(),
     NgxSmartModalModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],
