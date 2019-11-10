@@ -26,6 +26,9 @@ export class JournalComponent implements OnInit {
   public validation_messages = {
     'title': [
       { type: 'required', message: 'Title is required.' }
+    ],
+    'entry': [
+      {type: 'required', message: 'Entry is required.' }
     ]
   };
 
@@ -42,6 +45,7 @@ export class JournalComponent implements OnInit {
   public createForm(){
     this.newJournalEntryForm = this.fb.group({
       title: ['', Validators.required ],
+      entry: ['', Validators.required ]
     });
   }
 

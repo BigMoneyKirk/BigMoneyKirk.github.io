@@ -48,28 +48,29 @@
     <!-- <button (click)="createNewModal()">Create New Journal Entry</button> -->
  
     <form class="new-journal-entry-form" [formGroup]="newJournalEntryForm" novalidate (ngSubmit)="onSubmit(newJournalEntryForm.value)">
+        <div class="form-group">
             <!-- Title  -->
-            <div class="form-group">
-                 <mat-form-field class="input-style title-font">
-                      <input matInput placeholder="Enter title here" class="form-control">
-                 </mat-form-field>
-                 <ng-container *ngFor="let validation of validation_messages.title">
-                      <mat-error *ngIf="newJournalEntryForm.get('title').hasError(validation.type) && (newJournalEntryForm.get('title').dirty || newJournalEntryForm.get('title').touched)">{{validation.message}}</mat-error>
-                 </ng-container>
-            </div>
+            <mat-form-field class="input-style title-font" floatLabel="never">
+                <input matInput placeholder="Enter title here" class="form-control" formControlName="title">
+            </mat-form-field>
+            <ng-container *ngFor="let validation of validation_messages.title">
+                <mat-error *ngIf="newJournalEntryForm.get('title').hasError(validation.type) && (newJournalEntryForm.get('title').dirty || newJournalEntryForm.get('title').touched)">{{validation.message}}
+                </mat-error>
+            </ng-container>
        
-       <!-- Write here -->
-            <div class="form-group">
-                    <mat-form-field class="input-style title-font">
-                            <textarea matInput placeholder="Write here what you want to say:" class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5"></textarea>
-                       </mat-form-field>
-                 <!-- <p>Write here what you want to say:</p>
-                 <textarea class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5"></textarea>
-                 <br>
-                 -->
-                 <div class="right-side">
-                 <button class="btn btn-success" type="submit" (click)="onSubmit(newJournalEntryForm.value)">Submit</button> 
-                 </div>
+           <!-- Write here -->
+            <mat-form-field class="input-style">
+                <textarea matInput placeholder="Write here what you want to say:" class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5" formControlName="entry"></textarea>
+            </mat-form-field>
+            <ng-container *ngFor="let validation of validation_messages.entry">
+                <mat-error *ngIf="newJournalEntryForm.get('entry').hasError(validation.type) && (newJournalEntryForm.get('entry').dirty || newJournalEntryForm.get('entry').touched)">{{validation.message}}
+                </mat-error>
+            </ng-container>
+        </div>
+
+        <!-- Submit button -->
+            <div class="right-side">
+                <button class="btn btn-success" type="submit" [disabled]="newJournalEntryForm.invalid">Submit</button> 
             </div>
        </form>
     <br>
