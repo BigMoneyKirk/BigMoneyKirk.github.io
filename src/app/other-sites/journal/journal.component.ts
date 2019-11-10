@@ -57,12 +57,13 @@ export class JournalComponent implements OnInit {
   }
 
   public dateformat(date: Date){
-    let huh = this.dateFormatter.shortMonthDayYear(date);
-    return huh;
+    let formattedDate = this.dateFormatter.shortMonthDayYear(date);
+    return formattedDate;
   }
 
   public onSubmit(value){
     console.log(value);
+    // TO-DO: I need to call the firebase service so that I can add the entry to the backend
   }
 
   public poem(){
