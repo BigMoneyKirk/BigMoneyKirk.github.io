@@ -11,29 +11,29 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class NewEntryComponent implements OnInit {
 
-  public exampleForm: FormGroup;
-  public avatarLink: string = this.imageService.king;
+  public newJournalEntryForm: FormGroup;
+
+  public validation_messages = {
+    'title': [
+      { type: 'required', message: 'Title is required.' }
+    ]
+  };
 
   constructor(private fb: FormBuilder, public firebaseService: FirebaseService, public imageService: GlobalImageService, private router: Router) {
     
   }
 
   ngOnInit() {
+    this.createForm();
+  }
+  
+  public createForm(){
+    this.newJournalEntryForm = this.fb.group({
+      title: ['', Validators.required ],
+    });
   }
 
   public onSubmit(value){
-    this.firebaseService.createUser(value, this.avatarLink).then(res => {
-        this.resetFields();
-        this.router.navigate(['/home']);
-      });
-  }
-
-  public resetFields(){
-    this.avatarLink = this.imageService.king;
-    this.exampleForm = this.fb.group({
-      name: new FormControl('', Validators.required),
-      surname: new FormControl('', Validators.required),
-      age: new FormControl('', Validators.required),
-    });
+    
   }
 }

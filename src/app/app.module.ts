@@ -29,6 +29,7 @@ import { NewEntryComponent } from './other-sites/journal/new-entry/new-entry.com
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatSelectModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     NgxSmartModalModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSliderModule,
+    MatDialogModule,
+    MatSelectModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],

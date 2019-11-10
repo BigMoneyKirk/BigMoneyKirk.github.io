@@ -1,9 +1,13 @@
 <form class="new-journal-entry-form" [formGroup]="newJournalEntryForm" novalidate (ngSubmit)="onSubmit(newJournalEntryForm.value)">
      <!-- Title -->
-     <h5>Title:</h5>
-     <textarea class="form-control" name="journalentrytitle" id="journalentrytitle" cols="30" rows="1"></textarea>
-
-     <br>
+     <div class="form-group">
+          <mat-form-field class="input-style title-font">
+               <input matInput placeholder="Enter title here" class="form-control" formControlName="title" required>
+          </mat-form-field>
+          <ng-container *ngFor="let validation of validation_messages.title">
+               <mat-error *ngIf="newJournalEntryForm.get('title').hasError(validation.type) && (newJournalEntryForm.get('title').dirty || newJournalEntryForm.get('title').touched)">{{validation.message}}</mat-error>
+          </ng-container>
+     </div>
 
 <!-- Write here -->
      <div>
@@ -11,7 +15,7 @@
           <textarea class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5"></textarea>
           <br>
           <div class="right-side">
-          <button class="btn btn-success">Submit</button>
+          <button class="btn btn-success" type="submit" (click)="onSubmit(newJournalEntryForm.value)">Submit</button>
           </div>
      </div>
 </form>

@@ -5,6 +5,7 @@ import { DateFormatterService } from 'src/app/services/date-formatter.service';
 import { NgxSmartModalService, NgxSmartModalComponent } from 'ngx-smart-modal';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 import { INgxSmartModalOptions } from 'ngx-smart-modal/src/config/ngx-smart-modal.config';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'messing-around-journal',
@@ -21,13 +22,34 @@ export class JournalComponent implements OnInit {
   public modalText = 'Holla back, yungen; whooo-whoooo!!!!';
   public scrollBannerUrl = "assets/images/journal/scroll-banner.png";
 
-  constructor(private dateFormatter: DateFormatterService, public ngxSmartModalService: NgxSmartModalService) {
+  public newJournalEntryForm: FormGroup;
+  public validation_messages = {
+    'title': [
+      { type: 'required', message: 'Title is required.' }
+    ]
+  };
+
+  constructor(private dateFormatter: DateFormatterService, private fb: FormBuilder, public ngxSmartModalService: NgxSmartModalService) {
    }
 
   ngOnInit() {
     this.journal_entries = new Array<JournalEntry>();
     this.journal_entries.push(this.journalEntry1);
     this.journal_entries.push(this.journalEntry2);
+    this.createForm();
+  }
+  
+  public createForm(){
+    this.newJournalEntryForm = this.fb.group({
+      title: ['', Validators.required ],
+    });
+  }
+
+  public createNewModal(){
+    const opts: INgxSmartModalOptions = {
+      backdrop: true
+    };
+    this.ngxSmartModalService.create('NewJournalEntry', NewEntryComponent, opts).open();
   }
 
   public dateformat(date: Date){
@@ -35,16 +57,11 @@ export class JournalComponent implements OnInit {
     return huh;
   }
 
-  public createNewModal(){
-    const opts: INgxSmartModalOptions = {
-      backdrop: true
-    };
-    
-    this.ngxSmartModalService.create('NewJournalEntry', NewEntryComponent, opts).open();
+  public onSubmit(value){
+    console.log(value);
   }
 
   public poem(){
     return `Uh huh`;
   }
-
 }
