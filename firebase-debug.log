@@ -1,0 +1,26 @@
+[debug] [2019-11-10T02:15:14.268Z] ----------------------------------------------------------------------
+[debug] [2019-11-10T02:15:14.270Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sk014\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-11-10T02:15:14.270Z] CLI Version:   7.7.0
+[debug] [2019-11-10T02:15:14.270Z] Platform:      win32
+[debug] [2019-11-10T02:15:14.270Z] Node Version:  v10.14.1
+[debug] [2019-11-10T02:15:14.272Z] Time:          Sat Nov 09 2019 21:15:14 GMT-0500 (Eastern Standard Time)
+[debug] [2019-11-10T02:15:14.272Z] ----------------------------------------------------------------------
+[debug] [2019-11-10T02:15:14.272Z] 
+[debug] [2019-11-10T02:15:14.287Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-10T02:15:14.288Z] > authorizing via signed-in user
+[debug] [2019-11-10T02:15:14.289Z] [iam] checking project messingaround-524ea for permissions ["firebase.projects.get"]
+[debug] [2019-11-10T02:15:14.294Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/messingaround-524ea:testIamPermissions  
+
+[debug] [2019-11-10T02:15:14.449Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-10T02:15:14.452Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/messingaround-524ea  
+ 
+[debug] [2019-11-10T02:15:14.695Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\sk014\Desktop\Self Teaching\Angular5\MessingAround'...
+[info] 
+[debug] [2019-11-10T02:15:14.699Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/messingaround-524ea/webApps/-/config  
+ 
+[debug] [2019-11-10T02:15:15.012Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: dist/MessingAround
+[info] +  hosting: Local server: http://localhost:5000
+[info] Shutting down...
