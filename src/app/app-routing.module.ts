@@ -16,6 +16,7 @@ import { KeatylinsBeautyComponent } from './other-sites/keatylins-beauty/keatyli
 import { SandrasRecordKeepingComponent } from './other-sites/sandras-record-keeping/sandras-record-keeping.component';
 import { SadesFruitComponent } from './other-sites/sades-fruit/sades-fruit.component';
 import { UnderConstructionComponent } from './other-sites/under-construction/under-construction.component';
+import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'best-buddies', component: BestBuddiesComponent },
   { path: 'bible', component: BibleComponent },
   { path: 'bookmarks', component: BookmarksComponent },
+  { path: 'heather-mary-kay', component: HeatherMaryKayComponent },
   { path: 'home', component: HomeComponent },
   { path: 'interior-design', component: InteriorDesingComponent },
   { path: 'journal', component: JournalComponent },

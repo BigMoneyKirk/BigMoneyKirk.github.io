@@ -30,6 +30,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatSelectModule } from '@angular/material';
+import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatSe
     SandrasRecordKeepingComponent,
     SadesFruitComponent,
     UnderConstructionComponent,
-    NewEntryComponent
+    NewEntryComponent,
+    HeatherMaryKayComponent
   ],
   entryComponents: [
     NewEntryComponent
