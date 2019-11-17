@@ -12,4 +12,8 @@ export class SadesFruitComponent implements OnInit {
   ngOnInit() {
   }
 
+  about(){
+    return `Linden, NJ -- Healthy Snacks -- Email:sadearielfruitjars@gmail.com -- FB: Sade'Ariel Hill -- IG: ohshe_real`;
+  }
+
 }

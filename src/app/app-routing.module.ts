@@ -31,10 +31,10 @@ const routes: Routes = [
   { path: 'keatylins-beauty', component: KeatylinsBeautyComponent},
   { path: 'login', component: LoginPageComponent },
   { path: 'passions', component: PassionsComponent },
-  { path: 'sades-fruit', component: SadesFruitComponent },
   { path: 'sandras-record-keeping', component: SandrasRecordKeepingComponent},
   { path: 'settings', component: SettingsComponent },
   { path: 'social-media', component: SocialMediaComponent },
+  { path: 'the-fruit-plug', component: SadesFruitComponent },
   { path: 'tishas-cupcakes', component: TishasCakesComponent },
   { path: 'under-construction', component: UnderConstructionComponent}
 ];

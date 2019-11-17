@@ -12,4 +12,8 @@ export class BestBuddiesComponent implements OnInit {
   ngOnInit() {
   }
 
+  about(){
+    return `Meet Anne Johnson and Max Hersberger. Not only are they my co-workers, but they are my friends.`;
+  }
+
 }
