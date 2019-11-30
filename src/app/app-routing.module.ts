@@ -17,6 +17,7 @@ import { SandrasRecordKeepingComponent } from './other-sites/sandras-record-keep
 import { SadesFruitComponent } from './other-sites/sades-fruit/sades-fruit.component';
 import { UnderConstructionComponent } from './other-sites/under-construction/under-construction.component';
 import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
+import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'interior-design', component: InteriorDesingComponent },
   { path: 'journal', component: JournalComponent },
   { path: 'keatylins-beauty', component: KeatylinsBeautyComponent},
+  { path: 'kirkland-loan', component: KirklandLoanComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'passions', component: PassionsComponent },
   { path: 'sandras-record-keeping', component: SandrasRecordKeepingComponent},

@@ -31,6 +31,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatSelectModule } from '@angular/material';
 import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
+import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-
     SadesFruitComponent,
     UnderConstructionComponent,
     NewEntryComponent,
-    HeatherMaryKayComponent
+    HeatherMaryKayComponent,
+    KirklandLoanComponent
   ],
   entryComponents: [
     NewEntryComponent
