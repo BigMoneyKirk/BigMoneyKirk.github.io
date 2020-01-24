@@ -33,6 +33,7 @@ import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatSe
 import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
 import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
 import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute.component';
+import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute
     NewEntryComponent,
     HeatherMaryKayComponent,
     KirklandLoanComponent,
-    BunnieBeauteComponent
+    BunnieBeauteComponent,
+    KevinsVisionComponent
   ],
   entryComponents: [
     NewEntryComponent

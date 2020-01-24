@@ -19,6 +19,7 @@ import { UnderConstructionComponent } from './other-sites/under-construction/und
 import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
 import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
 import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute.component';
+import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'interior-design', component: InteriorDesingComponent },
   { path: 'journal', component: JournalComponent },
   { path: 'keatylins-beauty', component: KeatylinsBeautyComponent},
+  { path: 'kevins-vision', component: KevinsVisionComponent },
   { path: 'kirkland-loan', component: KirklandLoanComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'passions', component: PassionsComponent },
