@@ -26,4 +26,8 @@ export class KevinsVisionComponent implements OnInit {
     return `And here!!`;
   }
 
+  kevins_vision(){
+    return `Kevin Scott from the Accenture Federal Services contract has come up with a brilliant idea to have a Revature type styled business. To train other developers up and then ship them out into the workplace. This has a lot in common with my vision of Kirkland Enterprises. I would love to open up some sort of "school" or education avenue for the youth and younger people (and even older people) can continue to learn outside of the school system and shine light on the fact that the school/college system is corrupt and there are better ways of learning. I think apprenticeship is the answer/key.`;
+  }
+
 }
