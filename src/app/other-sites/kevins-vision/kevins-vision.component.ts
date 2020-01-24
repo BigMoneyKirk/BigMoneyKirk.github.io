@@ -11,7 +11,7 @@ export class KevinsVisionComponent implements OnInit {
   public chair_design = "assets/images/interior-design/ejs-stuff/chair_design.jpg";
   public city_corener_sketch_img = "assets/images/interior-design/ejs-stuff/city-corner-sketch.JPG";
   public contrasts_img = "assets/images/interior-design/ejs-stuff/contrasts.jpg";
-  public ejs_logo = "https://fontmeme.com/permalink/191013/d1ef77ff2ea001812916feee00c10718.png";
+  public kevins_logo = "https://fontmeme.com/permalink/200124/0f46cb50d4c7865aa22650ca02bd0682.png";
 
   constructor() { }
 
