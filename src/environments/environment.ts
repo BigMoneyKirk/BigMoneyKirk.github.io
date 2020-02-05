@@ -6,12 +6,13 @@ export const environment = {
   production: false,
   firebaseAPIKey: 'AIzaSyDVw659-42k5Fp_0J6_7b7x_WAy3tW4JkQ',
   firebase: {
-    apiKey: 'AIzaSyDVw659-42k5Fp_0J6_7b7x_WAy3tW4JkQ',
-    authDomain: '<your-project-authdomain>',
-    databaseURL: '<your-database-URL>',
-    projectId: '<your-project-id>',
-    storageBucket: '<your-storage-bucket>',
-    messagingSenderId: '<your-messaging-sender-id>'
+    apiKey: "AIzaSyDVw659-42k5Fp_0J6_7b7x_WAy3tW4JkQ",
+      authDomain: "messingaround-524ea.firebaseapp.com",
+      databaseURL: "https://messingaround-524ea.firebaseio.com",
+      projectId: "messingaround-524ea",
+      storageBucket: "messingaround-524ea.appspot.com",
+      messagingSenderId: "480028060424",
+      appId: "1:480028060424:web:a1588c67306e7c70"
   }
 };
 

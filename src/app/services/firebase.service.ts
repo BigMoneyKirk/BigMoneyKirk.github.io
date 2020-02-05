@@ -49,4 +49,11 @@ export class FirebaseService {
       avatar: avatar
     });
   }
+
+  createJournalEntry(value){
+    return this.db.collection('Journal Entries').add({
+      title: value.title,
+      entry: value.entry
+    });
+  }
 }

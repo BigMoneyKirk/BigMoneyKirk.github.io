@@ -6,6 +6,7 @@ import { NgxSmartModalService, NgxSmartModalComponent } from 'ngx-smart-modal';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 import { INgxSmartModalOptions } from 'ngx-smart-modal/src/config/ngx-smart-modal.config';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'messing-around-journal',
@@ -32,7 +33,7 @@ export class JournalComponent implements OnInit {
     ]
   };
 
-  constructor(private dateFormatter: DateFormatterService, private fb: FormBuilder, public ngxSmartModalService: NgxSmartModalService) {
+  constructor(private dateFormatter: DateFormatterService, private fb: FormBuilder, public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService) {
    }
 
   ngOnInit() {
@@ -64,6 +65,9 @@ export class JournalComponent implements OnInit {
   public onSubmit(value){
     console.log(value);
     // TO-DO: I need to call the firebase service so that I can add the entry to the backend
+    this.firebaseService.createJournalEntry(value).then(() => {
+      alert('This actually saved.');
+    })
   }
 
   public poem(){
