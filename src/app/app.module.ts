@@ -34,6 +34,7 @@ import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-
 import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
 import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute.component';
 import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision.component';
+import { SmartHouseComponent } from './other-sites/smart-house/smart-house.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision
     HeatherMaryKayComponent,
     KirklandLoanComponent,
     BunnieBeauteComponent,
-    KevinsVisionComponent
+    KevinsVisionComponent,
+    SmartHouseComponent
   ],
   entryComponents: [
     NewEntryComponent

@@ -20,6 +20,7 @@ import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-
 import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
 import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute.component';
 import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision.component';
+import { SmartHouseComponent } from './other-sites/smart-house/smart-house.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'sandras-record-keeping', component: SandrasRecordKeepingComponent},
   { path: 'settings', component: SettingsComponent },
   { path: 'social-media', component: SocialMediaComponent },
+  { path: 'smart-home', component: SmartHouseComponent },
   { path: 'the-fruit-plug', component: SadesFruitComponent },
   { path: 'tishas-cupcakes', component: TishasCakesComponent },
   { path: 'under-construction', component: UnderConstructionComponent}
