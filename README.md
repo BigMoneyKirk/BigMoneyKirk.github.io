@@ -7,3 +7,11 @@ Alienware mostly, and the x360 HP Spectra). I have been praying for insight with
 been showing me some pretty fascinating stuff!
 
 The Word of God, social media, journaling, connecting, loving, sharing, caring, growing, developing. This application will have it all!
+
+### Testing Hashtags
+#### Does 4 hashtags work?
+<ul>
+  <li>Testing</li>
+  <li>Bullet</li>
+  <li>Points</li>
+</ul>
