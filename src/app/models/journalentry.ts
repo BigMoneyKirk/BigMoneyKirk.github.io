@@ -19,15 +19,13 @@ export class JournalEntry{
         this._Name = v;
     }
     
-    
     public get IsActive() : boolean {
         return this._IsActive;
     }
     public set IsActive(v : boolean) {
         this._IsActive = v;
     }
-    
-    
+     
     public get CreatedAt() : Date {
         return this._CreatedAt;
     }
@@ -35,7 +33,6 @@ export class JournalEntry{
         this._CreatedAt = v;
     }
 
-    
     private _CreatedBy : number;
     public get CreatedBy() : number {
         return this._CreatedBy;
@@ -43,7 +40,6 @@ export class JournalEntry{
     public set CreatedBy(v : number) {
         this._CreatedBy = v;
     }
-    
     
     private _UpdatedAt : Date;
     public get UpdatedAt() : Date {
@@ -53,7 +49,6 @@ export class JournalEntry{
         this._UpdatedAt = v;
     }
     
-    
     private _UpdatedBy : number;
     public get UpdatedBy() : number {
         return this._UpdatedBy;
@@ -62,7 +57,6 @@ export class JournalEntry{
         this._UpdatedBy = v;
     }
     
-    
     private _DeletedAt : Date;
     public get DeletedAt() : Date {
         return this._DeletedAt;
@@ -70,7 +64,6 @@ export class JournalEntry{
     public set DeletedAt(v : Date) {
         this._DeletedAt = v;
     }
-    
 
     private _DeletedBy : number;
     public get DeletedBy() : number {

@@ -51,7 +51,7 @@
         <div class="form-group">
             <!-- Title  -->
             <mat-form-field class="input-style title-font" floatLabel="never">
-                <input matInput placeholder="Enter title here" class="form-control" formControlName="title">
+                <input matInput placeholder="Enter title here" class="form-control" id="input-title" [(ngModel)]='journal_title' formControlName="title">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.title">
                 <mat-error *ngIf="newJournalEntryForm.get('title').hasError(validation.type) && (newJournalEntryForm.get('title').dirty || newJournalEntryForm.get('title').touched)">{{validation.message}}
@@ -60,7 +60,7 @@
        
            <!-- Write here -->
             <mat-form-field class="input-style">
-                <textarea matInput placeholder="Write here what you want to say:" class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5" formControlName="entry"></textarea>
+                <textarea matInput [(ngModel)]="journal_entry" placeholder="Write here what you want to say:" class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5" formControlName="entry"></textarea>
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.entry">
                 <mat-error *ngIf="newJournalEntryForm.get('entry').hasError(validation.type) && (newJournalEntryForm.get('entry').dirty || newJournalEntryForm.get('entry').touched)">{{validation.message}}
