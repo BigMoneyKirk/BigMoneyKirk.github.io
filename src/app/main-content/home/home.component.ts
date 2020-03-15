@@ -35,143 +35,32 @@ import { GlobalImageService } from 'src/app/services/global-image.service';
             style({
               transform: 'translateX(0)',
               offset: 1
-            }),
+            })
           ]))
-        ]),
-      ]),
-
-      transition('* => void', animate(300, style({ transform: 'translateX(100px)', opacity: 0 })))
-      // -------------------------------
-      // state('normal', style({
-      //   backgroundColor: 'black',
-      //   transform: 'translateX(0)'
-      // })),
-      // state('highlighted', style({
-      //   backgroundColor: 'blue',
-      //   transform: 'translateX(100px)'
-      // })),
-      // transition('normal <=> highlighted', animate(300)),
-    ]),
-
-    trigger('wildState', [
-      state('normal', style({
-        backgroundColor: 'red',
-        transform: 'translateX(0) scale(1)'
-      })),
-      state('highlighted', style({
-        backgroundColor: 'blue',
-        transform: 'translateX(100px) scale(1)'
-      })),
-      state('shrunken', style({
-        backgroundColor: 'green',
-        transform: 'translateX(0) scale(0.5)'
-      })),
-      transition('normal => highlighted', animate(300)),
-      transition('highlighted => normal', animate(800)),
-      transition('shrunken <=> *',
-        [style({
-          backgroundColor: 'orange'
-        }),
-        animate(0, style({ borderRadius: '50px' })),
-        animate(700),
         ])
-    ]),
-
-    trigger('list1', [
-      state('void', style({
-        opacity: 1,
-        transform: 'translateX(0)'
-      })),
-      transition('void => *', [
-        style({ opacity: 0, transform: 'translateX(-100px)', color: 'blue' }),
-        group([
-          animate(1000, keyframes([
-            style({
-              transform: 'translateX(-100px)',
-              opacity: 0,
-              offset: 0
-            }),
-            style({
-              transform: 'translateX(-50px)',
-              opacity: 0.5,
-              offset: 0.3,
-              color: 'red'
-            }),
-            style({
-              transform: 'translateX(-20px)',
-              opacity: 1,
-              offset: 0.8,
-              color: 'green'
-            }),
-            style({
-              transform: 'translateX(0)',
-              offset: 1,
-              color: 'pink'
-            }),
-          ])),
-          animate(300, style({
-            // color: 'red'
-          }))
-        ]),
-      ]),
-
-      transition('* => void', animate(300, style({ transform: 'translateX(100px)', opacity: 0 })))
-    ])
-
-  ]
+      ])])]
 })
 
 export class HomeComponent implements OnInit {
 
   public state = 'normal';
-  public wildState = 'normal';
-  public list1 = '';
   public king = this.globalImage.king;
   public logoUrl = this.globalImage.logoUrl;
   public welcomeLogoUrl = "https://fontmeme.com/permalink/191007/2ac185608541058593593bb536036fe6.png";
   public welcomeLogo2Url = "https://fontmeme.com/permalink/191015/8df3be736d6f57ed67102608a9251e75.png";
 
-  constructor(private cdr: ChangeDetectorRef, private globalImage: GlobalImageService) { }
+  constructor(private globalImage: GlobalImageService) { }
 
   ngOnInit() {
     this.thankyouAnimation();
-  }
-
-  public animationEnded(event) {
-    this.state = 'normal';
-  }
-
-  public animationStarted(event) {
-    this.state = 'highlighted';
   }
 
   public luke4_18() {
     return `Luke 4:18-19 The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free, to proclaim the year of the Lord's favor.`;
   }
 
-  public _1peter4_8_10(){
+  public _1peter4_8_10() {
     return `1 Peter 4:8-10 (ESV) Above all, keep loving one another earnestly, since love covers a multitude of sins. Show hospitality to one another without grumbling. As each has received a gift, use it to serve one another, as good stewards of God's varied grace:`;
-  }
-
-  public onAnimate() {
-    this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal';
-    this.wildState == 'normal' ? this.wildState = 'highlighted' : this.wildState = 'normal';
-  }
-
-  public onDelete() {
-    this.list1 = 'void';
-  }
-
-  public onShrink() {
-    if (this.wildState == 'normal')
-      this.wildState = 'shrunken';
-    else {
-      this.wildState = 'normal'
-    }
-  }
-
-  public startAnimation() {
-    this.state = 'highlighted';
   }
 
   public thankyouAnimation() {
