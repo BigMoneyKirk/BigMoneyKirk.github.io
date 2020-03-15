@@ -149,6 +149,10 @@ export class HomeComponent implements OnInit {
     return `Luke 4:18-19 The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free, to proclaim the year of the Lord's favor.`;
   }
 
+  public _1peter4_8_10(){
+    return `1 Peter 4:8-10 (ESV) Above all, keep loving one another earnestly, since love covers a multitude of sins. Show hospitality to one another without grumbling. As each has received a gift, use it to serve one another, as good stewards of God's varied grace:`;
+  }
+
   public onAnimate() {
     this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal';
     this.wildState == 'normal' ? this.wildState = 'highlighted' : this.wildState = 'normal';

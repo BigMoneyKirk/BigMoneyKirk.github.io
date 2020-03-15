@@ -15,9 +15,6 @@
 }
 
 .row{
-    .welcome-logo{
-        @include tada();
-    }
     text-align: center;
     margin: 0px;
 }
@@ -26,13 +23,13 @@
     text-align: center;
 }
 
+.welcome-logo{
+  animation: tada 2s 5;
+}
+
 // @media(max-width: 700px){
 //     .welcome-logo{
 //         width: 500px;
 //         height: 200px;
 //     }
 // }
-
-.delay-6s{
-    animation-delay: 6s;
-}
