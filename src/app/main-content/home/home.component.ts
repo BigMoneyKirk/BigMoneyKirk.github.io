@@ -134,6 +134,7 @@ export class HomeComponent implements OnInit {
   constructor(private cdr: ChangeDetectorRef, private globalImage: GlobalImageService) { }
 
   ngOnInit() {
+    this.thankyouAnimation();
   }
 
   public animationEnded(event) {
@@ -144,7 +145,7 @@ export class HomeComponent implements OnInit {
     this.state = 'highlighted';
   }
 
-  public luke4_18(){
+  public luke4_18() {
     return `Luke 4:18-19 The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free, to proclaim the year of the Lord's favor.`;
   }
 
@@ -167,5 +168,35 @@ export class HomeComponent implements OnInit {
 
   public startAnimation() {
     this.state = 'highlighted';
+  }
+
+  public thankyouAnimation() {
+    const thankYouElement = document.querySelector('#thank-you');
+    this.animateCSS('#thank-you', 'zoomInDown', () => {
+      thankYouElement.classList.add('animated', 'delay-3s', 'zoomOutDown');
+      $(thankYouElement).delay(4000).hide(0);
+    });
+
+    const gladElement = document.querySelector('#glad');
+    $(gladElement).hide(0);
+    $(gladElement).delay(6000).show(0);
+    this.animateCSS('#glad', 'zoomInDown', () => {
+      gladElement.classList.add('animated', 'delay-3s', 'zoomOutDown');
+      $(gladElement).delay(4000).hide(0);
+    });
+  }
+
+  public animateCSS(element, animationName, callback) {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+      node.classList.remove('animated', animationName)
+      node.removeEventListener('animationend', handleAnimationEnd)
+
+      if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
   }
 }
