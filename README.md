@@ -7,3 +7,32 @@ Alienware mostly, and the x360 HP Spectra). I have been praying for insight with
 been showing me some pretty fascinating stuff!
 
 The Word of God, social media, journaling, connecting, loving, sharing, caring, growing, developing. This application will have it all!
+
+# Outline
+1) [Home Page](#homepage)
+2) [Bible](#bible)
+3) [Journal](#journal)
+4) [Social Media](#socialmedia)
+5) [Blog](#blog)
+6) [Bookmarks](#bookmarks)
+7) [Passions](#passions)
+8) [About](#about)
+9) [Websites](#websites)
+
+## <a id="homepage">Home Page</a>
+
+## <a id="bible">Bible</a>
+
+## <a id="journal">Journal</a>
+
+## <a id="socialmedia">Social Media</a>
+
+## <a id="blog">Blog</a>
+
+## <a id="bookmarks">Bookmarks</a>
+
+## <a id="passions">Passions</a>
+
+## <a id="about">About</a>
+
+## <a id="websites">Websites</a>
