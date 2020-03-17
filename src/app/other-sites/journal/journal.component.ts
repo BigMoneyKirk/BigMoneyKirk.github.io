@@ -96,7 +96,12 @@ export class JournalComponent implements OnInit {
     const dbRefList = dbRefObject.child('hobbies');
     var titleArray = [];
     dbRefList.on('child_added', snap => {
-      titleArray.push(snap.val());
+      titleArray.push(
+        {
+          key: snap.key,
+          value: snap.val()
+        }
+      );
       this.journal_entries = new Array<JournalEntry>();
       var i = titleArray.length - 1;
       var j = 0;
@@ -104,14 +109,25 @@ export class JournalComponent implements OnInit {
       titleArray.forEach(element => {
         var date = new Date();
         date.setDate(date.getDate() - i);
-        this.journal_entries.push(new JournalEntry(j+1, titleArray[i], true, date));
+        this.journal_entries.push(new JournalEntry(j + 1, titleArray[i].value, true, date));
         i--;
         j++;
       });
-      
-      // this.journalEntry1 = new JournalEntry(1, snap.val(), true, new Date());
-      // this.journal_entries.push(this.journalEntry1);
     });
 
+    dbRefList.on('child_changed', snap => {
+      let initialValue = '';
+      for (var i = 0; i < titleArray.length; i++) {
+        if (titleArray[i].key == snap.key) {
+          initialValue = titleArray[i].value;
+          for(var j = 0; j < this.journal_entries.length; j++){
+            if(this.journal_entries[j].Name == initialValue){
+              this.journal_entries[j].Name = snap.val();
+              titleArray[i].value = this.journal_entries[j].Name;
+            }
+          }
+        }
+      }
+    })
   }
 }
