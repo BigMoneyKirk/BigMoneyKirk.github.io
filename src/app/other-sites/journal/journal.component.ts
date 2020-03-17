@@ -8,6 +8,7 @@ import { INgxSmartModalOptions } from 'ngx-smart-modal/src/config/ngx-smart-moda
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import firebase from 'firebase';
+import { listenToTriggers } from 'angular-bootstrap-md/lib/free/utilities';
 
 @Component({
   selector: 'messing-around-journal',
@@ -15,6 +16,8 @@ import firebase from 'firebase';
   styleUrls: ['./journal.component.scss']
 })
 export class JournalComponent implements OnInit {
+
+  // ---------------- Global Variables -----------------
 
   public journal_title: string = '';
   public journal_entry: string = '';
@@ -33,58 +36,98 @@ export class JournalComponent implements OnInit {
       { type: 'required', message: 'Title is required.' }
     ],
     'entry': [
-      {type: 'required', message: 'Entry is required.' }
+      { type: 'required', message: 'Entry is required.' }
     ]
   };
 
+  // ---------------- Constructor -----------------
+
   constructor(private dateFormatter: DateFormatterService, private fb: FormBuilder, public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService) {
-   }
+  }
 
   ngOnInit() {
-    this.journal_entries = new Array<JournalEntry>();
-    this.journal_entries.push(this.journalEntry1);
-    this.journal_entries.push(this.journalEntry2);
     this.createForm();
-    const fb = firebase.database().ref().child('object');
-    fb.on('value', 
-    snap => 
-    {
-      this.journal_title = JSON.stringify(snap.val().name).replace(/['"]+/g, '');
-      this.journal_entry = `My favorite number is ${JSON.stringify(snap.val().favNumber)}.`;
-    });
+    this.firebaseStuff();
   }
-  
-  public createForm(){
+
+  // ---------------- Form Stuff -----------------
+
+  public createForm() {
     this.newJournalEntryForm = this.fb.group({
-      title: ['', Validators.required ],
-      entry: ['', Validators.required ]
+      title: ['', Validators.required],
+      entry: ['', Validators.required]
     });
   }
 
-  public createNewModal(){
+  public onSubmit(value) {
+    // TO-DO: I need to call the firebase service so that I can add the entry to the backend
+  }
+
+  // ---------------- Date Formatter -----------------
+
+  public dateformat(date: Date) {
+    let formattedDate = this.dateFormatter.shortMonthDayYear(date);
+    return formattedDate;
+  }
+
+  // ---------------- Modal Play -----------------
+
+  public createNewModal() {
     const opts: INgxSmartModalOptions = {
       backdrop: true
     };
     this.ngxSmartModalService.create('NewJournalEntry', NewEntryComponent, opts).open();
   }
 
-  public dateformat(date: Date){
-    let formattedDate = this.dateFormatter.shortMonthDayYear(date);
-    return formattedDate;
-  }
+  // ---------------- Firebase Functions -----------------
 
-  public onSubmit(value){
-    // alert(this.journal_title);
-    // alert(this.journal_entry);
-    
-    
-    // TO-DO: I need to call the firebase service so that I can add the entry to the backend
-    // this.firebaseService.createJournalEntry(value).then(() => {
-    //   alert('This actually saved.');
-    // })
-  }
+  public firebaseStuff() {
+    //#region title and entry 
+    const dbRefObject = firebase.database().ref().child('object');
 
-  public poem(){
-    return `Uh huh`;
+    dbRefObject.on('value',
+      snap => {
+        this.journal_title = JSON.stringify(snap.val().name).replace(/['"]+/g, '');
+        this.journal_entry = `My favorite number is ${JSON.stringify(snap.val().favNumber)}.`;
+      });
+    //#endregion
+
+    const listElement = document.getElementById('list');
+    const dbRefList = dbRefObject.child('hobbies');
+    var titleArray = [];
+    dbRefList.on('child_added', snap => {
+      titleArray.push(
+        {
+          key: snap.key,
+          value: snap.val()
+        }
+      );
+      this.journal_entries = new Array<JournalEntry>();
+      var i = titleArray.length - 1;
+      var j = 0;
+
+      titleArray.forEach(element => {
+        var date = new Date();
+        date.setDate(date.getDate() - i);
+        this.journal_entries.push(new JournalEntry(j + 1, titleArray[i].value, true, date));
+        i--;
+        j++;
+      });
+    });
+
+    dbRefList.on('child_changed', snap => {
+      let initialValue = '';
+      for (var i = 0; i < titleArray.length; i++) {
+        if (titleArray[i].key == snap.key) {
+          initialValue = titleArray[i].value;
+          for(var j = 0; j < this.journal_entries.length; j++){
+            if(this.journal_entries[j].Name == initialValue){
+              this.journal_entries[j].Name = snap.val();
+              titleArray[i].value = this.journal_entries[j].Name;
+            }
+          }
+        }
+      }
+    })
   }
 }

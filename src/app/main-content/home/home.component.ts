@@ -43,17 +43,23 @@ import { GlobalImageService } from 'src/app/services/global-image.service';
 
 export class HomeComponent implements OnInit {
 
+  // --------------- Global Variables ------------------
+
   public state = 'normal';
   public king = this.globalImage.king;
   public logoUrl = this.globalImage.logoUrl;
   public welcomeLogoUrl = "https://fontmeme.com/permalink/191007/2ac185608541058593593bb536036fe6.png";
   public welcomeLogo2Url = "https://fontmeme.com/permalink/191015/8df3be736d6f57ed67102608a9251e75.png";
 
+  // ------------------- Constructor ----------------------
+
   constructor(private globalImage: GlobalImageService) { }
 
   ngOnInit() {
     this.thankyouAnimation();
   }
+
+  // ------------------- Scripture -------------------
 
   public luke4_18() {
     return `Luke 4:18-19 The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free, to proclaim the year of the Lord's favor.`;
@@ -62,6 +68,8 @@ export class HomeComponent implements OnInit {
   public _1peter4_8_10() {
     return `1 Peter 4:8-10 (ESV) Above all, keep loving one another earnestly, since love covers a multitude of sins. Show hospitality to one another without grumbling. As each has received a gift, use it to serve one another, as good stewards of God's varied grace:`;
   }
+
+  // ------------------ Animation ---------------------
 
   public thankyouAnimation() {
     const thankYouElement = document.querySelector('#thank-you');
