@@ -15,6 +15,10 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
   }
 
+  public hobbies(){
+    return `My hobbies are praising the Lord Jesus Christ, spending time with loved ones, playing video games, listening to music, dancing, reading, and reaching out to others. I love cracking jokes with people and making fun of people. If I make fun of you, it's because I like you and feel comfortable with you. Please feel free to make lighthearted jokes back. That's how I know we are on the same page. ;)`;
+  }
+
   public statement(){
     return `I would like to give a special shoutout to the families. The ones who have stuck in there through thick and thin. The ones who have known us from birth. A special cheers and thanks to you all. I love you.`;
   }
