@@ -15,15 +15,16 @@
 }
 
 .row{
-    .welcome-logo{
-        @include tada();
-    }
     text-align: center;
     margin: 0px;
 }
 
 .welcome{
     text-align: center;
+}
+
+.welcome-logo{
+  animation: tada 2s 5;
 }
 
 // @media(max-width: 700px){

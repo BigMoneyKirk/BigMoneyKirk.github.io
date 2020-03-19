@@ -1,7 +1,7 @@
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-color lighten-1">
   <a class="navbar-brand" [routerLink]="['/home']">Kirkland Enterprises</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+  <button title="Toggle navigation" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
     aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -34,12 +34,16 @@
           aria-haspopup="true" aria-expanded="false">Websites
         </a>
         <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
+          <a [routerLink]="['/smart-home']" class="dropdown-item">Grant and Kirk's Smart Home</a>
           <a [routerLink]="['/interior-design']" class="dropdown-item">EJ's Interior Designing</a>
           <a [routerLink]="['/tishas-cupcakes']" class="dropdown-item">Tisha's Cupcakes</a>
-          <a [routerLink]="['/sades-fruit']" class="dropdown-item">Sade's Fruitings</a>
+          <a [routerLink]="['/the-fruit-plug']" class="dropdown-item">The Fruit Plug</a>
           <a [routerLink]="['/best-buddies']" class="dropdown-item">Best Buddies</a>
-          <a [routerLink]="['/keatylins-beauty']" class="dropdown-item" >Keatylin's Beauty</a>
-          <a [routerLink]="['/sandras-record-keeping']" class="dropdown-item" >Sandra's Record Keeping</a>
+          <a [routerLink]="['/bunnie-beaute']" class="dropdown-item">Bunnie Beaute</a>
+          <a [routerLink]="['/sandras-record-keeping']" class="dropdown-item">Sandra's Record Keeping</a>
+          <a [routerLink]="['/heather-mary-kay']" class="dropdown-item">Heather's Mary Kay</a>
+          <a [routerLink]="['/kirkland-loan']" class="dropdown-item">Kirkland Loan</a>
+          <a [routerLink]="['/kevins-vision']" class="dropdown-item">Kevin's Vision</a>
         </div>
       </li>
     </ul>

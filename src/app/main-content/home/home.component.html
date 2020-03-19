@@ -1,46 +1,41 @@
 <div class="page-margin">
+    <!-- Welcome to section -->
     <div class="row welcome">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-                <!-- <img alt="Welcome to" class="full-width welcome-logo" src={{welcomeLogoUrl}}> -->
             <img alt="Welcome to" class="full-width top-padding-50px welcome-logo" src={{welcomeLogo2Url}}>
         </div>
         <div class="col-md-3"></div>
     </div>
     <br>
+    <!-- Kirkland Enterprises Logo -->
     <div class="row">
         <div class="col-md-2"></div>
         <div [@divState]="state" class="col-md-8">
             <img alt="Kirkland Enterprises Logo" class="ke_logo" src="{{logoUrl}}">
-            <!-- (@divState.start)="animationStarted($event)" (@divState.done)="animationEnded($event)"  class="styledimg"> -->
         </div>
         <div class="col-md-2"></div>
     </div>
-    <br>
-    <p class="satisfy-font">{{luke4_18()}}</p>
-    <br>
-    <div class="row">
-        <div class="col-2"></div>
-        <div [@wildState]="wildState" class="header2 col-8">
-            <h2>Where we make sites!</h2>
-        </div>
-        <div class="col-2"></div>
-    </div>
-    <br><br>
-    <div [@list1]="list1" (click)="onDelete()" style="color: blue">
-        <h3>And love people!</h3>
-    </div>
-    <br><br>
 
+    <br>
+    <!-- Thank you Animation fun -->
     <div class="row">
-        <div class="col-lg-4">
-            <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
+        <div class="col-lg-12">
+            <div class="thank-you animated delay-1s center-text" id="thank-you">
+                <p>Thank you so much for being here! :D</p>
+            </div>
+            <div class="glad animated delay-1s center-text" id="glad">
+                <p>Really glad you came!!</p>
+            </div>
         </div>
-        <div class="col-lg-4">
-            <button class="col-xs-4 btn btn-primary" (click)="onShrink()">Shrink!</button>
+    </div>
+    <br>
+    <!-- Scripture -->
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <p class="cookie-font">{{_1peter4_8_10()}}</p>
         </div>
-        <div class="col-lg-4">
-            <button class="col-xs-4 btn btn-primary" (click)="onDelete()">Slide Out!</button>
-        </div>
+        <div class="col-lg-2"></div>
     </div>
 </div>

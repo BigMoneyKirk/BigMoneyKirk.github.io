@@ -8,5 +8,4 @@ import { trigger } from '@angular/animations';
   animations: [ trigger('divState', []) ]
 })
 export class AppComponent {
-  
 }

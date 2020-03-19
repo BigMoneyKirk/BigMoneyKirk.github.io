@@ -1,0 +1,31 @@
+p{
+    text-align: center;
+}
+
+.second-half{
+    height: 300px;
+    width: 100%;
+    background-color: green;
+    z-index: -1;
+}
+
+.top-half{
+    margin-top: -50px;
+    height: 300px;
+    width: 100%;
+    background-color: blue;
+    z-index: -1;
+}
+
+.top-padding{
+    padding-top: 50px;
+}
+
+.welcome-font{
+    font-size: 70px;
+    color: yellow;
+}
+
+.white-font{
+    color: white;
+}

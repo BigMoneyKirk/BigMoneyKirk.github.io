@@ -1,0 +1,24 @@
+.new-journal-entry-form {
+    padding: 20px;
+
+
+    .submit-button-container {
+      justify-content: flex-end;
+
+      .submit-button{
+        width: 100%;
+      }
+    }
+
+    .title-font{
+        font-size: 50px;
+    }
+
+    .input-style{
+      width: 100%;
+    }
+
+    .mat-error {
+      font-size: 12px;
+    }
+  }

@@ -16,6 +16,11 @@ import { KeatylinsBeautyComponent } from './other-sites/keatylins-beauty/keatyli
 import { SandrasRecordKeepingComponent } from './other-sites/sandras-record-keeping/sandras-record-keeping.component';
 import { SadesFruitComponent } from './other-sites/sades-fruit/sades-fruit.component';
 import { UnderConstructionComponent } from './other-sites/under-construction/under-construction.component';
+import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
+import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
+import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute.component';
+import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision.component';
+import { SmartHouseComponent } from './other-sites/smart-house/smart-house.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -23,16 +28,21 @@ const routes: Routes = [
   { path: 'best-buddies', component: BestBuddiesComponent },
   { path: 'bible', component: BibleComponent },
   { path: 'bookmarks', component: BookmarksComponent },
+  { path: 'bunnie-beaute', component: BunnieBeauteComponent },
+  { path: 'heather-mary-kay', component: HeatherMaryKayComponent },
   { path: 'home', component: HomeComponent },
   { path: 'interior-design', component: InteriorDesingComponent },
   { path: 'journal', component: JournalComponent },
   { path: 'keatylins-beauty', component: KeatylinsBeautyComponent},
+  { path: 'kevins-vision', component: KevinsVisionComponent },
+  { path: 'kirkland-loan', component: KirklandLoanComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'passions', component: PassionsComponent },
-  { path: 'sades-fruit', component: SadesFruitComponent },
   { path: 'sandras-record-keeping', component: SandrasRecordKeepingComponent},
   { path: 'settings', component: SettingsComponent },
   { path: 'social-media', component: SocialMediaComponent },
+  { path: 'smart-home', component: SmartHouseComponent },
+  { path: 'the-fruit-plug', component: SadesFruitComponent },
   { path: 'tishas-cupcakes', component: TishasCakesComponent },
   { path: 'under-construction', component: UnderConstructionComponent}
 ];

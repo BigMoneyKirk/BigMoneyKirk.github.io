@@ -1,3 +1,6 @@
+@import "~ngx-smart-modal/ngx-smart-modal";
+@import "app/app.component";
+
 html, body {
     height: 100%;
     width: 100%;
@@ -15,6 +18,10 @@ html, body {
 
 .center-text{
     text-align: center;
+}
+
+.delay-6s{
+    animation-delay: 6s;
 }
 
 .full-width{
@@ -47,6 +54,10 @@ html, body {
     justify-content: flex-end;
 }
 
+.top-padding{
+    padding-top: 50px;
+}
+
 .top-padding-50px{
     margin-top: 50px;
 }
@@ -54,6 +65,10 @@ html, body {
 // fonts
 
 // fonts - cursive - primarily for the Journal page
+.classique-saigon{
+    font-family: clas;
+}
+
 .cookie-font{
     font-family: 'Cookie', cursive;
     font-size: 25px;
@@ -78,3 +93,10 @@ html, body {
     font-family: 'Satisfy', cursive;
     font-size: 25px;
 }
+
+.whole-height{
+    height: 100%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

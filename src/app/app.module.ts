@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -25,6 +24,17 @@ import { KeatylinsBeautyComponent } from './other-sites/keatylins-beauty/keatyli
 import { SandrasRecordKeepingComponent } from './other-sites/sandras-record-keeping/sandras-record-keeping.component';
 import { SadesFruitComponent } from './other-sites/sades-fruit/sades-fruit.component';
 import { UnderConstructionComponent } from './other-sites/under-construction/under-construction.component';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { NewEntryComponent } from './other-sites/journal/new-entry/new-entry.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatSelectModule } from '@angular/material';
+import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
+import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
+import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute.component';
+import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision.component';
+import { SmartHouseComponent } from './other-sites/smart-house/smart-house.component';
 
 @NgModule({
   declarations: [
@@ -46,17 +56,35 @@ import { UnderConstructionComponent } from './other-sites/under-construction/und
     KeatylinsBeautyComponent,
     SandrasRecordKeepingComponent,
     SadesFruitComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
+    NewEntryComponent,
+    HeatherMaryKayComponent,
+    KirklandLoanComponent,
+    BunnieBeauteComponent,
+    KevinsVisionComponent,
+    SmartHouseComponent
+  ],
+  entryComponents: [
+    NewEntryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     NavbarModule,
     WavesModule,
     MDBBootstrapModule.forRoot(),
+    NgxSmartModalModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSliderModule,
+    MatDialogModule,
+    MatSelectModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],
