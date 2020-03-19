@@ -35,6 +35,7 @@ import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan
 import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute.component';
 import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision.component';
 import { SmartHouseComponent } from './other-sites/smart-house/smart-house.component';
+import { BlogComponent } from './main-content/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { SmartHouseComponent } from './other-sites/smart-house/smart-house.compo
     KirklandLoanComponent,
     BunnieBeauteComponent,
     KevinsVisionComponent,
-    SmartHouseComponent
+    SmartHouseComponent,
+    BlogComponent
   ],
   entryComponents: [
     NewEntryComponent

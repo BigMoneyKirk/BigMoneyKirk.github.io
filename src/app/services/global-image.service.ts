@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalImageService {
 
+  public coronaGIF = "assets/images/blog/tissue_paper_on_the_low.gif";
   public logoUrl = 'assets/images/logos/KELogo_Resize.png';
   public kaka = 'assets/images/bunnie-beaute/kaka.jpg';
   public king = 'assets/images/people/KingKirk.png';

@@ -1,5 +1,3 @@
-@import "../../../../src/assets/animate.scss/animate.scss";
-
 @function calc-em($target-px, $context) {
     @return ($target-px / $context) * 1em;
 }
