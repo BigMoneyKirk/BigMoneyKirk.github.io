@@ -9,46 +9,65 @@
     <br>
     <div class="row">
         <div class="left-story">
-        <span class="left-story">{{story()}}</span>
-        <br><br>
-        <h2>Hobbies</h2>
-        <span class="left-story">{{hobbies()}}</span>
-        <br><br>
-        <h2>Favorite Video Games</h2>
-        <ul>
-            <li>
-                BioShock Collection
-            </li>
-            <li>The Outer Worlds</li>
-            <li>Brawlhalla</li>
-            <li>Call of Duty: Black Ops (this is why I bought a PS3 back in 2011)</li>
-            <li>The Far Cry Series</li>
-            <li>Minecraft</li>
-        </ul>
-        <br>
-        <h2>Favorite Movies</h2>
-        <ul>
-            <li>Whitie Chicks</li>
-            <li>Boomerang</li>
-            <li>Norbit</li>
-            <li>Inception</li>
-            <li>Batman: The Dark Knight</li>
-            <li>The Truman Show</li>
-            <li>Moana</li>
-            <li>Frozen 2</li>
-            <li>Lion King</li>
-        </ul>
-        <br>
-        <h2>Must Reads</h2>
-        <ul>
-            <li>The Bible (although I have yet to read it all the way through)</li>
-            <li>The 7 Habits of Highly Effective People</li>
-            <li>Think and Grow Rich</li>
-        </ul>
+            <span class="left-story">{{story()}}</span>
+            <br><br>
+            <h2>Hobbies</h2>
+            <span class="left-story">{{hobbies()}}</span>
+            <br><br>
+            <h2>Favorite Video Games</h2>
+            <ul>
+                <li>
+                    BioShock Collection
+                </li>
+                <li>The Outer Worlds</li>
+                <li>Brawlhalla</li>
+                <li>Call of Duty: Black Ops (this is why I bought a PS3 back in 2011)</li>
+                <li>The Far Cry Series</li>
+                <li>Minecraft</li>
+            </ul>
+            <br>
+            <h2>Favorite Movies</h2>
+            <ul>
+                <li>Whitie Chicks</li>
+                <li>Boomerang</li>
+                <li>Norbit</li>
+                <li>Inception</li>
+                <li>Batman: The Dark Knight</li>
+                <li>The Truman Show</li>
+                <li>Moana</li>
+                <li>Frozen 2</li>
+                <li>Lion King</li>
+            </ul>
+            <br>
+            <h2>Must Reads</h2>
+            <ul>
+                <li>The Bible (although I have yet to read it all the way through)</li>
+                <li>The 7 Habits of Highly Effective People</li>
+                <li>Think and Grow Rich</li>
+            </ul>
         </div>
 
         <span class="right-img">
             <img [src]="kingUrl" alt="">
         </span>
+    </div>
+
+    <!-- Additional -->
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <div class="grow">
+                <button class="card">
+                    <div class="card-img-top container">
+                        <img class="card-icon" [src]="kingUrl" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">About Stephen</h4>
+                        <p class="card-text">Stephen Michael Here</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-4"></div>
     </div>
 </div>
