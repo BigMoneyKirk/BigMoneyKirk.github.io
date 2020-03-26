@@ -1,3 +1,7 @@
+.description{
+    opacity: 0;
+}
+
 .left-story{
     width: 50%;
 }
@@ -5,4 +9,100 @@
 .right-img{
     width: 50%;
     text-align: center;
+}
+
+.flipin:hover{
+    animation: flipInX 1s 1;
+}
+
+.flipout:hover{
+    animation: flipOutY 1s 1;
+}
+
+// https://www.youtube.com/watch?v=27oDB-kSbA0
+#section-feature{
+    font-size: 16px;
+    line-height: 22px;
+    color: #555;
+    // background-image: "assets/images/blog/tissue_paper_on_the_low.gif";
+    background-size: cover;
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    // overflow-x: hidden;
+    text-shadow: rgba(0, 0, 0, 0.1) 0 0 1px;
+
+    ul{
+        margin: 100px 0 0 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+    }
+
+    li{
+        box-sizing: border-box;
+        position: relative;
+        height: 380px;
+        padding: 2%;
+        float: left;
+        margin-bottom: 40px;
+        user-select: none;
+    }
+
+    .sf-wrap{
+        background-repeat: no-repeat;
+        // position: absolute;
+        max-width: 280px;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        // margin-left: -140px;
+        top: 0;
+        perspective: 600;
+        cursor: pointer
+    }
+}
+
+.sf-mdl-left, .sf-mdl-left-full, .sf-mdl-right, .sf-mdl-right-full{
+    // position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    transition: all 0.5s;
+    // overflow: hidden;
+}
+
+.sf-icon{
+    // position: absolute;
+    top: 90px;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    width: 200%;
+    color: #fb527a;
+}
+
+.sf-mdl-left-full, .sf-mdl-right-full{
+    .sf-icon{
+        // color: white;
+    }
+}
+
+.sf-mdl-right, .sf-mdl-right-full{
+    left: auto;
+    right: 0;
+}
+
+.sf-mdl-left-full, .sf-mdl.right-full{
+    background-color: #fb527a;
+    z-index: 9;
+    // color: white;
+}
+
+.sf-wrap{
+    a{
+        color: white;
+        text-decoration: none;
+        margin-top: 110px;
+    }
 }
