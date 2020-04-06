@@ -259,11 +259,23 @@
   }
   
   .front .inner p{
-    font-size: 2rem;
+    // font-size: 2rem;
     margin-bottom: 2rem;
     position: relative;
   }
+
+  .front .inner .fav-video-game-title{
+    font-size: 23px;
+  }
+
+  .front .inner .fav-video-game-info{
+      font-size: 12px;
+  }
   
+  .back .inner .fav-video-game-items{
+    font-size: 15px;
+  }
+
   .front .inner p:after{
     content: '';
     width: 4rem;
@@ -281,6 +293,16 @@
     color: rgba(255,255,255,0.7);
     font-family: 'Montserrat';
     font-weight: 300;
+  }
+
+  .video-game{
+    background-image: url(https://www.pngkey.com/png/full/438-4381099_ps4-controller-vector-ps4-controller-icon-vector.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+  }
+
+  .fav-video-game-title{
+      font-size: 10px;
   }
   
   @media screen and (max-width: 64rem){
