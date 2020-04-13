@@ -146,6 +146,8 @@
     width: calc(25% - 2rem);
     margin: 1rem;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
   }
   
   .container{
@@ -228,6 +230,7 @@
       -webkit-perspective: inherit;
               perspective: inherit;
       z-index: 2;
+      justify-content: center;
   }
   
   .container .back{
