@@ -9,42 +9,8 @@
     <br>
     <div class="row">
         <div class="left-story">
-            <span class="left-story">{{story()}}</span>
-            <br><br>
-            <h2>Hobbies</h2>
-            <span class="left-story">{{hobbies()}}</span>
-            <br><br>
-            <h2>Favorite Video Games</h2>
-            <ul>
-                <li>
-                    BioShock Collection
-                </li>
-                <li>The Outer Worlds</li>
-                <li>Brawlhalla</li>
-                <li>Call of Duty: Black Ops (this is why I bought a PS3 back in 2011)</li>
-                <li>The Far Cry Series</li>
-                <li>Minecraft</li>
-            </ul>
-            <br>
-            <h2>Favorite Movies</h2>
-            <ul>
-                <li>Whitie Chicks</li>
-                <li>Boomerang</li>
-                <li>Norbit</li>
-                <li>Inception</li>
-                <li>Batman: The Dark Knight</li>
-                <li>The Truman Show</li>
-                <li>Moana</li>
-                <li>Frozen 2</li>
-                <li>Lion King</li>
-            </ul>
-            <br>
-            <h2>Must Reads</h2>
-            <ul>
-                <li>The Bible (although I have yet to read it all the way through)</li>
-                <li>The 7 Habits of Highly Effective People</li>
-                <li>Think and Grow Rich</li>
-            </ul>
+            <h3>Hobbies</h3>
+            {{hobbies()}}
         </div>
 
         <span class="right-img">
@@ -54,125 +20,82 @@
 
     <!-- Additional -->
     <!-- source: https://csshint.com/css-flip-cards/ -->
-    
+
     <div class="wrapper">
-        <h1>Parallax Flipping Cards</h1>
         <div class="cols">
-                  <div class="col" ontouchstart="this.classList.toggle('hover');">
-                      <div class="container">
-                          <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
-                              <div class="inner">
-                                  <p>Hobbies</p>
-                    <span>Lorem ipsum</span>
-                              </div>
-                          </div>
-                          <div class="back">
-                              <div class="inner">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col" ontouchstart="this.classList.toggle('hover');">
-                      <div class="container">
-                          <div class="front video-game">
-                              <div class="inner">
-                                  <p class="fav-video-game-title">Favorite Video Games</p>
-                    <span class="fav-video-game-info">I've spend HOURS playing these games</span>
-                              </div>
-                          </div>
-                          <div class="back">
-                              <div class="inner">
-                                <ul class="fav-video-game-items">
-                                    <li>
-                                        BioShock Collection
-                                    </li>
-                                    <li>The Outer Worlds</li>
-                                    <li>Brawlhalla</li>
-                                    <li>Call of Duty: Black Ops (this is why I bought a PS3 back in 2011)</li>
-                                    <li>The Far Cry Series</li>
-                                    <li>Minecraft</li>
-                                </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col" ontouchstart="this.classList.toggle('hover');">
-                      <div class="container">
-                          <div class="front" style="background-image: url(https://unsplash.it/503/503/)">
-                              <div class="inner">
-                                  <p>Favorite Movies</p>
-                    <span>Lorem ipsum</span>
-                              </div>
-                          </div>
-                          <div class="back">
-                              <div class="inner">
-                                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col" ontouchstart="this.classList.toggle('hover');">
-                      <div class="container">
-                          <div class="front" style="background-image: url(https://unsplash.it/504/504/">
-                              <div class="inner">
-                                  <p>Must Reads</p>
-                    <span>Lorem ipsum</span>
-                              </div>
-                          </div>
-                          <div class="back">
-                              <div class="inner">
-                                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col" ontouchstart="this.classList.toggle('hover');">
-                      <div class="container">
-                          <div class="front" style="background-image: url(https://unsplash.it/505/505/)">
-                              <div class="inner">
-                                  <p>Reflupper</p>
-                    <span>Lorem ipsum</span>
-                              </div>
-                          </div>
-                          <div class="back">
-                              <div class="inner">
-                                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col" ontouchstart="this.classList.toggle('hover');">
-                      <div class="container">
-                          <div class="front" style="background-image: url(https://unsplash.it/506/506/)">
-                              <div class="inner">
-                                  <p>Acirassi</p>
-                    <span>Lorem ipsum</span>
-                              </div>
-                          </div>
-                          <div class="back">
-                              <div class="inner">
-                                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col" ontouchstart="this.classList.toggle('hover');">
-                      <div class="container">
-                          <div class="front" style="background-image: url(https://unsplash.it/508/508/)">
-                              <div class="inner">
-                                  <p>Sohanidd</p>
-                    <span>Lorem ipsum</span>
-                              </div>
-                          </div>
-                          <div class="back">
-                              <div class="inner">
-                                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-       </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front video-game">
+                        <div class="inner">
+                            <p class="fav-video-game-title card-title">
+                                Favorite Video Games
+                            </p>
+                            <span class="fav-video-game-info card-info">I've spend HOURS playing these games</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <ul class="fav-video-game-items card-items">
+                                <li>
+                                    BioShock Collection
+                                </li>
+                                <li>The Outer Worlds</li>
+                                <li>Brawlhalla</li>
+                                <li>Call of Duty: Black Ops (this is why I bought a PS3 back in 2011)</li>
+                                <li>The Far Cry Series</li>
+                                <li>Minecraft</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front movie">
+                        <div class="inner">
+                            <p class="fav-movie-title card-title">
+                                Favorite Movies
+                            </p>
+                            <span class="fav-movie-info card-info">I've watched each of these movies over 5 times</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <ul class="fav-movie-items card-items">
+                                <li>Whitie Chicks</li>
+                                <li>Boomerang</li>
+                                <li>Norbit</li>
+                                <li>Inception</li>
+                                <li>Batman: The Dark Knight</li>
+                                <li>The Truman Show</li>
+                                <li>Moana</li>
+                                <li>Frozen 2</li>
+                                <li>Lion King</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front book">
+                        <div class="inner">
+                            <p class="card-title">Must Reads</p>
+                            <span class="card-info">Expand your mind</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <ul class="card-items">
+                                <li>The Bible (although I have yet to read it all the way through)</li>
+                                <li>The 7 Habits of Highly Effective People</li>
+                                <li>Think and Grow Rich</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
