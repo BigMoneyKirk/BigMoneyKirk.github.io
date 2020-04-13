@@ -209,9 +209,12 @@
       transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
   }
   
+  .black{
+    background-color: black;
+  }
+
   .back{
       position: absolute;
-      top: 0;
       left: 0;
       width: 100%;
   }
@@ -296,6 +299,12 @@
     color: rgba(255,255,255,0.7);
     font-family: 'Montserrat';
     font-weight: 300;
+  }
+
+  .col .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   .video-game{

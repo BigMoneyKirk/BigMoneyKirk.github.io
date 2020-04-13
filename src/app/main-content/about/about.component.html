@@ -1,25 +1,31 @@
-<div class="page-margin">
-    <h1>INTO THE MIND AND WORLD OF STEPHEN MICHAEL KIRKLAND!</h1>
-
-    <h3>i really am making my own websites now....tee-hee!</h3>
-
-    {{statement()}}
-
-    <br>
-    <br>
-    <div class="row">
-        <div class="left-story">
-            <h3>Hobbies</h3>
-            {{hobbies()}}
-        </div>
-
-        <span class="right-img">
-            <img [src]="kingUrl" alt="">
-        </span>
-    </div>
+<div class="page-margin black">
 
     <!-- Additional -->
     <!-- source: https://csshint.com/css-flip-cards/ -->
+
+    <div class="wrapper">
+        <div class="cols">
+            <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front book">
+                        <div class="inner">
+                            <p class="card-title">Must Reads</p>
+                            <span class="card-info">Expand your mind</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <ul class="card-items">
+                                <li>The Bible (although I have yet to read it all the way through)</li>
+                                <li>The 7 Habits of Highly Effective People</li>
+                                <li>Think and Grow Rich</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="wrapper">
         <div class="cols">
@@ -49,6 +55,11 @@
                     </div>
                 </div>
             </div>
+            <div class="col">
+                <span>
+                    <img [src]="kingUrl" alt="">
+                </span>
+            </div>
             <div class="col" ontouchstart="this.classList.toggle('hover');">
                 <div class="container">
                     <div class="front movie">
@@ -76,26 +87,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front book">
-                        <div class="inner">
-                            <p class="card-title">Must Reads</p>
-                            <span class="card-info">Expand your mind</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <ul class="card-items">
-                                <li>The Bible (although I have yet to read it all the way through)</li>
-                                <li>The 7 Habits of Highly Effective People</li>
-                                <li>Think and Grow Rich</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-
 </div>
