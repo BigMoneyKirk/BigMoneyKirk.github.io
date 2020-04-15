@@ -1,3 +1,5 @@
+$card-width: 200px;
+
 .description{
     opacity: 0;
 }
@@ -151,12 +153,14 @@
   }
   
   .container{
+      position: relative;
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
       -webkit-perspective: 1000px;
               perspective: 1000px;
 
-    width: 200px;
+    width: $card-width;
+    z-index: 1;
   }
   
   .front,
@@ -179,10 +183,10 @@
   }
   
   .back{
-    background: #cedce7;
-    background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-    background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-    background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+    // background: #cedce7;
+    background: -webkit-linear-gradient(135deg, #3c0596 0%, #5822ad 25%, #2c2c2c 50%, #6d6d6d 75%, rgb(197, 197, 197) 100%);
+    background: -o-linear-gradient(135deg, #3c0596 0%, #5822ad 25%, #2c2c2c 50%, #6d6d6d 75%, rgb(197, 197, 197) 100%);
+    background: linear-gradient(135deg, #3c0596 0%, #5822ad 25%, #2c2c2c 50%, #6d6d6d 75%, rgb(197, 197, 197) 100%);
   }
   
   .front:after{
@@ -309,19 +313,19 @@
 
   .video-game{
     background-image: url(https://store-images.s-microsoft.com/image/apps.58231.65463610408817762.16ac64e5-a1b8-49fa-87ad-cbc5902fcb27.b9524e52-fe80-4e00-9b0a-66275fe9ed5a?w=180&h=270&q=60);
-    background-size: 200px;
+    background-size: $card-width;
     background-repeat: no-repeat;
   }
 
   .movie{
     background-image: url(https://resizing.flixster.com/m1KEoItg4izd4iJTrXjQQCr3aCc=/206x305/v1.bTsxMTE2OTg3NjtqOzE4NDQ0OzEyMDA7ODAwOzEyMDA);
-    background-size: 200px;
+    background-size: $card-width;
     background-repeat: no-repeat;
   }
 
   .book{
     background-image: url("src/assets/images/about/think_and_grow_rich.jpg");
-    background-size: 200px;
+    background-size: $card-width;
     background-repeat: no-repeat;
   }
   
