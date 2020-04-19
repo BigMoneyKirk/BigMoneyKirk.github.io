@@ -142,11 +142,12 @@ $card-width: 200px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+            align-items: center;
   }
   
   .col{
     width: calc(25% - 2rem);
-    margin: 1rem;
+    // margin: 1rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -337,6 +338,15 @@ $card-width: 200px;
       margin-top: 9px;
       margin-left: -32px;
       opacity: 35%;
+  }
+
+  .kirk-image{
+    width: 100%;
+    height: 100%;
+  }
+
+  .think-card{
+    margin: 1rem;
   }
 
   @media screen and (max-width: 64rem){
