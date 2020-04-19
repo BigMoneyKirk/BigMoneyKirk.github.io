@@ -29,6 +29,7 @@ import { NewEntryComponent } from './other-sites/journal/new-entry/new-entry.com
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatSelectModule } from '@angular/material';
 import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
 import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
