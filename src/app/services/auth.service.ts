@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, onErrorResumeNext, Subject } from 'rxjs';
 import { AuthResponseData } from '../interfaces/auth-response-data';
 import { User } from '../models/user';
-import { removeSummaryDuplicates } from '@angular/compiler';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -15,7 +17,7 @@ export class AuthService {
 
   private user: Observable<firebase.User>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   public signup(email: string, password: string){
     return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseAPIKey,
