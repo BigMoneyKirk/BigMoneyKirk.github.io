@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, onErrorResumeNext, Subject } from 'rxjs';
 import { AuthResponseData } from '../interfaces/auth-response-data';
@@ -12,7 +13,7 @@ import { environment } from '../../environments/environment';
 })
 export class AuthService {
 
-  public user = new Subject<User>();
+  private user: Observable<firebase.User>;
 
   constructor(private http: HttpClient) { }
 
@@ -37,7 +38,7 @@ export class AuthService {
   private handleAuthentication (email: string, userId: string, token: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
       const user = new User(email, userId, token, expirationDate);
-      this.user.next(user);
+      // this.user.next(user);
   }
 
   private handleError (errorRes: HttpErrorResponse) {
