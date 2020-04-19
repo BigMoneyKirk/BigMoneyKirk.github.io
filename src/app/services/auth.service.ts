@@ -17,7 +17,13 @@ export class AuthService {
 
   private user: Observable<firebase.User>;
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient, private _firebaseAuth: AngularFireAuth) { 
+    this.user = _firebaseAuth.authState;
+  }
+
+  public signInWithTwitter(){
+    return this._firebaseAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+  }
 
   public signup(email: string, password: string){
     return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseAPIKey,
