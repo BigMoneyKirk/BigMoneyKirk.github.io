@@ -63,7 +63,7 @@ export class LoginPageComponent implements OnInit {
   public signInWithTwitter() {
     return this._firebaseAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider()).then((result) => {
       this.router.navigate(['home']);
-    }, (error) => {
+      window.location.reload();
     });
   }
 }
