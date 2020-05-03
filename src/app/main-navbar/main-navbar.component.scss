@@ -37,7 +37,7 @@ $the-color: #6804A4;
         background-color: $the-color;
     }
 
-    @media(max-width: 1120px){
+    @media(max-width: 768px){
         .navbar-color{
             background-color: rgb(50,150,220);
         }

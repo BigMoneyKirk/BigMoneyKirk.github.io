@@ -22,6 +22,7 @@ import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute
 import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision.component';
 import { SmartHouseComponent } from './other-sites/smart-house/smart-house.component';
 import { BlogComponent } from './main-content/blog/blog.component';
+import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-forward.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'passions', component: PassionsComponent },
   { path: 'sandras-record-keeping', component: SandrasRecordKeepingComponent},
+  { path: 'screven-forward', component: ScrevenForwardComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'social-media', component: SocialMediaComponent },
   { path: 'smart-home', component: SmartHouseComponent },

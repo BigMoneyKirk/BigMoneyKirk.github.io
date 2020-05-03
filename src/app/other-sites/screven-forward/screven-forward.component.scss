@@ -1,0 +1,55 @@
+$egg-shell-white: rgb(255, 254, 253);
+
+.body{
+    position: absolute;
+    background-color: $egg-shell-white;
+}
+
+.page-margin{
+    position: relative;
+    // margin-top: 100px;
+    box-sizing: border-box;
+}
+
+.logo-container{
+    position: relative;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    margin-top: 50px;
+}
+
+.welcome-container{
+    background-color: lightblue;
+    margin-top: 50px;
+}
+
+.welcome-message{
+    background-color: pink;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-bottom: 2em;
+    padding-right: 225px;
+    line-height: 1.6;
+    word-spacing: 5px;
+    font-family: 'Dosis', sans-serif;
+    text-align: right;
+    font-size: 1rem;
+    
+    > .my-mission-title{
+        font-size: 40px;
+    }
+
+    > hr{
+        margin-top: -20px;
+        margin-bottom: 20px;
+    }
+}
+
+.screven-plaza-image{
+    > img{
+        width: 100%;
+    }
+}

@@ -10,6 +10,7 @@ export class GlobalImageService {
   public kaka = 'assets/images/bunnie-beaute/kaka.jpg';
   public king = 'assets/images/people/KingKirk.png';
   public moneySmiley = 'assets/images/kirkland-loan/money-smiley.gif';
+  public screvenPlaza = 'assets/images/screven-forward/screven-co-plaza.PNG'
   public shanghaiUrl = "assets/images/backgrounds/ShanghaiWorldFinanncialCenter.jpg";
   public thinkGrowRich = "assets/images/about/think_and_grow_rich.jpg";
 
