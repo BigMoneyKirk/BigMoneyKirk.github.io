@@ -27,8 +27,11 @@ import { UnderConstructionComponent } from './other-sites/under-construction/und
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { NewEntryComponent } from './other-sites/journal/new-entry/new-entry.component';
 import { environment } from 'src/environments/environment';
-import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from '././services/auth.service';
 import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatSelectModule } from '@angular/material';
 import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
 import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
@@ -80,7 +83,9 @@ import { BlogComponent } from './main-content/blog/blog.component';
     WavesModule,
     MDBBootstrapModule.forRoot(),
     NgxSmartModalModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AngularFirestoreModule,
     MatButtonModule,
     MatInputModule,
@@ -89,7 +94,7 @@ import { BlogComponent } from './main-content/blog/blog.component';
     MatSelectModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

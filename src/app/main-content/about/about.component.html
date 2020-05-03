@@ -1,54 +1,93 @@
-<div class="page-margin">
-    <h1>INTO THE MIND AND WORLD OF STEPHEN MICHAEL KIRKLAND!</h1>
+<div class="page-margin black">
 
-    <h3>i really am making my own websites now....tee-hee!</h3>
+    <!-- Additional -->
+    <!-- source: https://csshint.com/css-flip-cards/ -->
 
-    {{statement()}}
-
-    <br>
-    <br>
-    <div class="row">
-        <div class="left-story">
-        <span class="left-story">{{story()}}</span>
-        <br><br>
-        <h2>Hobbies</h2>
-        <span class="left-story">{{hobbies()}}</span>
-        <br><br>
-        <h2>Favorite Video Games</h2>
-        <ul>
-            <li>
-                BioShock Collection
-            </li>
-            <li>The Outer Worlds</li>
-            <li>Brawlhalla</li>
-            <li>Call of Duty: Black Ops (this is why I bought a PS3 back in 2011)</li>
-            <li>The Far Cry Series</li>
-            <li>Minecraft</li>
-        </ul>
-        <br>
-        <h2>Favorite Movies</h2>
-        <ul>
-            <li>Whitie Chicks</li>
-            <li>Boomerang</li>
-            <li>Norbit</li>
-            <li>Inception</li>
-            <li>Batman: The Dark Knight</li>
-            <li>The Truman Show</li>
-            <li>Moana</li>
-            <li>Frozen 2</li>
-            <li>Lion King</li>
-        </ul>
-        <br>
-        <h2>Must Reads</h2>
-        <ul>
-            <li>The Bible (although I have yet to read it all the way through)</li>
-            <li>The 7 Habits of Highly Effective People</li>
-            <li>Think and Grow Rich</li>
-        </ul>
+    <div class="wrapper">
+        <div class="cols">
+            <div class="col think-card" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front book">
+                        <div class="inner">
+                            <div class="highlight"></div>
+                            <p class="card-title">Must Reads</p>
+                            <span class="card-info">Expand your mind</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <ul class="card-items">
+                                <li>The Bible (although I have yet to read it all the way through)</li>
+                                <li>The 7 Habits of Highly Effective People</li>
+                                <li>Think and Grow Rich</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <span class="right-img">
-            <img [src]="kingUrl" alt="">
-        </span>
+    <div class="wrapper">
+        <div class="cols row">
+            <div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front video-game">
+                        <div class="inner">
+                            <p class="fav-video-game-title card-title">
+                                Favorite Video Games
+                            </p>
+                            <span class="fav-video-game-info card-info">I've spend HOURS playing these games</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <ul class="fav-video-game-items card-items">
+                                <li>
+                                    BioShock Collection
+                                </li>
+                                <li>The Outer Worlds</li>
+                                <li>Brawlhalla</li>
+                                <li>Call of Duty: Black Ops (this is why I bought a PS3 back in 2011)</li>
+                                <li>The Far Cry Series</li>
+                                <li>Minecraft</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <!-- <span> -->
+                    <img class="kirk-image" [src]="kingUrl" alt="">
+                <!-- </span> -->
+            </div>
+            <div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3 test" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                    <div class="front movie">
+                        <div class="inner">
+                            <p class="fav-movie-title card-title">
+                                Favorite Movies
+                            </p>
+                            <span class="fav-movie-info card-info">I've watched each of these movies over 5 times</span>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="inner">
+                            <ul class="fav-movie-items card-items">
+                                <li>Whitie Chicks</li>
+                                <li>Boomerang</li>
+                                <li>Norbit</li>
+                                <li>Inception</li>
+                                <li>Batman: The Dark Knight</li>
+                                <li>The Truman Show</li>
+                                <li>Moana</li>
+                                <li>Frozen 2</li>
+                                <li>Lion King</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,3 +1,9 @@
+$card-width: 200px;
+
+.description{
+    opacity: 0;
+}
+
 .left-story{
     width: 50%;
 }
@@ -6,3 +12,358 @@
     width: 50%;
     text-align: center;
 }
+
+.flipin:hover{
+    animation: flipInX 1s 1;
+}
+
+.flipout:hover{
+    animation: flipOutY 1s 1;
+}
+
+// https://www.youtube.com/watch?v=27oDB-kSbA0
+#section-feature{
+    font-size: 16px;
+    line-height: 22px;
+    color: #555;
+    // background-image: "assets/images/blog/tissue_paper_on_the_low.gif";
+    background-size: cover;
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    // overflow-x: hidden;
+    text-shadow: rgba(0, 0, 0, 0.1) 0 0 1px;
+
+    ul{
+        margin: 100px 0 0 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+    }
+
+    li{
+        box-sizing: border-box;
+        position: relative;
+        height: 380px;
+        padding: 2%;
+        float: left;
+        margin-bottom: 40px;
+        user-select: none;
+    }
+
+    .sf-wrap{
+        background-repeat: no-repeat;
+        // position: absolute;
+        max-width: 280px;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        // margin-left: -140px;
+        top: 0;
+        perspective: 600;
+        cursor: pointer
+    }
+}
+
+.sf-mdl-left, .sf-mdl-left-full, .sf-mdl-right, .sf-mdl-right-full{
+    // position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    transition: all 0.5s;
+    // overflow: hidden;
+}
+
+.sf-icon{
+    // position: absolute;
+    top: 90px;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    width: 200%;
+    color: #fb527a;
+}
+
+.sf-mdl-left-full, .sf-mdl-right-full{
+    .sf-icon{
+        color: white;
+    }
+}
+
+.sf-mdl-right, .sf-mdl-right-full{
+    left: auto;
+    right: 0;
+}
+
+.sf-mdl-left-full, .sf-mdl.right-full{
+    background-color: #fb527a;
+    z-index: 9;
+    color: white;
+}
+
+.sf-wrap{
+    a{
+        color: white;
+        text-decoration: none;
+        margin-top: 110px;
+    }
+}
+
+// Additional
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  h1{
+    font-size: 2.5rem;
+    font-family: 'Montserrat';
+    font-weight: normal;
+    color: #444;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .wrapper{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 80rem;
+  }
+  
+  .cols{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+            align-items: center;
+  }
+  
+  .col{
+    width: calc(25% - 2rem);
+    // margin: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container{
+      position: relative;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+      -webkit-perspective: 1000px;
+              perspective: 1000px;
+
+    width: $card-width;
+    z-index: 1;
+  }
+  
+  .front,
+  .back{
+    background-size: cover;
+      background-position: center;
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      text-align: center;
+      min-height: 280px;
+      height: auto;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1.3rem;
+  }
+  
+  .back{
+    // background: #cedce7;
+    background: -webkit-linear-gradient(135deg, #3c0596 0%, #5822ad 25%, #2c2c2c 50%, #6d6d6d 75%, rgb(197, 197, 197) 100%);
+    background: -o-linear-gradient(135deg, #3c0596 0%, #5822ad 25%, #2c2c2c 50%, #6d6d6d 75%, rgb(197, 197, 197) 100%);
+    background: linear-gradient(135deg, #3c0596 0%, #5822ad 25%, #2c2c2c 50%, #6d6d6d 75%, rgb(197, 197, 197) 100%);
+  }
+  
+  .front:after{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      content: '';
+      display: block;
+      opacity: .6;
+      background-color: #000;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      border-radius: 10px;
+  }
+  .container:hover .front,
+  .container:hover .back{
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+  
+  .black{
+    background-color: black;
+  }
+
+  .back{
+      position: absolute;
+      left: 0;
+      width: 100%;
+  }
+  
+  .inner{
+      -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+              transform: translateY(-50%) translateZ(60px) scale(0.94);
+      top: 50%;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: 2rem;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      outline: 1px solid transparent;
+      -webkit-perspective: inherit;
+              perspective: inherit;
+      z-index: 2;
+      justify-content: center;
+  }
+  
+  .container .back{
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+  }
+  
+  .container .front{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+  }
+  
+  .container:hover .back{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+  
+  .container:hover .front{
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+  
+  .front .inner p{
+    // font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .card-title{
+    font-size: 23px;
+  }
+
+  .card-info{
+    font-size: 12px;
+  }
+
+  .card-items{
+    font-size: 15px;
+  }
+
+  .front .inner p:after{
+    content: '';
+    width: 4rem;
+    height: 2px;
+    position: absolute;
+    background: #C6D4DF;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -.75rem;
+  }
+  
+  .front .inner span{
+    color: rgba(255,255,255,0.7);
+    font-family: 'Montserrat';
+    font-weight: 300;
+  }
+
+  .col .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .video-game{
+    background-image: url(https://store-images.s-microsoft.com/image/apps.58231.65463610408817762.16ac64e5-a1b8-49fa-87ad-cbc5902fcb27.b9524e52-fe80-4e00-9b0a-66275fe9ed5a?w=180&h=270&q=60);
+    background-size: $card-width;
+    background-repeat: no-repeat;
+  }
+
+  .movie{
+    background-image: url(https://resizing.flixster.com/m1KEoItg4izd4iJTrXjQQCr3aCc=/206x305/v1.bTsxMTE2OTg3NjtqOzE4NDQ0OzEyMDA7ODAwOzEyMDA);
+    background-size: $card-width;
+    background-repeat: no-repeat;
+  }
+
+  .book{
+    background-image: url("src/assets/images/about/think_and_grow_rich.jpg");
+    background-size: $card-width;
+    background-repeat: no-repeat;
+  }
+  
+  .highlight{
+      position: absolute;
+      background-color: skyblue;
+      width: 100%;
+      height: 15px;
+      margin-top: 9px;
+      margin-left: -32px;
+      opacity: 35%;
+  }
+
+  .kirk-image{
+    width: 100%;
+    height: 100%;
+  }
+
+  .think-card{
+    margin: 1rem;
+  }
+
+  @media screen and (max-width: 64rem){
+    .col{
+      width: calc(33.333333% - 2rem);
+    }
+  }
+  
+  @media screen and (max-width: 48rem){
+    .col{
+      width: calc(50% - 2rem);
+    }
+  }
+  
+  @media screen and (max-width: 32rem){
+    .col{
+      width: 100%;
+      margin: 0 0 2rem 0;
+    }
+  }

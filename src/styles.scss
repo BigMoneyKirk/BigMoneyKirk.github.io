@@ -11,6 +11,14 @@ html, body {
     border-style: solid;
 }
 
+.card{
+    
+}
+
+.card-title{
+    font-weight: bold;
+}
+
 .cell-center{
     vertical-align: center;
     text-align: center;
@@ -26,6 +34,10 @@ html, body {
 
 .full-width{
     width: 100%;
+}
+
+.grow:hover{
+    transform: scale(1.1);
 }
 
 .left-half{
