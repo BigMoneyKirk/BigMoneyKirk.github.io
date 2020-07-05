@@ -1,4 +1,9 @@
-$the-color: #6804A4;
+$blue-color: rgb(50,150,220);
+$purple-color: #6804A4;
+
+.just-about{
+    left: auto;
+}
 
 .profile-image{
     width: 50px;
@@ -33,12 +38,16 @@ $the-color: #6804A4;
     background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
     }
 
+    .navbar-brand-text{
+        color: lime;
+    }
+
     .navbar-color{
-        background-color: $the-color;
+        background-color: $purple-color;
     }
 
     @media(max-width: 768px){
         .navbar-color{
-            background-color: rgb(50,150,220);
+            background-color: $blue-color;
         }
     }

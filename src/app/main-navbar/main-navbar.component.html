@@ -1,53 +1,68 @@
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-color lighten-1">
-  <a class="navbar-brand" [routerLink]="['/home']">Kirkland Enterprises</a>
-  <button title="Toggle navigation" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" (click)="logoNavigation()">
+    <span class="navbar-brand-text">
+      Kirkland Enterprises
+    </span>
+  </a>
+  <button title="Toggle navigation" class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" aria-expanded="false"
+    aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/home']">Home <span><i class="fas fa-home"></i></span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/bible']">Bible <span><i class="fas fa-bible"></i></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/social-media']">Social Media <span><i class="fas fa-users"></i></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/bookmarks']">Bookmarks <span><i class="fas fa-bookmark"></i></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/journal']">Journal <span><i class="fas fa-book-open"></i></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/passions']">Passions <span><i class="fas fa-heart"></i></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']"><span>About <i class="fas fa-question-circle"></i></span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Websites
-        </a>
-        <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
-          <a [routerLink]="['/smart-home']" class="dropdown-item">Grant and Kirk's Smart Home</a>
-          <a [routerLink]="['/interior-design']" class="dropdown-item">EJ's Interior Designing</a>
-          <a [routerLink]="['/tishas-cupcakes']" class="dropdown-item">Tisha's Cupcakes</a>
-          <a [routerLink]="['/the-fruit-plug']" class="dropdown-item">The Fruit Plug</a>
-          <a [routerLink]="['/best-buddies']" class="dropdown-item">Best Buddies</a>
-          <a [routerLink]="['/bunnie-beaute']" class="dropdown-item">Bunnie Beaute</a>
-          <a [routerLink]="['/sandras-record-keeping']" class="dropdown-item">Sandra's Record Keeping</a>
-          <a [routerLink]="['/screven-forward']" class="dropdown-item">Screven Forward</a>
-          <a [routerLink]="['/heather-mary-kay']" class="dropdown-item">Heather's Mary Kay</a>
-          <a [routerLink]="['/kirkland-loan']" class="dropdown-item">Kirkland Loan</a>
-          <a [routerLink]="['/kevins-vision']" class="dropdown-item">Kevin's Vision</a>
-        </div>
-      </li>
-    </ul>
+    <div class="main-nav-btns" *ngIf="authorized()">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']">Home <span><i class="fas fa-home"></i></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/bible']">Bible <span><i class="fas fa-bible"></i></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/social-media']">Social Media <span><i
+                class="fas fa-users"></i></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/bookmarks']">Bookmarks <span><i class="fas fa-bookmark"></i></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/journal']">Journal <span><i class="fas fa-book-open"></i></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/passions']">Passions <span><i class="fas fa-heart"></i></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/about']"><span>About <i class="fas fa-question-circle"></i></span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Websites
+          </a>
+          <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
+            <a [routerLink]="['/smart-home']" class="dropdown-item">Grant and Kirk's Smart Home</a>
+            <a [routerLink]="['/interior-design']" class="dropdown-item">EJ's Interior Designing</a>
+            <a [routerLink]="['/tishas-cupcakes']" class="dropdown-item">Tisha's Cupcakes</a>
+            <a [routerLink]="['/the-fruit-plug']" class="dropdown-item">The Fruit Plug</a>
+            <a [routerLink]="['/best-buddies']" class="dropdown-item">Best Buddies</a>
+            <a [routerLink]="['/bunnie-beaute']" class="dropdown-item">Bunnie Beaute</a>
+            <a [routerLink]="['/sandras-record-keeping']" class="dropdown-item">Sandra's Record Keeping</a>
+            <a [routerLink]="['/screven-forward']" class="dropdown-item">Screven Forward</a>
+            <a [routerLink]="['/heather-mary-kay']" class="dropdown-item">Heather's Mary Kay</a>
+            <a [routerLink]="['/kirkland-loan']" class="dropdown-item">Kirkland Loan</a>
+            <a [routerLink]="['/kevins-vision']" class="dropdown-item">Kevin's Vision</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="main-nav-btns just-about" *ngIf="!authorized()">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/about']"><span>About <i class="fas fa-question-circle"></i></span></a>
+        </li>
+      </ul>
+    </div>
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light">1
@@ -55,10 +70,9 @@
         </a>
       </li>
       <li class="nav-item avatar dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          <img [src]="kingImg" class="rounded-circle z-depth-0 profile-image"
-            alt="avatar image">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <img [src]="kingImg" class="rounded-circle z-depth-0 profile-image" alt="avatar image">
         </a>
         <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
           aria-labelledby="navbarDropdownMenuLink-55">
@@ -67,7 +81,7 @@
           <a class="dropdown-item" [routerLink]="['/journal']">Journal</a>
           <a class="dropdown-item" [routerLink]="['/passions']">Passions</a>
           <a class="dropdown-item" [routerLink]="['/settings']">Settings</a>
-          <a class="dropdown-item" [routerLink]="['/login']">Sign Out</a>
+          <a class="dropdown-item" (click)="logout()">Sign Out</a>
         </div>
       </li>
     </ul>

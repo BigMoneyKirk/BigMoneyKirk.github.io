@@ -18,7 +18,7 @@
             </div>
             <div>
                 <div class="login-button-container">
-                    <button title="Login / Sign Up Button" class="btn btn-primary" type="submit"
+                    <button title="Login / Sign Up Button" class="login-btn btn btn-primary" type="submit"
                         [disabled]="loginForm.invalid">{{ isLoginMode ? 'Login': 'Sign Up' }}</button>
                     <button title="Switch to Login / Sign Up Toggle Button" class="btn btn-primary switch-btn" type="button"
                         (click)="onSwitchMode()">Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}</button>
