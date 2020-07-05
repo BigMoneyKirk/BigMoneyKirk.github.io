@@ -13,15 +13,20 @@
 
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" class="form-control" ngModel name="password" required minlength="8">
+                <input type="password" id="password" class="form-control" ngModel name="password" required
+                    minlength="8">
             </div>
             <div>
-                <button title="Login / Sign Up Button" class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">{{ isLoginMode ? 'Login': 'Sign Up' }}</button> | 
-                <button title="Switch to Login / Sign Up Toggle Button" class="btn btn-primary" type="button" (click)="onSwitchMode()">Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}</button>
-                <button type="button" class="btn btn-block btn-primary" (click)="signInWithTwitter()">
+                <div class="login-button-container">
+                    <button title="Login / Sign Up Button" class="btn btn-primary" type="submit"
+                        [disabled]="loginForm.invalid">{{ isLoginMode ? 'Login': 'Sign Up' }}</button>
+                    <button title="Switch to Login / Sign Up Toggle Button" class="btn btn-primary switch-btn" type="button"
+                        (click)="onSwitchMode()">Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}</button>
+                </div>
+                <button type="button" class="btn btn-block btn-primary twitter-login-ctn" (click)="signInWithTwitter()">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
-                       Login with Twitter
-                 </button>
+                    Login with Twitter
+                </button>
             </div>
         </form>
     </div>

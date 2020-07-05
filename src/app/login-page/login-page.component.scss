@@ -1,3 +1,8 @@
+.login-button-container{
+    display: flex;
+    justify-content: center;
+}
+
 .top{
     background-image: url(../../assets/images/backgrounds/ShanghaiWorldFinanncialCenter.jpg);
     background-size: cover;
@@ -7,6 +12,14 @@
     width: 100%;
     align-content: center;
     margin-left: 0px;
+}
+
+.switch-btn{
+    margin-left: 0.5rem;
+}
+
+.twitter-login-ctn{
+    margin-top: 1rem;
 }
 
 @media(min-width: 300px){
