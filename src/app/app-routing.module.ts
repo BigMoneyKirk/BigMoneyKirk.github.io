@@ -23,10 +23,11 @@ import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision
 import { SmartHouseComponent } from './other-sites/smart-house/smart-house.component';
 import { BlogComponent } from './main-content/blog/blog.component';
 import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-forward.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'about', component: AboutComponent },
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
   { path: 'best-buddies', component: BestBuddiesComponent },
   { path: 'bible', component: BibleComponent },
   { path: 'blog', component: BlogComponent },
