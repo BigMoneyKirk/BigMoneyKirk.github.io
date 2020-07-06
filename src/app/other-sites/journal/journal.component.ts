@@ -43,7 +43,10 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Constructor -----------------
 
-  constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder, public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService) {
+  constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder, 
+    // https://maximelafarie.com/ngx-smart-modal/#/
+    public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService
+    ) {
   }
 
   ngOnInit() {
@@ -68,7 +71,6 @@ export class JournalComponent implements OnInit {
     }, (error) => {
       alert("There was some trouble saving your journal entry.");
     });
-    // TO-DO: I need to call the firebase service so that I can add the entry to the backend
   }
 
   // ---------------- Date Formatter -----------------
@@ -80,11 +82,12 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Modal Play -----------------
 
-  public createNewModal() {
+  public editEntry(data) {
     const opts: INgxSmartModalOptions = {
       backdrop: true
     };
-    this.ngxSmartModalService.create('NewJournalEntry', NewEntryComponent, opts).open();
+    var modal = this.ngxSmartModalService.create('EditJournalEntry', NewEntryComponent, opts)
+    modal.setData(data).open();
   }
 
   // ---------------- Firebase Functions -----------------

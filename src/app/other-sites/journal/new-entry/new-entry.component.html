@@ -2,20 +2,30 @@
      <!-- Title -->
      <div class="form-group">
           <mat-form-field class="input-style title-font">
-               <input matInput placeholder="Enter title here" class="form-control" formControlName="title" required>
+               <input matInput placeholder="Enter title here" class="form-control" formControlName="title"
+                    [(ngModel)]="entry.title" required>
           </mat-form-field>
           <ng-container *ngFor="let validation of validation_messages.title">
-               <mat-error *ngIf="newJournalEntryForm.get('title').hasError(validation.type) && (newJournalEntryForm.get('title').dirty || newJournalEntryForm.get('title').touched)">{{validation.message}}</mat-error>
+               <mat-error
+                    *ngIf="newJournalEntryForm.get('title').hasError(validation.type) && (newJournalEntryForm.get('title').dirty || newJournalEntryForm.get('title').touched)">
+                    {{validation.message}}</mat-error>
           </ng-container>
      </div>
 
-<!-- Write here -->
      <div>
           <p>Write here what you want to say:</p>
-          <textarea class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5"></textarea>
+          <textarea class="form-control" cols="30" rows="5" formControlName="entry" [(ngModel)]="entry.entry" required>
+          </textarea>
+          <ng-container *ngFor="let validation of validation_messages.entry">
+               <mat-error
+                    *ngIf="newJournalEntryForm.get('entry').hasError(validation.type) && (newJournalEntryForm.get('entry').dirty || newJournalEntryForm.get('entry').touched)">
+                    {{validation.message}}</mat-error>
+          </ng-container>
+
           <br>
+
           <div class="right-side">
-          <button class="btn btn-success" type="submit" (click)="onSubmit(newJournalEntryForm)">Submit</button>
+               <button class="btn btn-success" type="submit" (click)="onSubmit(newJournalEntryForm)" [disabled]="newJournalEntryForm.invalid">Submit</button>
           </div>
      </div>
 </form>

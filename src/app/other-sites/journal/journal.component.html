@@ -26,6 +26,12 @@
                 <th>
                     <span>Entry</span>
                 </th>
+                <th>
+                    <span>Edit</span>
+                </th>
+                <th>
+                    <span>Delete</span>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +44,16 @@
                 </td>
                 <td>
                     {{journal_entry.entry}}
+                </td>
+                <td>
+                    <button class="btn" (click)="editEntry(journal_entry)">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn">
+                        <i class="fas fa-trash"></i>
+                    </button>
                 </td>
             </tr>
         </tbody>
@@ -70,11 +86,6 @@
                 <button class="btn btn-success" type="submit" [disabled]="newJournalEntryForm.invalid" (click)="onSubmit(newJournalEntryForm.value)">Submit</button> 
             </div>
        </form>
-
-       <!-- Learning List Firebase Practice -->
-       <ul id="list">
-
-       </ul>
 
     <br>
 
