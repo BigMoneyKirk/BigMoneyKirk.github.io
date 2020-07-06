@@ -18,7 +18,9 @@
         <thead>
             <tr>
                 <th>
-                    <span>Journal ID</span>
+                    <div class="journal-id-container">
+                        <span>Journal ID</span>
+                    </div>
                 </th>
                 <th>
                     <span>Name</span>
@@ -27,7 +29,9 @@
                     <span>Entry</span>
                 </th>
                 <th>
-                    <span>Edit</span>
+                    <div class="edit-btn-container">
+                        <span>Edit</span>
+                    </div>
                 </th>
                 <th>
                     <span>Delete</span>
@@ -37,7 +41,9 @@
         <tbody>
             <tr *ngFor="let journal_entry of journal_entries; let indexOfelement = index;">
                 <td>
-                    {{indexOfelement + 1}}
+                    <div class="journal-id-container">
+                        {{indexOfelement + 1}}
+                    </div>
                 </td>
                 <td>
                     {{journal_entry.title}}
@@ -46,9 +52,12 @@
                     {{journal_entry.entry}}
                 </td>
                 <td>
-                    <button class="btn" (click)="editEntry(journal_entry)">
-                        <i class="fas fa-edit"></i>
-                    </button>
+                    <div class="edit-btn-container">
+                        <button class="btn" id="edit-button-{{indexOfelement+1}}"
+                            title="Edit Button {{indexOfelement+1}}" (click)="editEntry(journal_entry)">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </div>
                 </td>
                 <td>
                     <button class="btn">
@@ -58,34 +67,42 @@
             </tr>
         </tbody>
     </table>
- 
+
     <!-- New Journal Entry Form -->
     <form class="new-journal-entry-form" [formGroup]="newJournalEntryForm" novalidate>
         <div class="form-group">
             <!-- Title  -->
             <mat-form-field class="input-style title-font" floatLabel="never">
-                <input matInput placeholder="Enter title here" class="form-control" id="input-title" [(ngModel)]='journal_title' formControlName="title">
+                <input matInput placeholder="Enter title here" class="form-control" id="input-title"
+                    [(ngModel)]='journal_title' formControlName="title">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.title">
-                <mat-error *ngIf="newJournalEntryForm.get('title').hasError(validation.type) && (newJournalEntryForm.get('title').dirty || newJournalEntryForm.get('title').touched)">{{validation.message}}
+                <mat-error
+                    *ngIf="newJournalEntryForm.get('title').hasError(validation.type) && (newJournalEntryForm.get('title').dirty || newJournalEntryForm.get('title').touched)">
+                    {{validation.message}}
                 </mat-error>
             </ng-container>
-       
-           <!-- Write here -->
+
+            <!-- Write here -->
             <mat-form-field class="input-style">
-                <textarea matInput [(ngModel)]="journal_entry" placeholder="Write here what you want to say:" class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5" formControlName="entry"></textarea>
+                <textarea matInput [(ngModel)]="journal_entry" placeholder="Write here what you want to say:"
+                    class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5"
+                    formControlName="entry"></textarea>
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.entry">
-                <mat-error *ngIf="newJournalEntryForm.get('entry').hasError(validation.type) && (newJournalEntryForm.get('entry').dirty || newJournalEntryForm.get('entry').touched)">{{validation.message}}
+                <mat-error
+                    *ngIf="newJournalEntryForm.get('entry').hasError(validation.type) && (newJournalEntryForm.get('entry').dirty || newJournalEntryForm.get('entry').touched)">
+                    {{validation.message}}
                 </mat-error>
             </ng-container>
         </div>
 
         <!-- Submit button -->
-            <div class="right-side">
-                <button class="btn btn-success" type="submit" [disabled]="newJournalEntryForm.invalid" (click)="onSubmit(newJournalEntryForm.value)">Submit</button> 
-            </div>
-       </form>
+        <div class="right-side">
+            <button class="btn btn-success" type="submit" [disabled]="newJournalEntryForm.invalid"
+                (click)="onSubmit(newJournalEntryForm.value)">Submit</button>
+        </div>
+    </form>
 
     <br>
 
