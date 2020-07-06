@@ -10,6 +10,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 import firebase from 'firebase';
 import { listenToTriggers } from 'angular-bootstrap-md/lib/free/utilities';
 import { HttpClient } from '@angular/common/http';
+import { NotificationModalService } from 'src/app/modals/notification-modal.service';
 
 @Component({
   selector: 'messing-around-journal',
@@ -24,9 +25,6 @@ export class JournalComponent implements OnInit {
   public journal_entry: string = '';
 
   public journal_entries = [];
-
-  // public journalEntry1: JournalEntry = new JournalEntry(1, 'Journal Entry 1', true, new Date());
-  // public journalEntry2: JournalEntry = new JournalEntry(2, 'Journal Entry 2', true, new Date());
   public journalUrl = "https://fontmeme.com/permalink/191015/6ed769f9c99ef18d831273a181e61f9f.png";
   public modalText = 'Holla back, yungen; whooo-whoooo!!!!';
   public scrollBannerUrl = "assets/images/journal/scroll-banner.png";
@@ -45,7 +43,7 @@ export class JournalComponent implements OnInit {
 
   constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder, 
     // https://maximelafarie.com/ngx-smart-modal/#/
-    public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService
+    public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService, private notificationService: NotificationModalService
     ) {
   }
 
@@ -67,9 +65,9 @@ export class JournalComponent implements OnInit {
     this.firebaseService.getUser(localStorage.getItem("userIDtoken"));
     this.firebaseService.createJournalEntry('steve', value).subscribe(() => {
       this.getEntries();
-      alert("The message has been saved successfully!");
+      this.notificationService.success("The message has been saved successfully!");
     }, (error) => {
-      alert("There was some trouble saving your journal entry.");
+      this.notificationService.error("There was some trouble saving your journal entry.");
     });
   }
 

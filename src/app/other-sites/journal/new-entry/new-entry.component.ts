@@ -43,7 +43,8 @@ export class NewEntryComponent implements OnInit {
     });
   }
 
-  public onSubmit(value){
-    
+  public onSubmit(){
+   this.firebaseService.createJournalEntry('steve', this.entry).subscribe(data => {console.log(data);
+   }); 
   }
 }

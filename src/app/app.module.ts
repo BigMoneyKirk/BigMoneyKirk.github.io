@@ -40,6 +40,7 @@ import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision
 import { SmartHouseComponent } from './other-sites/smart-house/smart-house.component';
 import { BlogComponent } from './main-content/blog/blog.component';
 import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-forward.component';
+import { NotificationModalComponent } from './main-content/modal-content/notification-modal/notification-modal.component';
 
 @NgModule({
   declarations: [
@@ -69,10 +70,12 @@ import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-f
     KevinsVisionComponent,
     SmartHouseComponent,
     BlogComponent,
-    ScrevenForwardComponent
+    ScrevenForwardComponent,
+    NotificationModalComponent
   ],
   entryComponents: [
-    NewEntryComponent
+    NewEntryComponent,
+    NotificationModalComponent
   ],
   imports: [
     BrowserModule,
