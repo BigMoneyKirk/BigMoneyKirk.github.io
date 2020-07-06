@@ -44,8 +44,6 @@ export class LoginPageComponent implements OnInit {
     this.isLoading = true;
     if (this.isLoginMode) {
       authObs = this.authService.login(email, password);
-      console.log(authObs);
-      
     }
     else {
       authObs = this.authService.signup(email, password);
@@ -53,8 +51,10 @@ export class LoginPageComponent implements OnInit {
 
     authObs.subscribe(data => {
       this.isLoading = false;
+      
       // pass a success token to the localStorage
       localStorage.setItem("successfulLogin", "true");
+      localStorage.setItem("userIDtoken", data.localId);
       this.router.navigate(['/home']);
     },
       errorMessage => {

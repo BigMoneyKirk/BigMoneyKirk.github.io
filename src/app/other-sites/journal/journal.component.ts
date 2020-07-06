@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import firebase from 'firebase';
 import { listenToTriggers } from 'angular-bootstrap-md/lib/free/utilities';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'messing-around-journal',
@@ -22,10 +23,10 @@ export class JournalComponent implements OnInit {
   public journal_title: string = '';
   public journal_entry: string = '';
 
-  public journal_entries: Array<JournalEntry>;
+  public journal_entries = [];
 
-  public journalEntry1: JournalEntry = new JournalEntry(1, 'Journal Entry 1', true, new Date());
-  public journalEntry2: JournalEntry = new JournalEntry(2, 'Journal Entry 2', true, new Date());
+  // public journalEntry1: JournalEntry = new JournalEntry(1, 'Journal Entry 1', true, new Date());
+  // public journalEntry2: JournalEntry = new JournalEntry(2, 'Journal Entry 2', true, new Date());
   public journalUrl = "https://fontmeme.com/permalink/191015/6ed769f9c99ef18d831273a181e61f9f.png";
   public modalText = 'Holla back, yungen; whooo-whoooo!!!!';
   public scrollBannerUrl = "assets/images/journal/scroll-banner.png";
@@ -42,12 +43,12 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Constructor -----------------
 
-  constructor(private dateFormatter: DateFormatterService, private fb: FormBuilder, public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService) {
+  constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder, public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService) {
   }
 
   ngOnInit() {
     this.createForm();
-    this.firebaseStuff();
+    this.getEntries();
   }
 
   // ---------------- Form Stuff -----------------
@@ -60,6 +61,13 @@ export class JournalComponent implements OnInit {
   }
 
   public onSubmit(value) {
+    this.firebaseService.getUser(localStorage.getItem("userIDtoken"));
+    this.firebaseService.createJournalEntry('steve', value).subscribe(() => {
+      this.getEntries();
+      alert("The message has been saved successfully!");
+    }, (error) => {
+      alert("There was some trouble saving your journal entry.");
+    });
     // TO-DO: I need to call the firebase service so that I can add the entry to the backend
   }
 
@@ -81,53 +89,9 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Firebase Functions -----------------
 
-  public firebaseStuff() {
-    //#region title and entry 
-    const dbRefObject = firebase.database().ref().child('object');
-
-    dbRefObject.on('value',
-      snap => {
-        this.journal_title = JSON.stringify(snap.val().name).replace(/['"]+/g, '');
-        this.journal_entry = `My favorite number is ${JSON.stringify(snap.val().favNumber)}.`;
-      });
-    //#endregion
-
-    const listElement = document.getElementById('list');
-    const dbRefList = dbRefObject.child('hobbies');
-    var titleArray = [];
-    dbRefList.on('child_added', snap => {
-      titleArray.push(
-        {
-          key: snap.key,
-          value: snap.val()
-        }
-      );
-      this.journal_entries = new Array<JournalEntry>();
-      var i = titleArray.length - 1;
-      var j = 0;
-
-      titleArray.forEach(element => {
-        var date = new Date();
-        date.setDate(date.getDate() - i);
-        this.journal_entries.push(new JournalEntry(j + 1, titleArray[i].value, true, date));
-        i--;
-        j++;
-      });
+  public getEntries(){
+    this.firebaseService.getJournalEntries('steve').subscribe(entries => {
+      this.journal_entries = entries;
     });
-
-    dbRefList.on('child_changed', snap => {
-      let initialValue = '';
-      for (var i = 0; i < titleArray.length; i++) {
-        if (titleArray[i].key == snap.key) {
-          initialValue = titleArray[i].value;
-          for(var j = 0; j < this.journal_entries.length; j++){
-            if(this.journal_entries[j].Name == initialValue){
-              this.journal_entries[j].Name = snap.val();
-              titleArray[i].value = this.journal_entries[j].Name;
-            }
-          }
-        }
-      }
-    })
   }
 }
