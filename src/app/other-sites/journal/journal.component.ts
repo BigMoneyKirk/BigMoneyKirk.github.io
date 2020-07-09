@@ -21,6 +21,8 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Global Variables -----------------
 
+  private currentUsername = 'steve';
+
   public journal_title: string = '';
   public journal_entry: string = '';
 
@@ -63,12 +65,20 @@ export class JournalComponent implements OnInit {
 
   public onSubmit(value) {
     this.firebaseService.getUser(localStorage.getItem("userIDtoken"));
-    this.firebaseService.createJournalEntry('steve', value).subscribe(() => {
+    this.firebaseService.createJournalEntry(this.currentUsername, value).subscribe(() => {
       this.getEntries();
       this.notificationService.success("The message has been saved successfully!");
     }, (error) => {
       this.notificationService.error("There was some trouble saving your journal entry.");
     });
+  }
+
+  public deleteJournalEntry(value) {
+    // TO-DO: Add an "Are you sure?" modal to the delete functionality
+    this.firebaseService.deleteJournalEntry(this.currentUsername, value.id).subscribe(() => {
+      this.notificationService.success("The journal entry has been deleted.");
+      this.getEntries();
+    })
   }
 
   // ---------------- Date Formatter -----------------
@@ -91,7 +101,7 @@ export class JournalComponent implements OnInit {
   // ---------------- Firebase Functions -----------------
 
   public getEntries(){
-    this.firebaseService.getJournalEntries('steve').subscribe(entries => {
+    this.firebaseService.getJournalEntries(this.currentUsername).subscribe(entries => {
       this.journal_entries = entries;
     });
   }

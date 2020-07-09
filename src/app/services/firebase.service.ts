@@ -60,11 +60,15 @@ export class FirebaseService {
     });
   }
 
-  createJournalEntry(username, value) {
+  public createJournalEntry(username, value) {
     return this.http.post<JournalEntry>(`${this.firebaseURL}Journal%20Entries/${username}.json`, value);
   }
 
-  getJournalEntries(username) {
+  public deleteJournalEntry(username, value) {
+    return this.http.delete<JournalEntry>(`${this.firebaseURL}Journal%20Entries/${username}/${value}.json`);
+  }
+
+  public getJournalEntries(username) {
     return this.http.get<JournalEntry[]>(`${this.firebaseURL}Journal%20Entries/${username}.json`).pipe(map(responseData => {
       const entryArray: JournalEntry[] = [];
       for (const key in responseData) {
