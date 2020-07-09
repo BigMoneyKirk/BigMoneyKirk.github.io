@@ -21,6 +21,7 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Global Variables -----------------
 
+  // TO-DO: This needs to be set dynamically
   private currentUsername = 'steve';
 
   public journal_title: string = '';
@@ -28,7 +29,6 @@ export class JournalComponent implements OnInit {
 
   public journal_entries = [];
   public journalUrl = "https://fontmeme.com/permalink/191015/6ed769f9c99ef18d831273a181e61f9f.png";
-  public modalText = 'Holla back, yungen; whooo-whoooo!!!!';
   public scrollBannerUrl = "assets/images/journal/scroll-banner.png";
 
   public newJournalEntryForm: FormGroup;
@@ -43,10 +43,10 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Constructor -----------------
 
-  constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder, 
+  constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder,
     // https://maximelafarie.com/ngx-smart-modal/#/
     public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService, private notificationService: NotificationModalService
-    ) {
+  ) {
   }
 
   ngOnInit() {
@@ -100,7 +100,7 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Firebase Functions -----------------
 
-  public getEntries(){
+  public getEntries() {
     this.firebaseService.getJournalEntries(this.currentUsername).subscribe(entries => {
       this.journal_entries = entries;
     });
