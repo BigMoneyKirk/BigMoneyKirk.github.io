@@ -17,6 +17,7 @@ export class NewEntryComponent implements OnInit {
 
   // TO-DO: This needs to be set dynamically
   private currentUsername = 'steve';
+  private editModal: string = `EditJournalEntry`
   private original: JournalEntry;
 
   public newJournalEntryForm: FormGroup;
@@ -39,8 +40,17 @@ export class NewEntryComponent implements OnInit {
     this.createForm();
   }
 
+  ngAfterViewInit(){
+    this.ngxSmartModalService.getModal(this.editModal).onAnyCloseEventFinished.subscribe(() => {
+      this.onClose();
+    });
+    this.ngxSmartModalService.getModal(this.editModal).onDismissFinished.subscribe(() => {
+      this.onDismiss();
+    });
+  }
+
   public createForm() {
-    this.entry = this.ngxSmartModalService.getModalData('EditJournalEntry');
+    this.entry = this.ngxSmartModalService.getModalData(this.editModal);
     this.original = this.entry;
 
     this.newJournalEntryForm = this.fb.group({
@@ -52,13 +62,13 @@ export class NewEntryComponent implements OnInit {
   public onSubmit() {
     this.firebaseService.editJournalEntry(this.currentUsername, this.entry.id, this.entry).subscribe(data => {
       this.notificationService.success("This entry updated successfully.");
-      this.ngxSmartModalService.close('EditJournalEntry');
+      this.ngxSmartModalService.getModal(this.editModal).removeData().close();
     }
     );
   }
 
   public onClose(){
-    this.entry = this.original;
+    this.ngxSmartModalService.getModal(this.editModal).removeData();
   }
 
   public onDismiss(){

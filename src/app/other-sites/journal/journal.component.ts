@@ -23,6 +23,7 @@ export class JournalComponent implements OnInit {
 
   // TO-DO: This needs to be set dynamically
   private currentUsername = 'steve';
+  private editModal = `EditJournalEntry`;
 
   public journal_title: string = '';
   public journal_entry: string = '';
@@ -94,7 +95,7 @@ export class JournalComponent implements OnInit {
     const opts: INgxSmartModalOptions = {
       backdrop: true
     };
-    var modal = this.ngxSmartModalService.create('EditJournalEntry', NewEntryComponent, opts)
+    var modal = this.ngxSmartModalService.create(`EditJournalEntry`, NewEntryComponent, opts)
     modal.setData(data).open();
   }
 
@@ -104,5 +105,13 @@ export class JournalComponent implements OnInit {
     this.firebaseService.getJournalEntries(this.currentUsername).subscribe(entries => {
       this.journal_entries = entries;
     });
+  }
+
+  public onDismiss(){
+    console.log("onDismiss()");
+  }
+
+  public onClose(){
+    console.log("onClose()");
   }
 }
