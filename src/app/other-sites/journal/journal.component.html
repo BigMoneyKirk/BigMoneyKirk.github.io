@@ -58,9 +58,11 @@
                     </div>
                 </td>
                 <td>
-                    <button class="btn">
-                        <i class="fas fa-trash"></i>
-                    </button>
+                    <div class="delete-btn-container">
+                        <button class="btn delete-btn-{{indexOfelement+1}}" (click)="deleteJournalEntry(journal_entry)">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
                 </td>
             </tr>
         </tbody>

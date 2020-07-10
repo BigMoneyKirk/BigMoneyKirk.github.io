@@ -21,12 +21,14 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Global Variables -----------------
 
+  // TO-DO: This needs to be set dynamically
+  private currentUsername = 'steve';
+
   public journal_title: string = '';
   public journal_entry: string = '';
 
   public journal_entries = [];
   public journalUrl = "https://fontmeme.com/permalink/191015/6ed769f9c99ef18d831273a181e61f9f.png";
-  public modalText = 'Holla back, yungen; whooo-whoooo!!!!';
   public scrollBannerUrl = "assets/images/journal/scroll-banner.png";
 
   public newJournalEntryForm: FormGroup;
@@ -41,10 +43,10 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Constructor -----------------
 
-  constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder, 
+  constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder,
     // https://maximelafarie.com/ngx-smart-modal/#/
     public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService, private notificationService: NotificationModalService
-    ) {
+  ) {
   }
 
   ngOnInit() {
@@ -63,12 +65,20 @@ export class JournalComponent implements OnInit {
 
   public onSubmit(value) {
     this.firebaseService.getUser(localStorage.getItem("userIDtoken"));
-    this.firebaseService.createJournalEntry('steve', value).subscribe(() => {
+    this.firebaseService.createJournalEntry(this.currentUsername, value).subscribe(() => {
       this.getEntries();
       this.notificationService.success("The message has been saved successfully!");
     }, (error) => {
       this.notificationService.error("There was some trouble saving your journal entry.");
     });
+  }
+
+  public deleteJournalEntry(value) {
+    // TO-DO: Add an "Are you sure?" modal to the delete functionality
+    this.firebaseService.deleteJournalEntry(this.currentUsername, value.id).subscribe(() => {
+      this.notificationService.success("The journal entry has been deleted.");
+      this.getEntries();
+    })
   }
 
   // ---------------- Date Formatter -----------------
@@ -90,8 +100,8 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Firebase Functions -----------------
 
-  public getEntries(){
-    this.firebaseService.getJournalEntries('steve').subscribe(entries => {
+  public getEntries() {
+    this.firebaseService.getJournalEntries(this.currentUsername).subscribe(entries => {
       this.journal_entries = entries;
     });
   }
