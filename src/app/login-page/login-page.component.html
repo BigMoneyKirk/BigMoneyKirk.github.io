@@ -1,7 +1,13 @@
+<ng-template messing-around-placeholder></ng-template>
 <div class="row top">
     <div class="col-lg-4"></div>
     <div class="col-xs-12 col-md-12 col-lg-4">
-        <div class="alert alert-danger" *ngIf="error"><span>{{ error }}</span></div>
+        <!-- <div class="alert alert-danger" *ngIf="error">
+            <span>
+                {{ error }}
+            </span>
+        </div> -->
+        <!-- <alert-modal [message]="error" *ngIf="error" (close)="onHandleError()"></alert-modal> -->
         <div *ngIf="isLoading" class="loading-spinner">
             <messing-around-loading-spinner></messing-around-loading-spinner>
         </div>

@@ -41,6 +41,8 @@ import { SmartHouseComponent } from './other-sites/smart-house/smart-house.compo
 import { BlogComponent } from './main-content/blog/blog.component';
 import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-forward.component';
 import { NotificationModalComponent } from './main-content/modal-content/notification-modal/notification-modal.component';
+import { AlertModalComponent } from './modals/alert-modal.component';
+import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -71,11 +73,14 @@ import { NotificationModalComponent } from './main-content/modal-content/notific
     SmartHouseComponent,
     BlogComponent,
     ScrevenForwardComponent,
-    NotificationModalComponent
+    NotificationModalComponent,
+    AlertModalComponent,
+    PlaceholderDirective
   ],
   entryComponents: [
     NewEntryComponent,
-    NotificationModalComponent
+    NotificationModalComponent,
+    AlertModalComponent
   ],
   imports: [
     BrowserModule,
