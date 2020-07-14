@@ -30,7 +30,7 @@ export class JournalComponent implements OnInit {
 
   public journal_entries = [];
   public journalUrl = "https://fontmeme.com/permalink/191015/6ed769f9c99ef18d831273a181e61f9f.png";
-  public scrollBannerUrl = "assets/images/journal/scroll-banner.png";
+  public scrollBannerUrl = "assets/images/journal/scroll-banner-2.PNG";
 
   public newJournalEntryForm: FormGroup;
   public validation_messages = {

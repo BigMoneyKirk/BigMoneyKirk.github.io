@@ -17,6 +17,7 @@ export class MainNavbarComponent implements OnInit, OnDestroy {
   private userSub: Subscription;
   public isAuthenticated: boolean = false;
   public kingImg = this.gloabalImage.king;
+  public logoHomeButton = this.gloabalImage.logoHomeButton;
 
   constructor(private router: Router, private global: GlobalService, private authService: AuthService, private gloabalImage: GlobalImageService) { }
 
