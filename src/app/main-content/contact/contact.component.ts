@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { ContactForm } from 'src/app/models/contact-form';
 
 @Component({
   selector: 'messing-around-contact',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  // class variables
+  contactFormObject: ContactForm = new ContactForm();
+  firstName : FormControl = new FormControl();
+
   constructor() { }
 
   ngOnInit() {
+    this.contactFormObject.FirstName = "Stephen";
+    this.firstName = new FormControl(this.contactFormObject.FirstName);
   }
 
 }
