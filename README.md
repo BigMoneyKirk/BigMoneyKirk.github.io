@@ -79,3 +79,7 @@ If deploying this application to a new app server for the first time, then here 
 ## <a id="about">About</a>
 
 ## <a id="websites">Websites</a>
+
+# Modal Information
+I am using the ngx-smart-modal for modal information.
+Documentation: https://maximelafarie.com/ngx-smart-modal/#/

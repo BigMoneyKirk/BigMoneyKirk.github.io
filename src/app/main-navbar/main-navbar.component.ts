@@ -17,19 +17,37 @@ export class MainNavbarComponent implements OnInit, OnDestroy {
   private userSub: Subscription;
   public isAuthenticated: boolean = false;
   public kingImg = this.gloabalImage.king;
+  public logoHomeButton = this.gloabalImage.logoHomeButton;
 
   constructor(private router: Router, private global: GlobalService, private authService: AuthService, private gloabalImage: GlobalImageService) { }
 
   ngOnInit() {
-    
+
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.userSub.unsubscribe();
+  }
+
+  public authorized() : boolean{
+    return localStorage.getItem("successfulLogin") == "true" ? true : false;
+  }
+
+  public logoNavigation(){
+    if(this.authorized()){
+      this.navigate('/home');
+    }
+    else{
+      this.navigate('/login');
+    }
+  }
+
+  public logout() {
+    localStorage.setItem("successfulLogin", "false");
+    this.global.navigate('/login');
   }
 
   public navigate(path: string): void {
     this.global.navigate(path);
   }
-
 }

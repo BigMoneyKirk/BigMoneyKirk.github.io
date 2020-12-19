@@ -39,6 +39,10 @@ import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute
 import { KevinsVisionComponent } from './other-sites/kevins-vision/kevins-vision.component';
 import { SmartHouseComponent } from './other-sites/smart-house/smart-house.component';
 import { BlogComponent } from './main-content/blog/blog.component';
+import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-forward.component';
+import { NotificationModalComponent } from './main-content/modal-content/notification-modal/notification-modal.component';
+import { AlertModalComponent } from './modals/alert-modal.component';
+import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -67,10 +71,16 @@ import { BlogComponent } from './main-content/blog/blog.component';
     BunnieBeauteComponent,
     KevinsVisionComponent,
     SmartHouseComponent,
-    BlogComponent
+    BlogComponent,
+    ScrevenForwardComponent,
+    NotificationModalComponent,
+    AlertModalComponent,
+    PlaceholderDirective
   ],
   entryComponents: [
-    NewEntryComponent
+    NewEntryComponent,
+    NotificationModalComponent,
+    AlertModalComponent
   ],
   imports: [
     BrowserModule,

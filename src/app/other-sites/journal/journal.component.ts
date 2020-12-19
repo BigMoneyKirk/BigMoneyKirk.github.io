@@ -9,6 +9,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import firebase from 'firebase';
 import { listenToTriggers } from 'angular-bootstrap-md/lib/free/utilities';
+import { HttpClient } from '@angular/common/http';
+import { NotificationModalService } from 'src/app/modals/notification-modal.service';
 
 @Component({
   selector: 'messing-around-journal',
@@ -19,16 +21,16 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Global Variables -----------------
 
+  // TO-DO: This needs to be set dynamically
+  private currentUsername = 'steve';
+  private editModal = `EditJournalEntry`;
+
   public journal_title: string = '';
   public journal_entry: string = '';
 
-  public journal_entries: Array<JournalEntry>;
-
-  public journalEntry1: JournalEntry = new JournalEntry(1, 'Journal Entry 1', true, new Date());
-  public journalEntry2: JournalEntry = new JournalEntry(2, 'Journal Entry 2', true, new Date());
+  public journal_entries = [];
   public journalUrl = "https://fontmeme.com/permalink/191015/6ed769f9c99ef18d831273a181e61f9f.png";
-  public modalText = 'Holla back, yungen; whooo-whoooo!!!!';
-  public scrollBannerUrl = "assets/images/journal/scroll-banner.png";
+  public scrollBannerUrl = "assets/images/journal/scroll-banner-2.PNG";
 
   public newJournalEntryForm: FormGroup;
   public validation_messages = {
@@ -42,12 +44,15 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Constructor -----------------
 
-  constructor(private dateFormatter: DateFormatterService, private fb: FormBuilder, public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService) {
+  constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder,
+    // https://maximelafarie.com/ngx-smart-modal/#/
+    public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService, private notificationService: NotificationModalService
+  ) {
   }
 
   ngOnInit() {
     this.createForm();
-    this.firebaseStuff();
+    this.getEntries();
   }
 
   // ---------------- Form Stuff -----------------
@@ -60,7 +65,21 @@ export class JournalComponent implements OnInit {
   }
 
   public onSubmit(value) {
-    // TO-DO: I need to call the firebase service so that I can add the entry to the backend
+    this.firebaseService.getUser(localStorage.getItem("userIDtoken"));
+    this.firebaseService.createJournalEntry(this.currentUsername, value).subscribe(() => {
+      this.getEntries();
+      this.notificationService.success("The message has been saved successfully!");
+    }, (error) => {
+      this.notificationService.error("There was some trouble saving your journal entry.");
+    });
+  }
+
+  public deleteJournalEntry(value) {
+    // TO-DO: Add an "Are you sure?" modal to the delete functionality
+    this.firebaseService.deleteJournalEntry(this.currentUsername, value.id).subscribe(() => {
+      this.notificationService.success("The journal entry has been deleted.");
+      this.getEntries();
+    })
   }
 
   // ---------------- Date Formatter -----------------
@@ -72,62 +91,27 @@ export class JournalComponent implements OnInit {
 
   // ---------------- Modal Play -----------------
 
-  public createNewModal() {
+  public editEntry(data) {
     const opts: INgxSmartModalOptions = {
       backdrop: true
     };
-    this.ngxSmartModalService.create('NewJournalEntry', NewEntryComponent, opts).open();
+    var modal = this.ngxSmartModalService.create(`EditJournalEntry`, NewEntryComponent, opts)
+    modal.setData(data).open();
   }
 
   // ---------------- Firebase Functions -----------------
 
-  public firebaseStuff() {
-    //#region title and entry 
-    const dbRefObject = firebase.database().ref().child('object');
-
-    dbRefObject.on('value',
-      snap => {
-        this.journal_title = JSON.stringify(snap.val().name).replace(/['"]+/g, '');
-        this.journal_entry = `My favorite number is ${JSON.stringify(snap.val().favNumber)}.`;
-      });
-    //#endregion
-
-    const listElement = document.getElementById('list');
-    const dbRefList = dbRefObject.child('hobbies');
-    var titleArray = [];
-    dbRefList.on('child_added', snap => {
-      titleArray.push(
-        {
-          key: snap.key,
-          value: snap.val()
-        }
-      );
-      this.journal_entries = new Array<JournalEntry>();
-      var i = titleArray.length - 1;
-      var j = 0;
-
-      titleArray.forEach(element => {
-        var date = new Date();
-        date.setDate(date.getDate() - i);
-        this.journal_entries.push(new JournalEntry(j + 1, titleArray[i].value, true, date));
-        i--;
-        j++;
-      });
+  public getEntries() {
+    this.firebaseService.getJournalEntries(this.currentUsername).subscribe(entries => {
+      this.journal_entries = entries;
     });
+  }
 
-    dbRefList.on('child_changed', snap => {
-      let initialValue = '';
-      for (var i = 0; i < titleArray.length; i++) {
-        if (titleArray[i].key == snap.key) {
-          initialValue = titleArray[i].value;
-          for(var j = 0; j < this.journal_entries.length; j++){
-            if(this.journal_entries[j].Name == initialValue){
-              this.journal_entries[j].Name = snap.val();
-              titleArray[i].value = this.journal_entries[j].Name;
-            }
-          }
-        }
-      }
-    })
+  public onDismiss(){
+    console.log("onDismiss()");
+  }
+
+  public onClose(){
+    console.log("onClose()");
   }
 }

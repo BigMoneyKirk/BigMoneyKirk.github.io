@@ -1,80 +1,108 @@
 <div class="page-margin">
     <!-- Journal Banner Logo -->
-    <div class="row">
+    <div class="row logo-row">
         <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-            <!-- <div class="border-test"> -->
-            <img alt="Scroll Banner" class="full-width" src={{scrollBannerUrl}}>
-            <!-- </div> -->
-            <div class="cell-center">
-                <img alt="Journal Text" class="journal-text" src={{journalUrl}}>
-            </div>
+        <div class="col-lg-6 logo-container">
+            <img alt="Scroll Banner" class="full-width scroll-image" src={{scrollBannerUrl}}>
+            <!-- <div class="journal-logo-container">
+                <img alt="Journal Text" class="journal-logo-text" src={{journalUrl}}>
+            </div> -->
         </div>
         <div class="col-lg-3"></div>
     </div>
 
     <!-- Journal Table -->
-    <table class="table">
+    <table class="table journal-table">
         <thead>
             <tr>
                 <th>
-                    <span>Journal ID</span>
+                    <div class="journal-id-container">
+                        <span>Journal ID</span>
+                    </div>
                 </th>
                 <th>
                     <span>Name</span>
                 </th>
                 <th>
-                    <span>Date Created</span>
+                    <span>Entry</span>
+                </th>
+                <th>
+                    <div class="edit-btn-container">
+                        <span>Edit</span>
+                    </div>
+                </th>
+                <th>
+                    <span>Delete</span>
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let jouranl_entry of journal_entries">
+            <tr *ngFor="let journal_entry of journal_entries; let indexOfelement = index;">
                 <td>
-                    {{jouranl_entry._JournalID}}
+                    <div class="journal-id-container">
+                        {{indexOfelement + 1}}
+                    </div>
                 </td>
                 <td>
-                    {{jouranl_entry.Name}}
+                    {{journal_entry.title}}
                 </td>
                 <td>
-                    {{dateformat(jouranl_entry.CreatedAt)}}
+                    {{journal_entry.entry}}
+                </td>
+                <td>
+                    <div class="edit-btn-container">
+                        <button class="btn" id="edit-button-{{indexOfelement+1}}"
+                            title="Edit Button {{indexOfelement+1}}" (click)="editEntry(journal_entry)">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </div>
+                </td>
+                <td>
+                    <div class="delete-btn-container">
+                        <button class="btn delete-btn-{{indexOfelement+1}}" (click)="deleteJournalEntry(journal_entry)">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
                 </td>
             </tr>
         </tbody>
     </table>
- 
+
     <!-- New Journal Entry Form -->
-    <form class="new-journal-entry-form" [formGroup]="newJournalEntryForm" novalidate (ngSubmit)="onSubmit(newJournalEntryForm.value)">
+    <form class="new-journal-entry-form" [formGroup]="newJournalEntryForm" novalidate>
         <div class="form-group">
             <!-- Title  -->
             <mat-form-field class="input-style title-font" floatLabel="never">
-                <input matInput placeholder="Enter title here" class="form-control" id="input-title" [(ngModel)]='journal_title' formControlName="title">
+                <input matInput placeholder="Enter title here" class="form-control" id="input-title"
+                    [(ngModel)]='journal_title' formControlName="title">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.title">
-                <mat-error *ngIf="newJournalEntryForm.get('title').hasError(validation.type) && (newJournalEntryForm.get('title').dirty || newJournalEntryForm.get('title').touched)">{{validation.message}}
+                <mat-error
+                    *ngIf="newJournalEntryForm.get('title').hasError(validation.type) && (newJournalEntryForm.get('title').dirty || newJournalEntryForm.get('title').touched)">
+                    {{validation.message}}
                 </mat-error>
             </ng-container>
-       
-           <!-- Write here -->
+
+            <!-- Write here -->
             <mat-form-field class="input-style">
-                <textarea matInput [(ngModel)]="journal_entry" placeholder="Write here what you want to say:" class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5" formControlName="entry"></textarea>
+                <textarea matInput [(ngModel)]="journal_entry" placeholder="Write here what you want to say:"
+                    class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5"
+                    formControlName="entry"></textarea>
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.entry">
-                <mat-error *ngIf="newJournalEntryForm.get('entry').hasError(validation.type) && (newJournalEntryForm.get('entry').dirty || newJournalEntryForm.get('entry').touched)">{{validation.message}}
+                <mat-error
+                    *ngIf="newJournalEntryForm.get('entry').hasError(validation.type) && (newJournalEntryForm.get('entry').dirty || newJournalEntryForm.get('entry').touched)">
+                    {{validation.message}}
                 </mat-error>
             </ng-container>
         </div>
 
         <!-- Submit button -->
-            <div class="right-side">
-                <button class="btn btn-success" type="submit" [disabled]="newJournalEntryForm.invalid">Submit</button> 
-            </div>
-       </form>
-
-       <!-- Learning List Firebase Practice -->
-       <ul id="list">
-
-       </ul>
+        <div class="right-side">
+            <button class="btn btn-success" type="submit" [disabled]="newJournalEntryForm.invalid"
+                (click)="onSubmit(newJournalEntryForm.value)">Submit</button>
+        </div>
+    </form>
 
     <br>
 

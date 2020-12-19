@@ -1,7 +1,13 @@
+<ng-template messing-around-placeholder></ng-template>
 <div class="row top">
     <div class="col-lg-4"></div>
     <div class="col-xs-12 col-md-12 col-lg-4">
-        <div class="alert alert-danger" *ngIf="error"><span>{{ error }}</span></div>
+        <!-- <div class="alert alert-danger" *ngIf="error">
+            <span>
+                {{ error }}
+            </span>
+        </div> -->
+        <!-- <alert-modal [message]="error" *ngIf="error" (close)="onHandleError()"></alert-modal> -->
         <div *ngIf="isLoading" class="loading-spinner">
             <messing-around-loading-spinner></messing-around-loading-spinner>
         </div>
@@ -13,15 +19,20 @@
 
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" class="form-control" ngModel name="password" required minlength="8">
+                <input type="password" id="password" class="form-control" ngModel name="password" required
+                    minlength="8">
             </div>
             <div>
-                <button title="Login / Sign Up Button" class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">{{ isLoginMode ? 'Login': 'Sign Up' }}</button> | 
-                <button title="Switch to Login / Sign Up Toggle Button" class="btn btn-primary" type="button" (click)="onSwitchMode()">Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}</button>
-                <button type="button" class="btn btn-block btn-primary" (click)="signInWithTwitter()">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                       Login with Twitter
-                 </button>
+                <div class="login-button-container">
+                    <button title="Login / Sign Up Button" class="login-btn btn btn-primary" type="submit"
+                        [disabled]="loginForm.invalid">{{ isLoginMode ? 'Login': 'Sign Up' }}</button>
+                    <button title="Switch to Login / Sign Up Toggle Button" class="btn btn-primary switch-btn" type="button"
+                        (click)="onSwitchMode()">Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}</button>
+                </div>
+                <button type="button" class="btn btn-block btn-primary twitter-login-ctn" (click)="signInWithTwitter()" [disabled]="true">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    Login with Twitter
+                </button>
             </div>
         </form>
     </div>

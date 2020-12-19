@@ -1,10 +1,33 @@
+.edit-btn-container, .journal-id-container, .journal-logo-container
+{
+    display: flex;
+    justify-content: center;
+}
+
 .input-style{
     width: 100%;
   }
 
-.journal-text{
-    margin-top: -240px;
+.journal-logo-container{
+    margin-top: 1rem;
+    margin-left: 2rem;
 }
+
+.journal-logo-text{
+    z-index: 1;
+}
+
+.journal-table{
+    margin-top: 2.5rem;
+}
+
+// .logo-container, .logo-row{
+//     position: relative;
+// }
+
+// .scroll-image{
+//     position: absolute;
+// }
 
 .title-font{
     font-size: 30px;

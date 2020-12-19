@@ -1,4 +1,14 @@
-$the-color: #6804A4;
+$blue-color: rgb(50,150,220);
+$purple-color: #6804A4;
+
+.just-about{
+    left: auto;
+}
+
+.logo-home-button{
+    height: 80%;
+    width: 100%;
+}
 
 .profile-image{
     width: 50px;
@@ -33,12 +43,25 @@ $the-color: #6804A4;
     background-image: url('https://mdbootstrap.com/img/svg/hamburger3.svg?color=00FBD8');
     }
 
-    .navbar-color{
-        background-color: $the-color;
+    .navbar-brand{
+        height: 50px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        margin: 0 1rem 0 0.5rem;
     }
 
-    @media(max-width: 1120px){
+    .navbar-brand-text{
+        color: lime;
+        width: 100%;
+    }
+
+    .navbar-color{
+        background-color: $purple-color;
+    }
+
+    @media(max-width: 768px){
         .navbar-color{
-            background-color: rgb(50,150,220);
+            background-color: $blue-color;
         }
     }
