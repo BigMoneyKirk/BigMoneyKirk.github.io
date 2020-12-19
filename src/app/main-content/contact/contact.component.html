@@ -1,4 +1,22 @@
-<h3>Contact us</h3>
+<div class="page-margin">
+    <div class="col-xl-12 center-text">
+        <h3 class="contact-us-header">Contact us</h3>
 
-<div class="first-name">First Name: </div>
-<input type="text" [(ngModel)]="contactForm.FirstName">
+        <hr>
+        <div class="first-name">First Name: </div>
+        <input type="text" [(ngModel)]="contactForm.FirstName">
+
+        <div class="last-name">Last Name: </div>
+        <input type="text" [(ngModel)]="contactForm.LastName">
+
+        <div class="phone-number">Phone Number: </div>
+        <input type="phone" [(ngModel)]="contactForm.PhoneNumber">
+
+        <div class="email">Email: </div>
+        <input type="email" [(ngModel)]="contactForm.Email">
+
+        <div class="submit-button-holder">
+            <button class="btn btn-success submit-button" type="submit">Submit</button>
+        </div>
+    </div>
+</div>
