@@ -10,14 +10,12 @@ import { ContactForm } from 'src/app/models/contact-form';
 export class ContactComponent implements OnInit {
 
   // class variables
-  contactFormObject: ContactForm = new ContactForm();
-  firstName : FormControl = new FormControl();
+  contactForm: ContactForm = new ContactForm();
 
   constructor() { }
 
   ngOnInit() {
-    this.contactFormObject.FirstName = "Stephen";
-    this.firstName = new FormControl(this.contactFormObject.FirstName);
+    
   }
 
 }
