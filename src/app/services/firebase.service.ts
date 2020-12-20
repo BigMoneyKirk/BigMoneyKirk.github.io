@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { JournalEntry } from '../models/journalentry';
+import { ContactForm } from '../models/contact-form';
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +59,10 @@ export class FirebaseService {
       age: parseInt(value.age),
       avatar: avatar
     });
+  }
+
+  public createContactEntry(contact : ContactForm){
+    return this.http.post<ContactForm>(`${this.firebaseURL}Contact%20Info.json`, contact);
   }
 
   public createJournalEntry(username, value) {
