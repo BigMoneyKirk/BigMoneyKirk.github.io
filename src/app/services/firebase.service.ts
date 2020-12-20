@@ -62,7 +62,7 @@ export class FirebaseService {
   }
 
   public createContactEntry(contact : ContactForm){
-    return this.http.post<ContactForm>(`${this.firebaseURL}Contact%20Info.json`, contact);
+    return this.http.post<ContactForm>(`${this.firebaseURL}Contact%20Info/${contact.FirstName}%20${contact.LastName}.json`, contact);
   }
 
   public createJournalEntry(username, value) {

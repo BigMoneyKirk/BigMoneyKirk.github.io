@@ -4,4 +4,5 @@ export class ContactForm{
     PhoneNumber: number;
     Email: string;
     Comments: string;
+    ID?: string;
 }

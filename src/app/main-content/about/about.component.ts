@@ -27,7 +27,7 @@ export class AboutComponent implements OnInit {
   }
 
   public story() {
-    return `This is my story. Stephen Michael Kirkland. The Lord came to me when I was being quiet and still before him. He has blessed me exceedingly. I have been on a tough and rough journey. This will be the site that I publish just for myself to prove that I can do it, in the name of Jesus Christ Almighty! [Added Thursday, October 10, 2019 10:40 PM EST]`;
+    return `This website started as a personal project; something to prove to myself that I am a competent web developer. I proved myself correct. I have been working on this site for over a year now, and I am extremely pleased with the results. In a few more months, I believe this site will be fully functional, meeting all its MVPs. [Updated Sunday, December 20, 2020 12:25 PM EST]`;
   }
 
   public temp_hover_animation(){

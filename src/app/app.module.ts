@@ -8,7 +8,7 @@ import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { HomeComponent } from './main-content/home/home.component';
 import { AboutComponent } from './main-content/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { NavbarModule, WavesModule, MDBBootstrapModule  } from 'angular-bootstrap-md';
 import { BibleComponent } from './main-content/bible/bible.component';
@@ -44,6 +44,7 @@ import { NotificationModalComponent } from './main-content/modal-content/notific
 import { AlertModalComponent } from './modals/alert-modal.component';
 import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 import { ContactComponent } from './main-content/contact/contact.component';
+import { BibleService } from './services/bible.service';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,9 @@ import { ContactComponent } from './main-content/contact/contact.component';
     MatSelectModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [AuthService],
+  providers: [AuthService, {
+    provide: HTTP_INTERCEPTORS,useClass: BibleService, multi: true 
+}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

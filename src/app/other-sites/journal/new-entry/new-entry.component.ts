@@ -5,7 +5,6 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 import { JournalEntry } from 'src/app/models/journalentry';
-import { JournalComponent } from '../journal.component';
 import { NotificationModalService } from 'src/app/modals/notification-modal.service';
 
 @Component({
@@ -18,7 +17,6 @@ export class NewEntryComponent implements OnInit {
   // TO-DO: This needs to be set dynamically
   private currentUsername = 'steve';
   private editModal: string = `EditJournalEntry`
-  private original: JournalEntry;
 
   public newJournalEntryForm: FormGroup;
   public entry: JournalEntry;
@@ -51,7 +49,6 @@ export class NewEntryComponent implements OnInit {
 
   public createForm() {
     this.entry = this.ngxSmartModalService.getModalData(this.editModal);
-    this.original = this.entry;
 
     this.newJournalEntryForm = this.fb.group({
       title: [this.entry.title, Validators.required],

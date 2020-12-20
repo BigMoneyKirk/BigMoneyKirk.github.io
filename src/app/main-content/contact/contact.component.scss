@@ -1,3 +1,16 @@
-.last-name, .phone-number, .email, .comments, .submit-button-holder{
+.last-name, .phone-number, .email, .comments{
     margin-top: 20px;
+}
+
+.form-control{
+    width: 50%
+}
+
+.center-input-container{
+    display: flex;
+    justify-content: center;
+}
+
+.submit-button-holder{
+    padding: 20px 0;
 }

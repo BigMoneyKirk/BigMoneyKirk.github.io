@@ -13,7 +13,8 @@ export const environment = {
     storageBucket: "messingaround-524ea.appspot.com",
     messagingSenderId: "480028060424",
     appId: "1:480028060424:web:a1588c67306e7c70"
-  }
+  },
+  bibleAPIKey: 'fe5e4c01ba24ee35796151495026e386'
 };
 
 /*
