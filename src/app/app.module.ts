@@ -43,6 +43,7 @@ import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-f
 import { NotificationModalComponent } from './main-content/modal-content/notification-modal/notification-modal.component';
 import { AlertModalComponent } from './modals/alert-modal.component';
 import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
+import { ContactComponent } from './main-content/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { PlaceholderDirective } from './shared/placeholder/placeholder.directive
     ScrevenForwardComponent,
     NotificationModalComponent,
     AlertModalComponent,
-    PlaceholderDirective
+    PlaceholderDirective,
+    ContactComponent
   ],
   entryComponents: [
     NewEntryComponent,

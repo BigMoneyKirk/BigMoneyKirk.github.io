@@ -24,6 +24,7 @@ import { SmartHouseComponent } from './other-sites/smart-house/smart-house.compo
 import { BlogComponent } from './main-content/blog/blog.component';
 import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-forward.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ContactComponent } from './main-content/contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent, canActivate: [AuthGuard] },
   { path: 'bookmarks', component: BookmarksComponent, canActivate: [AuthGuard] },
   { path: 'bunnie-beaute', component: BunnieBeauteComponent, canActivate: [AuthGuard] },
+  { path: 'contact', component: ContactComponent },
   { path: 'heather-mary-kay', component: HeatherMaryKayComponent, canActivate: [AuthGuard] },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'interior-design', component: InteriorDesingComponent, canActivate: [AuthGuard] },

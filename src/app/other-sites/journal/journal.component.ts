@@ -23,7 +23,6 @@ export class JournalComponent implements OnInit {
 
   // TO-DO: This needs to be set dynamically
   private currentUsername = 'steve';
-  private editModal = `EditJournalEntry`;
 
   public journal_title: string = '';
   public journal_entry: string = '';

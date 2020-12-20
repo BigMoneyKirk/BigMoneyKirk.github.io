@@ -1,4 +1,5 @@
 $card-width: 200px;
+$bio-card-height: $card-width*2.5;
 
 .description{
     opacity: 0;
@@ -152,6 +153,18 @@ $card-width: 200px;
     display: flex;
     justify-content: center;
   }
+
+  .bio-container{
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+      -webkit-perspective: 1000px;
+              perspective: 1000px;
+
+              width: $card-width*2;
+              height: $bio-card-height;
+    z-index: 1;
+  }
   
   .container{
       position: relative;
@@ -165,7 +178,9 @@ $card-width: 200px;
   }
   
   .front,
-  .back{
+  .back,
+  .bio-front,
+  .bio-back{
     background-size: cover;
       background-position: center;
       -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -205,8 +220,29 @@ $card-width: 200px;
               backface-visibility: hidden;
       border-radius: 10px;
   }
+
+  .bio-front:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    opacity: 0;
+    background-color: #000;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    border-radius: 10px;
+}
+
   .container:hover .front,
-  .container:hover .back{
+  .container:hover .back,
+  .bio-container:hover .front,
+  .bio-container:hover .bio-front,
+  .bio-container:hover .back
+  {
       -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
       transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
       -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -241,28 +277,28 @@ $card-width: 200px;
       justify-content: center;
   }
   
-  .container .back{
+  .container .back, .bio-container .back{
       -webkit-transform: rotateY(180deg);
               transform: rotateY(180deg);
       -webkit-transform-style: preserve-3d;
               transform-style: preserve-3d;
   }
   
-  .container .front{
+  .container .front, .bio-container .bio-front{
       -webkit-transform: rotateY(0deg);
               transform: rotateY(0deg);
       -webkit-transform-style: preserve-3d;
               transform-style: preserve-3d;
   }
   
-  .container:hover .back{
+  .container:hover .back, .bio-container:hover .back{
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
   }
   
-  .container:hover .front{
+  .container:hover .front, .bio-container:hover .bio-front{
     -webkit-transform: rotateY(-180deg);
             transform: rotateY(-180deg);
     -webkit-transform-style: preserve-3d;
@@ -270,7 +306,6 @@ $card-width: 200px;
   }
   
   .front .inner p{
-    // font-size: 2rem;
     margin-bottom: 2rem;
     position: relative;
   }
@@ -306,10 +341,21 @@ $card-width: 200px;
     font-weight: 300;
   }
 
-  .col .container{
+  .col .container, .col .bio-container{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+  }
+
+  .bio-front{
+    background-image: url('../../../assets/images/people/KingKirk.png');
+    height: $bio-card-height;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .bio-back{
+    height: $bio-card-height;
   }
 
   .video-game{
