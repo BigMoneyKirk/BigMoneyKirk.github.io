@@ -1,131 +1,11 @@
 $card-width: 200px;
 $bio-card-height: $card-width*2.5;
 
-.description{
-    opacity: 0;
-}
-
-.left-story{
-    width: 50%;
-}
-
-.right-img{
-    width: 50%;
-    text-align: center;
-}
-
-.flipin:hover{
-    animation: flipInX 1s 1;
-}
-
-.flipout:hover{
-    animation: flipOutY 1s 1;
-}
-
-// https://www.youtube.com/watch?v=27oDB-kSbA0
-#section-feature{
-    font-size: 16px;
-    line-height: 22px;
-    color: #555;
-    // background-image: "assets/images/blog/tissue_paper_on_the_low.gif";
-    background-size: cover;
-    font-weight: 300;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    // overflow-x: hidden;
-    text-shadow: rgba(0, 0, 0, 0.1) 0 0 1px;
-
-    ul{
-        margin: 100px 0 0 0;
-        padding: 0;
-        list-style: none;
-        position: relative;
-    }
-
-    li{
-        box-sizing: border-box;
-        position: relative;
-        height: 380px;
-        padding: 2%;
-        float: left;
-        margin-bottom: 40px;
-        user-select: none;
-    }
-
-    .sf-wrap{
-        background-repeat: no-repeat;
-        // position: absolute;
-        max-width: 280px;
-        width: 100%;
-        height: 100%;
-        left: 50%;
-        // margin-left: -140px;
-        top: 0;
-        perspective: 600;
-        cursor: pointer
-    }
-}
-
-.sf-mdl-left, .sf-mdl-left-full, .sf-mdl-right, .sf-mdl-right-full{
-    // position: absolute;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    transition: all 0.5s;
-    // overflow: hidden;
-}
-
-.sf-icon{
-    // position: absolute;
-    top: 90px;
-    text-align: center;
-    width: 100%;
-    left: 0;
-    width: 200%;
-    color: #fb527a;
-}
-
-.sf-mdl-left-full, .sf-mdl-right-full{
-    .sf-icon{
-        color: white;
-    }
-}
-
-.sf-mdl-right, .sf-mdl-right-full{
-    left: auto;
-    right: 0;
-}
-
-.sf-mdl-left-full, .sf-mdl.right-full{
-    background-color: #fb527a;
-    z-index: 9;
-    color: white;
-}
-
-.sf-wrap{
-    a{
-        color: white;
-        text-decoration: none;
-        margin-top: 110px;
-    }
-}
-
-// Additional
-
 *{
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-  }
-  
-  h1{
-    font-size: 2.5rem;
-    font-family: 'Montserrat';
-    font-weight: normal;
-    color: #444;
-    text-align: center;
-    margin: 2rem 0;
   }
   
   .wrapper{
@@ -153,6 +33,17 @@ $bio-card-height: $card-width*2.5;
     display: flex;
     justify-content: center;
   }
+  
+  .container{
+      position: relative;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+      -webkit-perspective: 1000px;
+              perspective: 1000px;
+
+    width: $card-width;
+    z-index: 1;
+  }
 
   .bio-container{
     position: relative;
@@ -163,17 +54,6 @@ $bio-card-height: $card-width*2.5;
 
               width: $card-width*2;
               height: $bio-card-height;
-    z-index: 1;
-  }
-  
-  .container{
-      position: relative;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-      -webkit-perspective: 1000px;
-              perspective: 1000px;
-
-    width: $card-width;
     z-index: 1;
   }
   
@@ -199,7 +79,6 @@ $bio-card-height: $card-width*2.5;
   }
   
   .back{
-    // background: #cedce7;
     background: -webkit-linear-gradient(135deg, #3c0596 0%, #5822ad 25%, #2c2c2c 50%, #6d6d6d 75%, rgb(197, 197, 197) 100%);
     background: -o-linear-gradient(135deg, #3c0596 0%, #5822ad 25%, #2c2c2c 50%, #6d6d6d 75%, rgb(197, 197, 197) 100%);
     background: linear-gradient(135deg, #3c0596 0%, #5822ad 25%, #2c2c2c 50%, #6d6d6d 75%, rgb(197, 197, 197) 100%);
@@ -221,7 +100,7 @@ $bio-card-height: $card-width*2.5;
       border-radius: 10px;
   }
 
-  .bio-front:after{
+  .bio-back:after{
     position: absolute;
     top: 0;
     left: 0;
@@ -230,7 +109,7 @@ $bio-card-height: $card-width*2.5;
     height: 100%;
     content: '';
     display: block;
-    opacity: 0;
+    opacity: 0.6;
     background-color: #000;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
@@ -239,9 +118,8 @@ $bio-card-height: $card-width*2.5;
 
   .container:hover .front,
   .container:hover .back,
-  .bio-container:hover .front,
   .bio-container:hover .bio-front,
-  .bio-container:hover .back
+  .bio-container:hover .bio-back
   {
       -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
       transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
@@ -254,7 +132,7 @@ $bio-card-height: $card-width*2.5;
     background-color: black;
   }
 
-  .back{
+  .back, .bio-back{
       position: absolute;
       left: 0;
       width: 100%;
@@ -277,7 +155,7 @@ $bio-card-height: $card-width*2.5;
       justify-content: center;
   }
   
-  .container .back, .bio-container .back{
+  .container .back, .bio-container .bio-back{
       -webkit-transform: rotateY(180deg);
               transform: rotateY(180deg);
       -webkit-transform-style: preserve-3d;
@@ -291,7 +169,7 @@ $bio-card-height: $card-width*2.5;
               transform-style: preserve-3d;
   }
   
-  .container:hover .back, .bio-container:hover .back{
+  .container:hover .back, .bio-container:hover .bio-back{
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
     -webkit-transform-style: preserve-3d;
@@ -355,7 +233,15 @@ $bio-card-height: $card-width*2.5;
   }
 
   .bio-back{
+    background-image: url('../../../assets/images/people/KingKirk.png');
     height: $bio-card-height;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+  }
+
+  .bio-back .inner{
+    
   }
 
   .video-game{
