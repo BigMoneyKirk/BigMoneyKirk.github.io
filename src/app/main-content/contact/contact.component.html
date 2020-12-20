@@ -3,24 +3,39 @@
         <h3 class="contact-us-header">Contact us</h3>
 
         <hr>
-        <div class="first-name">First Name: </div>
-        <input type="text" [(ngModel)]="contactForm.FirstName">
 
-        <div class="last-name">Last Name: </div>
-        <input type="text" [(ngModel)]="contactForm.LastName">
+        <form>
+            <div class="form-group">
+                <div class="first-name">First Name: </div>
+                <div class="center-input-container">
+                    <input type="text" class="form-control" name="first-name-input" [(ngModel)]="contactForm.FirstName">
+                </div>
 
-        <div class="phone-number">Phone Number: </div>
-        <input type="phone" [(ngModel)]="contactForm.PhoneNumber">
+                <div class="last-name">Last Name: </div>
+                <div class="center-input-container">
+                    <input type="text" class="form-control" name="last-name-input" [(ngModel)]="contactForm.LastName">
+                </div>
 
-        <div class="email">Email: </div>
-        <input type="email" [(ngModel)]="contactForm.Email">
+                <div class="phone-number">Phone Number: </div>
+                <div class="center-input-container">
+                    <input type="phone" class="form-control" name="phone-number-input" [(ngModel)]="contactForm.PhoneNumber">
+                </div>
 
-        <div class="comments">Comments: </div>
-        <textarea [(ngModel)]="contactForm.Comments">
+                <div class="email">Email: </div>
+                <div class="center-input-container">
+                    <input type="email" class="form-control" name="email-input" [(ngModel)]="contactForm.Email">
+                </div>
+
+                <div class="comments">Comments: </div>
+                <div class="center-input-container">
+                    <textarea [(ngModel)]="contactForm.Comments" class="form-control" name="comments-input">
             </textarea>
+                </div>
 
-        <div class="submit-button-holder">
-            <button class="btn btn-success submit-button" type="submit" (click)="onSubmit()">Submit</button>
-        </div>
+                <div class="submit-button-holder">
+                    <button class="btn btn-success submit-button" type="submit" (click)="onSubmit()">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { JournalEntry } from 'src/app/models/journalentry';
-import * as moment from 'moment';
 import { DateFormatterService } from 'src/app/services/date-formatter.service';
 import { NgxSmartModalService, NgxSmartModalComponent } from 'ngx-smart-modal';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 import { INgxSmartModalOptions } from 'ngx-smart-modal/src/config/ngx-smart-modal.config';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
-import firebase from 'firebase';
-import { listenToTriggers } from 'angular-bootstrap-md/lib/free/utilities';
 import { HttpClient } from '@angular/common/http';
 import { NotificationModalService } from 'src/app/modals/notification-modal.service';
 
@@ -64,7 +60,7 @@ export class JournalComponent implements OnInit {
   }
 
   public onSubmit(value) {
-    this.firebaseService.getUser(localStorage.getItem("userIDtoken"));
+    console.log(this.firebaseService.getUser(localStorage.getItem("userIDtoken")));
     this.firebaseService.createJournalEntry(this.currentUsername, value).subscribe(() => {
       this.getEntries();
       this.notificationService.success("The message has been saved successfully!");
