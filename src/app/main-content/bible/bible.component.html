@@ -7,10 +7,9 @@
             </div>
             <!-- TO-DO: *ngFor with all the names of bible books. maybe an api -->
             <select class="form-control" id="bible-book">
-                <option>Genesis</option>
-                <option>Exodus</option>
-                <option>Leviticus</option>
-                <option>Numbers</option>
+                <option *ngFor="let book of bibleBooks" [value]="book.bibleId">
+                    {{book.name}}
+                </option>
             </select>
         </div>
 
