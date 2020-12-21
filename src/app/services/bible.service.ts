@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { BibleBook } from '../models/bibleBook';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class BibleService implements HttpInterceptor {
 
   // global variables
   private bibleURL: string = 'https://api.scripture.api.bible';
+  private asvBible: string = '06125adad2d5898a-01';
+  public bibleBooks: Array<any>;
 
   constructor(private http : HttpClient) { }
 
@@ -24,7 +27,12 @@ export class BibleService implements HttpInterceptor {
     return next.handle(request);
   }
 
-  getBibles(){
-    this.http.get(`${this.bibleURL}/v1/bibles`).subscribe(data => {console.log(data)});
+  getASVBible(){
+    return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}`);
   }
+
+  getBibleBooks(): Observable<Object>{
+    return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/books`);
+  }
+
 }
