@@ -31,11 +31,15 @@ export class BibleService implements HttpInterceptor {
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}`);
   }
 
-  getBibleBooks(){
+  getBibleBooks(): Observable<any>{
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/books`);
   }
 
-  getBookChapters(bookID){
+  getBookChapters(bookID): Observable<any>{
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/books/${bookID}/chapters`)
+  }
+
+  getVerses(bookID, chapterID): Observable<any>{
+    return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/chapters/${chapterID}/verses`)
   }
 }

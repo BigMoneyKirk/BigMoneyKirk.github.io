@@ -15,23 +15,24 @@ export class BibleComponent implements OnInit {
   public selectedBook: BibleBook;
 
   public chapters;
+  public selectedChapter;
+
+  public verses;
+  public selectedVerse;
 
   constructor(private http: HttpClient, private bibleService: BibleService) { }
 
   ngOnInit() {
-    this.bibleService.getBibleBooks().subscribe(books => {
-      this.bibleBooks = books.data;
-      console.log(this.bibleBooks);
-
-    })
+    this.bibleService.getBibleBooks().subscribe(books => this.bibleBooks = books.data)
   }
 
   chapterChange(){
-    console.log(this.selectedBook);
-    
-    this.bibleService.getBookChapters(this.selectedBook).subscribe(chapters => {
-      this.chapters = chapters.data;
-      console.log(this.chapters);
-    });
+    this.bibleService.getBookChapters(this.selectedBook).subscribe(chapters => this.chapters = chapters.data);
   }
+
+  // verseChange(){
+  //   this.bibleService.getVerses(this.selectedBook, this.selectedChapter).subscribe(verses => {this.verses = verses.data;
+  //     console.log(this.verses)}
+  //     );
+  // }
 }
