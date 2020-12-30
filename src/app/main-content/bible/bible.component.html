@@ -1,31 +1,32 @@
 <div class="page-margin">
     <div class="row">
         <!-- Book Dropdown selectable -->
-        <div class="form-group col-4">
-            <div class="cell-center">
-                <label for="bible-book">Book</label>
+        <div class="row-container col-12">
+            <div class="form-group col-4">
+                <div class="cell-center">
+                    <label for="bible-book">Book</label>
+                </div>
+                <select class="form-control" id="bible-book" (change)="chapterChange()" [(ngModel)]="selectedBook">
+                    <option *ngFor="let book of bibleBooks" [value]="book.id">
+                        {{book.name}}
+                    </option>
+                </select>
             </div>
-            <select class="form-control" id="bible-book" (change)="chapterChange()" [(ngModel)]="selectedBook">
-                <option *ngFor="let book of bibleBooks" [value]="book.id">
-                    {{book.name}}
-                </option>
-            </select>
-        </div>
 
-        <!-- Chapter Dropdown selectable -->
-        <!-- disabled until Book is selected -->
-        <div class="form-group col-4">
-            <div class="cell-center">
-                <label for="bible-chapter">Chapter</label>
+            <!-- Chapter Dropdown selectable -->
+            <!-- disabled until Book is selected -->
+            <div class="form-group col-4">
+                <div class="cell-center">
+                    <label for="bible-chapter">Chapter</label>
+                </div>
+                <select class="form-control" id="bible-chapter" [(ngModel)]="selectedChapter">
+                    <option *ngFor="let chapter of chapters" [value]="chapter.id">{{chapter.number}}</option>
+                </select>
             </div>
-            <select class="form-control" id="bible-chapter" [(ngModel)]="selectedChapter">
-                <option *ngFor="let chapter of chapters" [value]="chapter.id">{{chapter.number}}</option>
-            </select>
-        </div>
 
-        <!-- (optional) Verse Dropdown selectable -->
-        <!-- disabled until Chapter is selected -->
-        <!-- <div class="form-group col-4">
+            <!-- (optional) Verse Dropdown selectable -->
+            <!-- disabled until Chapter is selected -->
+            <!-- <div class="form-group col-4">
             <div class="cell-center">
                 <label for="bible-verse">Verse</label>
             </div>
@@ -33,16 +34,20 @@
                 <option *ngFor="let verse of verses" [value]="verse.id">{{verse.id}}</option>
             </select>
         </div> -->
-    </div>
+        </div>
 
-    <!-- display of the Scripture -->
-    <div>
-        <!-- {{pikachu()}} -->
+        <!-- display of the Scripture -->
+        <div>
+            <!-- {{pikachu()}} -->
+        </div>
     </div>
 </div>
 
 <div class="encountering-god-container">
-    <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/13717043/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/90a1c7/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+    <iframe style="border: none"
+        src="//html5-player.libsyn.com/embed/episode/id/13717043/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/90a1c7/"
+        height="90" width="100%" scrolling="no" allowfullscreen webkitallowfullscreen mozallowfullscreen
+        oallowfullscreen msallowfullscreen></iframe>
 </div>
 
 <messing-around-under-construction></messing-around-under-construction>
