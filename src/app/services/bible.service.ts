@@ -35,4 +35,7 @@ export class BibleService implements HttpInterceptor {
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/books`);
   }
 
+  getBookChapters(bookID){
+    return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/books/${bookID}/chapters`)
+  }
 }

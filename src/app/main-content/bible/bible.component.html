@@ -6,8 +6,8 @@
                 <label for="bible-book">Book</label>
             </div>
             <!-- TO-DO: *ngFor with all the names of bible books. maybe an api -->
-            <select class="form-control" id="bible-book">
-                <option *ngFor="let book of bibleBooks" [value]="book.bibleId">
+            <select class="form-control" id="bible-book" (change)="chapterChange()" [(ngModel)]="selectedBook">
+                <option *ngFor="let book of bibleBooks" [value]="book.id">
                     {{book.name}}
                 </option>
             </select>
@@ -21,11 +21,7 @@
             </div>
             <!-- TO-DO: *ngFor with all the chapters in a bible book. maybe an api -->
             <select class="form-control" id="bible-chapter">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option *ngFor="let chapter of chapters" [value]="chapter.id">{{chapter.number}}</option>
             </select>
         </div>
 
