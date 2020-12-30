@@ -17,8 +17,8 @@ export class BibleComponent implements OnInit {
 
   ngOnInit() {
     this.bibleService.getBibleBooks().subscribe(books => {
-      // this.bibleBooks = books.data;
-      console.log("books", books.data);
+      this.bibleBooks = books.data;
+      // console.log("books", books.data);
       // console.log("this.bibleBooks", this.bibleBooks);
     })
   }

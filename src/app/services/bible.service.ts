@@ -31,7 +31,7 @@ export class BibleService implements HttpInterceptor {
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}`);
   }
 
-  getBibleBooks(): Observable<Object>{
+  getBibleBooks(){
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/books`);
   }
 
