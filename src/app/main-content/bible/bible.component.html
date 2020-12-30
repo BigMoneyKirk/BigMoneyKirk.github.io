@@ -19,10 +19,11 @@
                 <div class="cell-center">
                     <label for="bible-chapter">Chapter</label>
                 </div>
-                <select class="form-control" id="bible-chapter" [(ngModel)]="selectedChapter">
+                <select class="form-control" id="bible-chapter" [(ngModel)]="selectedChapter" (change)="getChapter()">
                     <option *ngFor="let chapter of chapters" [value]="chapter.id">{{chapter.number}}</option>
                 </select>
             </div>
+
 
             <!-- (optional) Verse Dropdown selectable -->
             <!-- disabled until Chapter is selected -->
@@ -37,17 +38,16 @@
         </div>
 
         <!-- display of the Scripture -->
-        <div>
-            <!-- {{pikachu()}} -->
+        <div class="selection" [innerHtml]="selection">
         </div>
     </div>
 </div>
 
-<div class="encountering-god-container">
+<!-- <div class="encountering-god-container">
     <iframe style="border: none"
         src="//html5-player.libsyn.com/embed/episode/id/13717043/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/90a1c7/"
         height="90" width="100%" scrolling="no" allowfullscreen webkitallowfullscreen mozallowfullscreen
         oallowfullscreen msallowfullscreen></iframe>
-</div>
+</div> -->
 
-<messing-around-under-construction></messing-around-under-construction>
+<!-- <messing-around-under-construction></messing-around-under-construction> -->

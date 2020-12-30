@@ -20,6 +20,8 @@ export class BibleComponent implements OnInit {
   public verses;
   public selectedVerse;
 
+  public selection;
+
   constructor(private http: HttpClient, private bibleService: BibleService) { }
 
   ngOnInit() {
@@ -28,6 +30,10 @@ export class BibleComponent implements OnInit {
 
   chapterChange(){
     this.bibleService.getBookChapters(this.selectedBook).subscribe(chapters => this.chapters = chapters.data);
+  }
+
+  getChapter(){
+    this.bibleService.getChapter(this.selectedChapter).subscribe(text => this.selection = text.data.content)
   }
 
   // verseChange(){
