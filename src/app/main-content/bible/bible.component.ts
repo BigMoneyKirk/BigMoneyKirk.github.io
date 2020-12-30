@@ -28,12 +28,14 @@ export class BibleComponent implements OnInit {
     this.bibleService.getBibleBooks().subscribe(books => this.bibleBooks = books.data)
   }
 
-  chapterChange(){
-    this.bibleService.getBookChapters(this.selectedBook).subscribe(chapters => this.chapters = chapters.data);
+  chapterChange(){this.bibleService.getBookChapters(this.selectedBook.id).subscribe(chapters => {
+      this.chapters = chapters.data;
+      
+    });
   }
 
   getChapter(){
-    this.bibleService.getChapter(this.selectedChapter).subscribe(text => this.selection = text.data.content)
+    this.bibleService.getChapter(this.selectedChapter.id).subscribe(text => this.selection = text.data.content)
   }
 
   // verseChange(){

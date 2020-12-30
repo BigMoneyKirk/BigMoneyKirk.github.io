@@ -7,47 +7,33 @@
                     <label for="bible-book">Book</label>
                 </div>
                 <select class="form-control" id="bible-book" (change)="chapterChange()" [(ngModel)]="selectedBook">
-                    <option *ngFor="let book of bibleBooks" [value]="book.id">
+                    <option *ngFor="let book of bibleBooks" [ngValue]="book">
                         {{book.name}}
                     </option>
                 </select>
             </div>
 
             <!-- Chapter Dropdown selectable -->
-            <!-- disabled until Book is selected -->
+            <!-- TO-DO: disabled until Book is selected -->
             <div class="form-group col-4">
                 <div class="cell-center">
                     <label for="bible-chapter">Chapter</label>
                 </div>
                 <select class="form-control" id="bible-chapter" [(ngModel)]="selectedChapter" (change)="getChapter()">
-                    <option *ngFor="let chapter of chapters" [value]="chapter.id">{{chapter.number}}</option>
+                    <option *ngFor="let chapter of chapters" [ngValue]="chapter">{{chapter.number}}</option>
                 </select>
             </div>
-
-
-            <!-- (optional) Verse Dropdown selectable -->
-            <!-- disabled until Chapter is selected -->
-            <!-- <div class="form-group col-4">
-            <div class="cell-center">
-                <label for="bible-verse">Verse</label>
-            </div>
-            <select class="form-control" id="bible-verse" [(ngModel)]="selectedVerse">
-                <option *ngFor="let verse of verses" [value]="verse.id">{{verse.id}}</option>
-            </select>
-        </div> -->
         </div>
+    </div>
 
-        <!-- display of the Scripture -->
-        <div class="selection" [innerHtml]="selection">
+    <!-- display of the Scripture -->
+    <div class="book-chapter-container" *ngIf="selectedBook && selectedChapter">
+        <div class="col-8">
+            <h1 class="book-chapter-text">{{selectedBook.name}} {{selectedChapter.number}}</h1>
+        </div>
+    </div>
+    <div class="selection-holder">
+        <div class="selection col-8" [innerHtml]="selection">
         </div>
     </div>
 </div>
-
-<!-- <div class="encountering-god-container">
-    <iframe style="border: none"
-        src="//html5-player.libsyn.com/embed/episode/id/13717043/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/90a1c7/"
-        height="90" width="100%" scrolling="no" allowfullscreen webkitallowfullscreen mozallowfullscreen
-        oallowfullscreen msallowfullscreen></iframe>
-</div> -->
-
-<!-- <messing-around-under-construction></messing-around-under-construction> -->

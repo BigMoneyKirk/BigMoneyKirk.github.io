@@ -2,7 +2,12 @@
     padding: 1vh 5vw
 }
 
-.row-container{
+.row-container, .selection-holder, .book-chapter-container{
     display: flex;
     justify-content: center;
+}
+
+.book-chapter-text{
+    text-align: center;
+    padding: 2rem 0;
 }
