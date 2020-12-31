@@ -47,3 +47,8 @@ export class BibleService implements HttpInterceptor {
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/chapters/${chapterID}/verses`)
   }
 }
+
+/*
+Notes: This is the Bible API that I used:
+https://scripture.api.bible/livedocs#/Chapters/getChapter
+*/
