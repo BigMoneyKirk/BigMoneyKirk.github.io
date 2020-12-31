@@ -14,26 +14,40 @@
             </div>
 
             <!-- Chapter Dropdown selectable -->
-            <!-- TO-DO: disabled until Book is selected -->
             <div class="form-group col-4">
                 <div class="cell-center">
                     <label for="bible-chapter">Chapter</label>
                 </div>
-                <select class="form-control" id="bible-chapter" [(ngModel)]="selectedChapter" (change)="getChapter()">
+                <select class="form-control" id="bible-chapter" [(ngModel)]="selectedChapter" (change)="getChapter()" [disabled]="!selectedBook">
                     <option *ngFor="let chapter of chapters" [ngValue]="chapter">{{chapter.number}}</option>
                 </select>
             </div>
         </div>
     </div>
 
-    <!-- display of the Scripture -->
-    <div class="book-chapter-container" *ngIf="selectedBook && selectedChapter">
-        <div class="col-8">
-            <h1 class="book-chapter-text">{{selectedBook.name}} {{selectedChapter.number}}</h1>
+    <!-- Bible welcome text -->
+    <div class="row" *ngIf="!selectedChapter">
+        <div class="bible-welcome-text-container col-12">
+            <h3 class="bible-welcome-text col-8">
+                Welcome to the Bible App! Please begin by selecting a Book, then the Chapter
+            </h3>
         </div>
     </div>
-    <div class="selection-holder">
-        <div class="selection col-8" [innerHtml]="selection">
+
+    <!-- Scripture Book and Chapter Header -->
+    <div class="row">
+        <div class="book-chapter-container col-12" *ngIf="selectedBook && selectedChapter">
+            <div class="col-8">
+                <h1 class="book-chapter-text">{{selectedBook.name}} {{selectedChapter.number}}</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- display of the Scripture -->
+    <div class="row">
+        <div class="selection-holder col-12">
+            <div class="selection col-8" [innerHtml]="selection">
+            </div>
         </div>
     </div>
 </div>
