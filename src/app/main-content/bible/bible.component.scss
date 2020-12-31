@@ -1,3 +1,23 @@
 .encountering-god-container{
     padding: 1vh 5vw
 }
+
+.row-container, .selection-holder, .book-chapter-container{
+    display: flex;
+    justify-content: center;
+}
+
+.book-chapter-text{
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.bible-welcome-text-container{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+
+    h3{
+        text-align: center;
+    }
+}

@@ -12,14 +12,35 @@ import { BibleBook } from 'src/app/models/bibleBook';
 export class BibleComponent implements OnInit {
 
   public bibleBooks: Array<BibleBook>;
+  public selectedBook: BibleBook;
+
+  public chapters;
+  public selectedChapter;
+
+  public verses;
+  public selectedVerse;
+
+  public selection;
 
   constructor(private http: HttpClient, private bibleService: BibleService) { }
 
   ngOnInit() {
-    this.bibleService.getBibleBooks().subscribe(books => {
-      this.bibleBooks = books.data;
-      // console.log("books", books.data[0]);
-      // console.log("this.bibleBooks", this.bibleBooks);
-    })
+    this.bibleService.getBibleBooks().subscribe(books => this.bibleBooks = books.data)
   }
+
+  chapterChange(){this.bibleService.getBookChapters(this.selectedBook.id).subscribe(chapters => {
+      this.chapters = chapters.data;
+      
+    });
+  }
+
+  getChapter(){
+    this.bibleService.getChapter(this.selectedChapter.id).subscribe(text => this.selection = text.data.content)
+  }
+
+  // verseChange(){
+  //   this.bibleService.getVerses(this.selectedBook, this.selectedChapter).subscribe(verses => {this.verses = verses.data;
+  //     console.log(this.verses)}
+  //     );
+  // }
 }

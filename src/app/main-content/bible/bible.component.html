@@ -1,59 +1,53 @@
 <div class="page-margin">
     <div class="row">
         <!-- Book Dropdown selectable -->
-        <div class="form-group col-4">
-            <div class="cell-center">
-                <label for="bible-book">Book</label>
+        <div class="row-container col-12">
+            <div class="form-group col-4">
+                <div class="cell-center">
+                    <label for="bible-book">Book</label>
+                </div>
+                <select class="form-control" id="bible-book" (change)="chapterChange()" [(ngModel)]="selectedBook">
+                    <option *ngFor="let book of bibleBooks" [ngValue]="book">
+                        {{book.name}}
+                    </option>
+                </select>
             </div>
-            <!-- TO-DO: *ngFor with all the names of bible books. maybe an api -->
-            <select class="form-control" id="bible-book">
-                <option *ngFor="let book of bibleBooks" [value]="book.bibleId">
-                    {{book.name}}
-                </option>
-            </select>
-        </div>
 
-        <!-- Chapter Dropdown selectable -->
-        <!-- disabled until Book is selected -->
-        <div class="form-group col-4">
-            <div class="cell-center">
-                <label for="bible-chapter">Chapter</label>
+            <!-- Chapter Dropdown selectable -->
+            <div class="form-group col-4">
+                <div class="cell-center">
+                    <label for="bible-chapter">Chapter</label>
+                </div>
+                <select class="form-control" id="bible-chapter" [(ngModel)]="selectedChapter" (change)="getChapter()" [disabled]="!selectedBook">
+                    <option *ngFor="let chapter of chapters" [ngValue]="chapter">{{chapter.number}}</option>
+                </select>
             </div>
-            <!-- TO-DO: *ngFor with all the chapters in a bible book. maybe an api -->
-            <select class="form-control" id="bible-chapter">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
         </div>
+    </div>
 
-        <!-- (optional) Verse Dropdown selectable -->
-        <!-- disabled until Chapter is selected -->
-        <div class="form-group col-4">
-            <div class="cell-center">
-                <label for="bible-verse">Verse</label>
+    <!-- Bible welcome text -->
+    <div class="row" *ngIf="!selectedChapter">
+        <div class="bible-welcome-text-container col-12">
+            <h3 class="bible-welcome-text col-8">
+                Welcome to the Bible App! Please begin by selecting a Book, then the Chapter
+            </h3>
+        </div>
+    </div>
+
+    <!-- Scripture Book and Chapter Header -->
+    <div class="row">
+        <div class="book-chapter-container col-12" *ngIf="selectedBook && selectedChapter">
+            <div class="col-8">
+                <h1 class="book-chapter-text">{{selectedBook.name}} {{selectedChapter.number}}</h1>
             </div>
-            <!-- TO-DO: *ngFor with all the verses in a bible book's chapter. maybe an api -->
-            <select class="form-control" id="bible-verse">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
         </div>
     </div>
 
     <!-- display of the Scripture -->
-    <div>
-        <!-- {{pikachu()}} -->
+    <div class="row">
+        <div class="selection-holder col-12">
+            <div class="selection col-8" [innerHtml]="selection">
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="encountering-god-container">
-    <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/13717043/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/90a1c7/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-</div>
-
-<messing-around-under-construction></messing-around-under-construction>
