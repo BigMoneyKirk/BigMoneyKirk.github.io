@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, onErrorResumeNext, Subject } from 'rxjs';
 import { AuthResponseData } from '../interfaces/auth-response-data';
@@ -15,10 +15,10 @@ import { environment } from '../../environments/environment';
 })
 export class AuthService {
 
-  private user: Observable<firebase.User>;
+  public user = new BehaviorSubject<User>(null);
 
   constructor(private router: Router, private http: HttpClient, private _firebaseAuth: AngularFireAuth) { 
-    this.user = _firebaseAuth.authState;
+    
   }
 
   public signInWithTwitter(){
@@ -46,6 +46,8 @@ export class AuthService {
   private handleAuthentication (email: string, userId: string, token: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
       const user = new User(email, userId, token, expirationDate, email);
+      this.user.next(user);
+      console.log(this.user);
   }
 
   private handleError (errorRes: HttpErrorResponse) {

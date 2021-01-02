@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { exhaustMap, map, take } from 'rxjs/operators';
 import { JournalEntry } from '../models/journalentry';
 import { ContactForm } from '../models/contact-form';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class FirebaseService {
   public journalEntries: JournalEntry[] = [];
   private firebaseURL: string = 'https://messingaround-524ea.firebaseio.com/';
 
-  constructor(private http: HttpClient, public db: AngularFirestore) { }
+  constructor(private http: HttpClient, public db: AngularFirestore, private authService: AuthService) { }
 
   getAvatars() {
     return this.db.collection('/avatar').valueChanges()
@@ -78,14 +79,20 @@ export class FirebaseService {
   }
 
   public getJournalEntries(username) {
-    return this.http.get<JournalEntry[]>(`${this.firebaseURL}Journal%20Entries/${username}.json`).pipe(map(responseData => {
-      const entryArray: JournalEntry[] = [];
-      for (const key in responseData) {
-        if (responseData.hasOwnProperty(key)) {
-          entryArray.push({ ...responseData[key], id: key })
+    return this.authService.user.pipe(take(1), exhaustMap(user => {
+      console.log(user);
+      
+      return this.http.get<JournalEntry[]>(`${this.firebaseURL}Journal%20Entries/${username}.json`, {
+        params: new HttpParams().set('auth', user.token)
+      }).pipe(map(responseData => {
+        const entryArray: JournalEntry[] = [];
+        for (const key in responseData) {
+          if (responseData.hasOwnProperty(key)) {
+            entryArray.push({ ...responseData[key], id: key })
+          }
         }
-      }
-      return entryArray;
+        return entryArray;
+      }));
     }));
   }
 }
