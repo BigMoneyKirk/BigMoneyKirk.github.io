@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   public login(email: string, password: string) {
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseAPIKey,
+    return this.http.post<AuthResponseData>('https://cors-anywhere.herokuapp.com/https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseAPIKey,
     {
       email: email,
       password: password,

@@ -2,7 +2,7 @@
     <div class="row">
         <!-- Book Dropdown selectable -->
         <div class="row-container col-12">
-            <div class="form-group col-4">
+            <div class="form-group col-md-4 col-xs-6">
                 <div class="cell-center">
                     <label for="bible-book">Book</label>
                 </div>
@@ -14,7 +14,7 @@
             </div>
 
             <!-- Chapter Dropdown selectable -->
-            <div class="form-group col-4">
+            <div class="form-group col-md-4 col-xs-6">
                 <div class="cell-center">
                     <label for="bible-chapter">Chapter</label>
                 </div>
@@ -28,7 +28,7 @@
     <!-- Bible welcome text -->
     <div class="row" *ngIf="!selectedChapter">
         <div class="bible-welcome-text-container col-12">
-            <h3 class="bible-welcome-text col-8">
+            <h3 class="bible-welcome-text col-md-8 col-xs-12">
                 Welcome to the Bible App! Please begin by selecting a Book, then the Chapter
             </h3>
         </div>
@@ -37,7 +37,7 @@
     <!-- Scripture Book and Chapter Header -->
     <div class="row">
         <div class="book-chapter-container col-12" *ngIf="selectedBook && selectedChapter">
-            <div class="col-8">
+            <div class="col-md-8 col-xs-12">
                 <h1 class="book-chapter-text">{{selectedBook.name}} {{selectedChapter.number}}</h1>
             </div>
         </div>
@@ -46,7 +46,7 @@
     <!-- display of the Scripture -->
     <div class="row">
         <div class="selection-holder col-12">
-            <div class="selection col-8" [innerHtml]="selection">
+            <div class="selection col-md-8 col-xs-10" [innerHtml]="selection">
             </div>
         </div>
     </div>
