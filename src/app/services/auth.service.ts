@@ -15,7 +15,8 @@ import { environment } from '../../environments/environment';
 })
 export class AuthService {
 
-  public user = new BehaviorSubject<User>(null);
+  public user: BehaviorSubject<User> = new BehaviorSubject<User>(null);
+  public userOb = this.user.asObservable();
 
   constructor(private router: Router, private http: HttpClient, private _firebaseAuth: AngularFireAuth) { 
     
@@ -47,7 +48,7 @@ export class AuthService {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
       const user = new User(email, userId, token, expirationDate, email);
       this.user.next(user);
-      console.log(this.user);
+      // console.log(this.user);
   }
 
   private handleError (errorRes: HttpErrorResponse) {

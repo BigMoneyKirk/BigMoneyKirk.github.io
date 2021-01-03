@@ -97,7 +97,8 @@ export class JournalComponent implements OnInit {
   // ---------------- Firebase Functions -----------------
 
   public getEntries() {
-    this.firebaseService.getJournalEntries(this.currentUsername).subscribe(entries => {
+    this.firebaseService.getJournalEntries(this.currentUsername)
+    .subscribe(entries => {
       this.journal_entries = entries;
     });
   }

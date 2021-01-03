@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectorRef, AfterViewInit } from '@angular/co
 import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
 import $ from 'jquery';
 import { GlobalImageService } from 'src/app/services/global-image.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -53,10 +55,11 @@ export class HomeComponent implements OnInit {
 
   // ------------------- Constructor ----------------------
 
-  constructor(private globalImage: GlobalImageService) { }
+  constructor(private globalImage: GlobalImageService, private authService: AuthService) { }
 
   ngOnInit() {
     this.thankyouAnimation();
+    this.authService.user.pipe(take(1));
   }
 
   // ------------------- Scripture -------------------

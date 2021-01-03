@@ -79,11 +79,8 @@ export class FirebaseService {
   }
 
   public getJournalEntries(username) {
-    return this.authService.user.pipe(take(1), exhaustMap(user => {
-      console.log(user);
-      
-      return this.http.get<JournalEntry[]>(`${this.firebaseURL}Journal%20Entries/${username}.json`, {
-        params: new HttpParams().set('auth', user.token)
+    return this.http.get<JournalEntry[]>(`${this.firebaseURL}Journal%20Entries/${username}.json`, {
+        // params: new HttpParams().set('auth', user.token)
       }).pipe(map(responseData => {
         const entryArray: JournalEntry[] = [];
         for (const key in responseData) {
@@ -93,6 +90,5 @@ export class FirebaseService {
         }
         return entryArray;
       }));
-    }));
   }
 }
