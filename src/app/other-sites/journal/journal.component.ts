@@ -60,7 +60,6 @@ export class JournalComponent implements OnInit {
   }
 
   public onSubmit(value) {
-    console.log(this.firebaseService.getUser(localStorage.getItem("userIDtoken")));
     this.firebaseService.createJournalEntry(this.currentUsername, value).subscribe(() => {
       this.getEntries();
       this.notificationService.success("The message has been saved successfully!");

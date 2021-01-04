@@ -15,8 +15,8 @@ import { environment } from '../../environments/environment';
 })
 export class AuthService {
 
-  public user: BehaviorSubject<User> = new BehaviorSubject<User>(null);
-  public userOb = this.user.asObservable();
+  user = new BehaviorSubject<User>(null);
+  //new User('fj', 'f', 'f', new Date(), 'fd')
 
   constructor(private router: Router, private http: HttpClient, private _firebaseAuth: AngularFireAuth) { 
     
@@ -44,11 +44,17 @@ export class AuthService {
     }).pipe(catchError(this.handleError), tap(resData => this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)));
   }
 
+  public getUser(){
+    return this.user.value;
+  }
+
   private handleAuthentication (email: string, userId: string, token: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
+    
       const user = new User(email, userId, token, expirationDate, email);
       this.user.next(user);
-      // console.log(this.user);
+      // console.log(this.user.value);
+      
   }
 
   private handleError (errorRes: HttpErrorResponse) {

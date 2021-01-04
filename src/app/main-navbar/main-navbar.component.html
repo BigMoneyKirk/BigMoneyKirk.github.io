@@ -30,7 +30,7 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/passions']">Passions <span><i class="fas fa-heart"></i></span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isAuthenticated">
           <a class="nav-link" [routerLink]="['/about']"><span>About <i class="fas fa-question-circle"></i></span></a>
         </li>
         <li class="nav-item">

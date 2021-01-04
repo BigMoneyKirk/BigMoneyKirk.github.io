@@ -22,7 +22,11 @@ export class MainNavbarComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private global: GlobalService, private authService: AuthService, private gloabalImage: GlobalImageService) { }
 
   ngOnInit() {
-
+    this.userSub = this.authService.user.subscribe(user => {
+      this.isAuthenticated = !!user;
+      console.log(user);
+      
+    });
   }
 
   ngOnDestroy() {

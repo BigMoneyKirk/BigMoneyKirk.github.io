@@ -10,7 +10,7 @@ import { AboutComponent } from './main-content/about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-import { NavbarModule, WavesModule, MDBBootstrapModule  } from 'angular-bootstrap-md';
+import { NavbarModule, WavesModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 import { BibleComponent } from './main-content/bible/bible.component';
 import { BestBuddiesComponent } from './other-sites/best-buddies/best-buddies.component';
 import { InteriorDesingComponent } from './other-sites/interior-desing/interior-desing.component';
@@ -32,7 +32,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from '././services/auth.service';
-import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatSelectModule } from '@angular/material';
+import { MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule, MatSelectModule } from '@angular/material';
 import { HeatherMaryKayComponent } from './other-sites/heather-mary-kay/heather-mary-kay.component';
 import { KirklandLoanComponent } from './other-sites/kirkland-loan/kirkland-loan.component';
 import { BunnieBeauteComponent } from './other-sites/bunnie-beaute/bunnie-beaute.component';
@@ -45,6 +45,7 @@ import { AlertModalComponent } from './modals/alert-modal.component';
 import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 import { ContactComponent } from './main-content/contact/contact.component';
 import { BibleService } from './services/bible.service';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -107,9 +108,10 @@ import { BibleService } from './services/bible.service';
     MatSelectModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [AuthService, {
-    provide: HTTP_INTERCEPTORS,useClass: BibleService, multi: true 
-}],
+  providers: [AuthService,
+    {provide: HTTP_INTERCEPTORS, useClass: BibleService, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

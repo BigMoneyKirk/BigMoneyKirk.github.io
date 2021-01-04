@@ -2,8 +2,7 @@ import { Component, OnInit, ChangeDetectorRef, AfterViewInit } from '@angular/co
 import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
 import $ from 'jquery';
 import { GlobalImageService } from 'src/app/services/global-image.service';
-import { AuthService } from 'src/app/services/auth.service';
-import { take } from 'rxjs/operators';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-home',
@@ -55,11 +54,14 @@ export class HomeComponent implements OnInit {
 
   // ------------------- Constructor ----------------------
 
-  constructor(private globalImage: GlobalImageService, private authService: AuthService) { }
+  constructor(private globalImage: GlobalImageService, private firebaseService: FirebaseService) { }
 
   ngOnInit() {
     this.thankyouAnimation();
-    this.authService.user.pipe(take(1));
+    let userID = localStorage.getItem('userIDtoken')
+    let huh = this.firebaseService.getUser(userID);
+    console.log(huh);
+    
   }
 
   // ------------------- Scripture -------------------
