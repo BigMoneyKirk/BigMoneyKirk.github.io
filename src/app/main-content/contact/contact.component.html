@@ -4,50 +4,83 @@
 
         <hr>
 
-        <form>
+        <form #contact="ngForm">
+
             <div class="form-group">
+                <!-- First Name -->
                 <div class="first-name">First Name: </div>
                 <div class="row">
                     <div class="center-input-container col-xs-12 col-md-12">
                         <input type="text" class="form-control col-xs-12 col-md-6" name="first-name-input"
-                            [(ngModel)]="contactForm.FirstName">
+                            [(ngModel)]="contactForm.FirstName" #firstName="ngModel" required>
+                    </div>
+                </div>
+                <!-- First Name error message -->
+                <div class="row" *ngIf="firstName.touched && firstName.invalid">
+                    <div class="center-inter-container col-xs-12 col-md-12 alert alert-danger">
+                        The First Name is a requirement.
                     </div>
                 </div>
 
+                <!-- Last Name -->
                 <div class="last-name">Last Name: </div>
                 <div class="row">
                     <div class="center-input-container col-xs-12 col-md-12">
                         <input type="text" class="form-control col-xs-12 col-md-6" name="last-name-input"
-                            [(ngModel)]="contactForm.LastName">
+                            [(ngModel)]="contactForm.LastName" #lastName="ngModel" required>
+                    </div>
+                </div>
+                <!-- Last Name error message -->
+                <div class="row" *ngIf="lastName.touched && lastName.invalid">
+                    <div class="center-inter-container col-xs-12 col-md-12 alert alert-danger">
+                        The Last Name is a requirement.
                     </div>
                 </div>
 
+                <!-- Phone Number -->
                 <div class="phone-number">Phone Number: </div>
                 <div class="row">
                     <div class="center-input-container col-xs-12 col-md-12">
                         <input type="phone" class="form-control col-xs-12 col-md-6" name="phone-number-input"
-                            [(ngModel)]="contactForm.PhoneNumber">
+                            [(ngModel)]="contactForm.PhoneNumber" #phoneNumber="ngModel" required>
+                    </div>
+                </div>
+                <!-- Phone Number error message -->
+                <div class="row" *ngIf="phoneNumber.touched && phoneNumber.invalid">
+                    <div class="center-inter-container col-xs-12 col-md-12 alert alert-danger">
+                        The Phone Number is a requirement.
                     </div>
                 </div>
 
+                <!-- Email -->
                 <div class="email">Email: </div>
                 <div class="row">
                     <div class="center-input-container col-xs-12 col-md-12">
                         <input type="email" class="form-control col-xs-12 col-md-6" name="email-input"
-                            [(ngModel)]="contactForm.Email">
+                            [(ngModel)]="contactForm.Email" #eMail="ngModel" required>
+                    </div>
+                </div>
+                <!-- Email error message -->
+                <div class="row" *ngIf="eMail.touched && eMail.invalid">
+                    <div class="center-inter-container col-xs-12 col-md-12 alert alert-danger">
+                        The Email is a requirement.
                     </div>
                 </div>
 
+                <!-- Comments -->
                 <div class="comments">Comments: </div>
                 <div class="row">
                     <div class="center-input-container col-xs-12 col-md-12">
-                        <textarea [(ngModel)]="contactForm.Comments" class="form-control col-xs-12 col-md-6" name="comments-input">
-            </textarea>
+                        <textarea [(ngModel)]="contactForm.Comments" class="form-control col-xs-12 col-md-6"
+                            name="comments-input">
+                        </textarea>
                     </div>
                 </div>
 
+                <!-- Submit button -->
                 <div class="submit-button-holder">
-                    <button class="btn btn-success submit-button" type="submit" (click)="onSubmit()">Submit</button>
+                    <button class="btn btn-success submit-button" type="submit" (click)="onSubmit()"
+                        [disabled]="!contact.valid">Submit</button>
                 </div>
             </div>
         </form>

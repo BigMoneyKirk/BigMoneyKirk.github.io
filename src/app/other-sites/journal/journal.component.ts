@@ -11,7 +11,8 @@ import { NotificationModalService } from 'src/app/modals/notification-modal.serv
 @Component({
   selector: 'messing-around-journal',
   templateUrl: './journal.component.html',
-  styleUrls: ['./journal.component.scss']
+  styleUrls: ['./journal.component.scss'],
+  providers: [FirebaseService]
 })
 export class JournalComponent implements OnInit {
 
