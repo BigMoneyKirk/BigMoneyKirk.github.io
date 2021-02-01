@@ -16,6 +16,7 @@ import { environment } from '../../environments/environment';
 export class AuthService {
 
   user = new BehaviorSubject<User>(null);
+  private token : string;
   //new User('fj', 'f', 'f', new Date(), 'fd')
 
   constructor(private router: Router, private http: HttpClient, private _firebaseAuth: AngularFireAuth) { 
@@ -45,7 +46,13 @@ export class AuthService {
   }
 
   public getUser(){
-    return this.user.value;
+    this.user.subscribe(user => {
+      return user;
+    });
+  }
+
+  public getToken(){
+    return this.token;
   }
 
   private handleAuthentication (email: string, userId: string, token: string, expiresIn: number) {
@@ -53,8 +60,7 @@ export class AuthService {
     
       const user = new User(email, userId, token, expirationDate, email);
       this.user.next(user);
-      // console.log(this.user.value);
-      
+      this.token = user.token; 
   }
 
   private handleError (errorRes: HttpErrorResponse) {

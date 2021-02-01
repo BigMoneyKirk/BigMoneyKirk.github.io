@@ -45,7 +45,7 @@ import { AlertModalComponent } from './modals/alert-modal.component';
 import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 import { ContactComponent } from './main-content/contact/contact.component';
 import { BibleService } from './services/bible.service';
-import { AuthInterceptorService } from './services/auth-interceptor.service';
+// import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -110,7 +110,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
   schemas: [NO_ERRORS_SCHEMA],
   providers: [AuthService,
     {provide: HTTP_INTERCEPTORS, useClass: BibleService, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
+    // {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
   ],
   bootstrap: [AppComponent]
 })

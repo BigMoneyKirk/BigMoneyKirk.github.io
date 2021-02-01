@@ -3,6 +3,7 @@ import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { BibleBook } from '../models/bibleBook';
+import firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -14,36 +15,39 @@ export class BibleService implements HttpInterceptor {
   private asvBible: string = '06125adad2d5898a-01';
   public bibleBooks: Array<any>;
 
-  constructor(private http : HttpClient) { }
+  private uid : string = localStorage.getItem("userIDtoken");
+  private token: string = localStorage.getItem("usertoken");
+
+  constructor(private http: HttpClient) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     request = request.clone({
       setHeaders: {
-        Authorization: `${environment.bibleAPIKey}`,
         'api-key': `${environment.bibleAPIKey}`
       }
     });
+    console.log("request", request.headers);
 
     return next.handle(request);
   }
 
-  getASVBible(){
+  getASVBible() {
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}`);
   }
 
-  getBibleBooks(): Observable<any>{
+  getBibleBooks(): Observable<any> {
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/books`);
   }
 
-  getBookChapters(bookID): Observable<any>{
+  getBookChapters(bookID): Observable<any> {
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/books/${bookID}/chapters`)
   }
 
-  getChapter(chapterID): Observable<any>{
+  getChapter(chapterID): Observable<any> {
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/chapters/${chapterID}`)
   }
 
-  getVerses(bookID, chapterID): Observable<any>{
+  getVerses(bookID, chapterID): Observable<any> {
     return this.http.get(`${this.bibleURL}/v1/bibles/${this.asvBible}/chapters/${chapterID}/verses`)
   }
 }
