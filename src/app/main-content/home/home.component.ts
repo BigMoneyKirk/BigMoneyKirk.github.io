@@ -56,13 +56,10 @@ export class HomeComponent implements OnInit {
 
   // ------------------- Constructor ----------------------
 
-  constructor(private globalImage: GlobalImageService, private authService: AuthService, private firebaseService: FirebaseService) { }
+  constructor(private globalImage: GlobalImageService, private firebaseService: FirebaseService) { }
 
   ngOnInit() {
     this.thankyouAnimation();
-    let userID = localStorage.getItem('userIDtoken')
-    let huh = this.firebaseService.getUser(userID);
-    console.log(huh);
   }
 
   // ------------------- Scripture -------------------

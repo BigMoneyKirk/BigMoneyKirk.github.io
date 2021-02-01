@@ -5,17 +5,22 @@ import { exhaustMap, map, take } from 'rxjs/operators';
 import { JournalEntry } from '../models/journalentry';
 import { ContactForm } from '../models/contact-form';
 import { AuthService } from './auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
 
-  public currentUser;
+  public currentUser = this.firebaseAuth.auth.currentUser;
   public journalEntries: JournalEntry[] = [];
   private firebaseURL: string = 'https://messingaround-524ea.firebaseio.com/';
 
-  constructor(private http: HttpClient, public db: AngularFirestore, private authService: AuthService) { }
+  constructor(private http: HttpClient, public db: AngularFirestore, private authService: AuthService, public firebaseAuth: AngularFireAuth) { }
+
+  getCurrentUser() {
+    return this.firebaseAuth.user.subscribe(user => {return user});
+  }
 
   getAvatars() {
     return this.db.collection('/avatar').valueChanges()
@@ -64,7 +69,7 @@ export class FirebaseService {
     });
   }
 
-  public createContactEntry(contact : ContactForm){
+  public createContactEntry(contact: ContactForm) {
     return this.http.post<ContactForm>(`${this.firebaseURL}Contact%20Info/${contact.FirstName}%20${contact.LastName}.json`, contact);
   }
 
@@ -81,14 +86,14 @@ export class FirebaseService {
   }
 
   public getJournalEntries(username) {
-      return this.http.get<JournalEntry[]>(`${this.firebaseURL}Journal%20Entries/${username}.json`).pipe(map(responseData => {
-        const entryArray: JournalEntry[] = [];
-        for (const key in responseData) {
-          if (responseData.hasOwnProperty(key)) {
-            entryArray.push({ ...responseData[key], id: key })
-          }
+    return this.http.get<JournalEntry[]>(`${this.firebaseURL}Journal%20Entries/${username}.json`).pipe(map(responseData => {
+      const entryArray: JournalEntry[] = [];
+      for (const key in responseData) {
+        if (responseData.hasOwnProperty(key)) {
+          entryArray.push({ ...responseData[key], id: key })
         }
-        return entryArray;
-      }));
+      }
+      return entryArray;
+    }));
   }
 }

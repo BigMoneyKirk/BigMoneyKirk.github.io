@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'bunnie-beaute', component: BunnieBeauteComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactComponent },
   { path: 'heather-mary-kay', component: HeatherMaryKayComponent, canActivate: [AuthGuard] },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent },
   { path: 'interior-design', component: InteriorDesingComponent, canActivate: [AuthGuard] },
   { path: 'journal', component: JournalComponent, canActivate: [AuthGuard] },
   { path: 'keatylins-beauty', component: KeatylinsBeautyComponent, canActivate: [AuthGuard] },

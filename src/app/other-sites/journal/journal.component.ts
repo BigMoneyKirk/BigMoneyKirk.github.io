@@ -7,6 +7,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { HttpClient } from '@angular/common/http';
 import { NotificationModalService } from 'src/app/modals/notification-modal.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'messing-around-journal',
@@ -20,6 +21,7 @@ export class JournalComponent implements OnInit {
 
   // TO-DO: This needs to be set dynamically
   private currentUsername = 'steve';
+  public emailAddress: string;
 
   public journal_title: string = '';
   public journal_entry: string = '';
@@ -42,13 +44,17 @@ export class JournalComponent implements OnInit {
 
   constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder,
     // https://maximelafarie.com/ngx-smart-modal/#/
-    public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService, private notificationService: NotificationModalService
+    public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService, private notificationService: NotificationModalService, public firebaseAuth: AngularFireAuth
   ) {
   }
 
   ngOnInit() {
     this.createForm();
     this.getEntries();
+    this.firebaseAuth.user.subscribe(user => {
+      console.log("Got the current user in the journal. This is your email address: ", user.email);
+      this.emailAddress = user.email;
+    })
   }
 
   // ---------------- Form Stuff -----------------

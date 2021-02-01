@@ -17,7 +17,7 @@ import { PlaceholderDirective } from '../shared/placeholder/placeholder.directiv
 })
 export class LoginPageComponent implements OnInit {
 
-  @ViewChild(PlaceholderDirective, {static: false}) alertHost: PlaceholderDirective;
+  @ViewChild(PlaceholderDirective, { static: false }) alertHost: PlaceholderDirective;
 
   public isLoginMode: boolean = true;
   public isLoading: boolean = false;
@@ -49,29 +49,39 @@ export class LoginPageComponent implements OnInit {
 
     this.isLoading = true;
     if (this.isLoginMode) {
-      authObs = this.authService.login(email, password);
+      //authObs = 
+      return this.authService.login(email, password).then(test => {
+        this.isLoading = false;
+        console.log("test", test);
+        
+        this.router.navigate(['/home']);
+      }, 
+      err => {
+        console.log("Sorry bub. Wrong password");
+      });
     }
     else {
-      authObs = this.authService.signup(email, password);
+      //authObs = 
+      this.authService.signup(email, password);
+      this.isLoading = false;
     }
 
-    authObs.subscribe(data => {
-      this.isLoading = false;
+    // authObs.subscribe(data => {
+    //   this.isLoading = false;
 
-      // pass a success token to the localStorage
-      localStorage.setItem("successfulLogin", "true");
-      localStorage.setItem("userIDtoken", data.localId);
-      localStorage.setItem("usertoken", data.idToken);
+    //   // pass a success token to the localStorage
+    //   localStorage.setItem("successfulLogin", "true");
+    //   localStorage.setItem("userIDtoken", data.localId);
+    //   localStorage.setItem("usertoken", data.idToken);
 
-      // function to get all of that user's information; let's start with just their name. Welcome [insert user name here]
+    //   // function to get all of that user's information; let's start with just their name. Welcome [insert user name here]
 
-      this.router.navigate(['/home']);
-    },
-      errorMessage => {
-        this.showErrorAlert(errorMessage);
-        this.isLoading = false;
-      }
-    );
+    // },
+    //   errorMessage => {
+    //     this.showErrorAlert(errorMessage);
+    //     this.isLoading = false;
+    //   }
+    // );
     form.reset();
   }
 

@@ -11,5 +11,4 @@ export class SocialMediaComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
