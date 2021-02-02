@@ -52,7 +52,6 @@ export class JournalComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.firebaseAuth.user.subscribe(user => {
-      console.log("Got the current user in the journal. This is your email address: ", user);
       this.emailAddress = user.email;
       this.uid = user.uid;
       this.getEntries();
