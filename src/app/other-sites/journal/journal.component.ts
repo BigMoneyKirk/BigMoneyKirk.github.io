@@ -21,6 +21,7 @@ export class JournalComponent implements OnInit {
 
   // TO-DO: This needs to be set dynamically
   private currentUsername = 'steve';
+  private uid: string = '';
   public emailAddress: string;
 
   public journal_title: string = '';
@@ -50,10 +51,11 @@ export class JournalComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-    this.getEntries();
     this.firebaseAuth.user.subscribe(user => {
-      console.log("Got the current user in the journal. This is your email address: ", user.email);
+      console.log("Got the current user in the journal. This is your email address: ", user);
       this.emailAddress = user.email;
+      this.uid = user.uid;
+      this.getEntries();
     })
   }
 
@@ -67,7 +69,7 @@ export class JournalComponent implements OnInit {
   }
 
   public onSubmit(value) {
-    this.firebaseService.createJournalEntry(this.currentUsername, value).subscribe(() => {
+    this.firebaseService.createJournalEntry(this.uid, value).subscribe(() => {
       this.getEntries();
       this.notificationService.success("The message has been saved successfully!");
     }, (error) => {
@@ -103,17 +105,17 @@ export class JournalComponent implements OnInit {
   // ---------------- Firebase Functions -----------------
 
   public getEntries() {
-    this.firebaseService.getJournalEntries(this.currentUsername)
-    .subscribe(entries => {
-      this.journal_entries = entries;
-    });
+    this.firebaseService.getJournalEntries(this.uid)
+      .subscribe(entries => {
+        this.journal_entries = entries;
+      });
   }
 
-  public onDismiss(){
+  public onDismiss() {
     console.log("onDismiss()");
   }
 
-  public onClose(){
+  public onClose() {
     console.log("onClose()");
   }
 }
