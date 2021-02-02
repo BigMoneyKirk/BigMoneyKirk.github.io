@@ -31,7 +31,7 @@ export class MainNavbarComponent implements OnInit, OnDestroy {
   }
 
   public authorized() : boolean{
-    return localStorage.getItem("successfulLogin") == "true" ? true : false;
+    return this.global.isLoggedIn;
   }
 
   public logoNavigation(){
@@ -47,6 +47,7 @@ export class MainNavbarComponent implements OnInit, OnDestroy {
     this.firebaseAuth.auth.signOut().then(() => {
       console.log("You have successfully logged out! :) Have a nice day!");
     });
+    this.global.isLoggedIn = false;
     localStorage.setItem("successfulLogin", "false");
     this.global.navigate('/login');
   }

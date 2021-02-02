@@ -1,45 +1,85 @@
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark navbar-color lighten-1">
-  <a class="navbar-brand" (click)="logoNavigation()">
+
+  <!-- Logo Home Button -->
+  <a class="navbar-brand" (click)="logoNavigation()" title="Logo Home Button" tabindex="0">
     <span class="navbar-brand-text">
       <img [src]="logoHomeButton" alt="Logo Home Button" class="logo-home-button">
     </span>
   </a>
+
+  <!-- When the app is too small, this will be the expand/collapse button for the menu -->
   <button title="Toggle navigation" class="navbar-toggler" type="button" data-toggle="collapse"
     data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" aria-expanded="false"
     aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+  <!-- Main NavBar Links -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
     <div class="main-nav-btns" *ngIf="authorized()">
       <ul class="navbar-nav mr-auto">
+        
+        <!-- Home Link -->
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']">Home <span><i class="fas fa-home"></i></span>
+          <a class="nav-link" [routerLink]="['/home']" title="Home">
+            Home 
+            <span><i class="fas fa-home"></i></span>
           </a>
         </li>
+
+        <!-- Bible Link -->
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/bible']">Bible <span><i class="fas fa-bible"></i></span></a>
+          <a class="nav-link" [routerLink]="['/bible']" title="Bible">
+            Bible
+            <span><i class="fas fa-bible"></i></span></a>
         </li>
+
+        <!-- Social Media Link -->
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/social-media']">Social Media <span><i
-                class="fas fa-users"></i></span></a>
+          <a class="nav-link" [routerLink]="['/social-media']" title="Social Media">
+            Social Media
+            <span><i class="fas fa-users"></i></span>
+          </a>
         </li>
+
+        <!-- Journal Link -->
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/journal']">Journal <span><i class="fas fa-book-open"></i></span></a>
+          <a class="nav-link" [routerLink]="['/journal']" title="Journal">
+            Journal 
+            <span><i class="fas fa-book-open"></i></span></a>
         </li>
+        
+        <!-- Passions Link -->
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/passions']">Passions <span><i class="fas fa-heart"></i></span></a>
+          <a class="nav-link" [routerLink]="['/passions']" title="Passions">
+            Passions 
+            <span><i class="fas fa-heart"></i></span>
+          </a>
         </li>
+
+        <!-- About Link -->
         <li class="nav-item" *ngIf="isAuthenticated">
-          <a class="nav-link" [routerLink]="['/about']"><span>About <i class="fas fa-question-circle"></i></span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/contact']">Contact <span><i class="fas fa-mobile"></i></span></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">Websites
+          <a class="nav-link" [routerLink]="['/about']" title="About">
+            About
+            <span><i class="fas fa-question-circle"></i></span>
           </a>
+        </li>
+
+        <!-- Contact Us Link -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contact']" title="Contact Us">
+            Contact
+            <span><i class="fas fa-mobile"></i></span>
+          </a>
+        </li>
+
+        <!-- Webistes Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" title="Webistes Dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Websites
+          </a>
+
           <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
             <!-- <a [routerLink]="['/smart-home']" class="dropdown-item">Grant and Kirk's Smart Home</a> -->
             <a [routerLink]="['/interior-design']" class="dropdown-item">EJ's Interior Designing</a>
@@ -56,6 +96,8 @@
         </li>
       </ul>
     </div>
+
+    <!-- About Link (Hidden when logged in. Shown when logged out) -->
     <div class="main-nav-btns just-about" *ngIf="!authorized()">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -63,17 +105,22 @@
         </li>
       </ul>
     </div>
+
     <ul class="navbar-nav ml-auto nav-flex-icons">
+
+      <!-- Pseudo Mail/Message Notification -->
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light">1
           <i class="fas fa-envelope"></i>
         </a>
       </li>
+
+      <!-- Avatar Dropdown -->
       <li class="nav-item avatar dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img [src]="kingImg" class="rounded-circle z-depth-0 profile-image" alt="avatar image">
         </a>
+
         <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
           aria-labelledby="navbarDropdownMenuLink-55">
           <a class="dropdown-item" [routerLink]="['/blog']">Blog</a>
@@ -87,4 +134,3 @@
     </ul>
   </div>
 </nav>
-<!--/.Navbar -->
