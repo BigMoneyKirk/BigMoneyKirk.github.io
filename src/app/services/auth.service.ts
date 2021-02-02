@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  public user = new BehaviorSubject<User>(null);
+  public user;
   private token : string;
 
   constructor(private http: HttpClient, private _firebaseAuth: AngularFireAuth, private router: Router) {
@@ -32,39 +32,25 @@ export class AuthService {
       email: email,
       password: password,
       returnSecureToken: true
-    }).pipe(catchError(this.handleError), tap(resData => this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)));
+    }).pipe(catchError(this.handleError), tap(resData => this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn, password)));
   }
 
   public login(email: string, password: string) {
-    return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password).then(me => {
-      console.log("You have successfully been logged in: ", me.user);
-    }, 
-    error => {
-      console.log(error.message);
-    });
-    // return this.http.post<AuthResponseData>('https://cors-anywhere.herokuapp.com/https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseAPIKey,
-    // {
-    //   email: email,
-    //   password: password,
-    //   returnSecureToken: true
-    // }).pipe(catchError(this.handleError), tap(resData => this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)));
+    // https://cors-anywhere.herokuapp.com/
+    return this.http.post<AuthResponseData>('https://cors-anywhere.herokuapp.com/https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseAPIKey,
+    {
+      email: email,
+      password: password,
+      returnSecureToken: true
+    }).pipe(catchError(this.handleError), tap(resData => this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn, password)));
   }
 
-  public getUser(){
-    this.user.subscribe(user => {
-      return user;
-    });
-  }
+  private handleAuthentication (email: string, userId: string, token: string, expiresIn: number, password?: string) {
+    this._firebaseAuth.auth.signInWithEmailAndPassword(email, password).then(data => this.user = data.user);
 
-  public getToken(){
-    return this.token;
-  }
-
-  private handleAuthentication (email: string, userId: string, token: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
 
       const user = new User(email, userId, token, expirationDate, email);
-      this.user.next(user);
       this.token = user.token;
   }
 
@@ -83,6 +69,10 @@ export class AuthService {
           break;
         case 'INVALID_PASSWORD':
           errorMessage = 'You have entered an incorrect password.';
+          break;
+        case 'TOO_MANY_ATTEMPTS_TRY_LATER : Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later.':
+          errorMessage = 'Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later.';
+          break;
       }
 
       return throwError(errorMessage);
