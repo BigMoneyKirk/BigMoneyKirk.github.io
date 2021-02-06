@@ -68,11 +68,18 @@ export class JournalComponent implements OnInit {
   }
 
   public onSubmit(value) {
-    this.firebaseService.createJournalEntry(this.uid, value).subscribe(() => {
+    this.firebaseService.createJournalEntry(this.uid, value).subscribe(() => {      
       this.getEntries();
       this.notificationService.success("The message has been saved successfully!");
     }, (error) => {
-      this.notificationService.error("There was some trouble saving your journal entry.");
+      switch(error.status){
+        case 401:
+          this.notificationService.error(`You are not authorized to write to this journal, playa.`);
+          break;
+        default:
+          this.notificationService.error(`There was some trouble saving your journal entry.`);
+          break;
+      }
     });
   }
 
