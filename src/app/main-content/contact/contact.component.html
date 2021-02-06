@@ -16,8 +16,8 @@
                     </div>
                 </div>
                 <!-- First Name error message -->
-                <div class="row" *ngIf="firstName.touched && firstName.invalid">
-                    <div class="center-inter-container col-xs-12 col-md-12 alert alert-danger">
+                <div class="row error-container" *ngIf="firstName.touched && firstName.invalid">
+                    <div class="col-xs-12 col-md-6 alert alert-danger">
                         The First Name is a requirement.
                     </div>
                 </div>
@@ -31,8 +31,8 @@
                     </div>
                 </div>
                 <!-- Last Name error message -->
-                <div class="row" *ngIf="lastName.touched && lastName.invalid">
-                    <div class="center-inter-container col-xs-12 col-md-12 alert alert-danger">
+                <div class="row error-container" *ngIf="lastName.touched && lastName.invalid">
+                    <div class="col-xs-12 col-md-6 alert alert-danger">
                         The Last Name is a requirement.
                     </div>
                 </div>
@@ -46,8 +46,8 @@
                     </div>
                 </div>
                 <!-- Phone Number error message -->
-                <div class="row" *ngIf="phoneNumber.touched && phoneNumber.invalid">
-                    <div class="center-inter-container col-xs-12 col-md-12 alert alert-danger">
+                <div class="row error-container" *ngIf="phoneNumber.touched && phoneNumber.invalid">
+                    <div class="col-xs-12 col-md-6 alert alert-danger">
                         The Phone Number is a requirement.
                     </div>
                 </div>
@@ -61,8 +61,8 @@
                     </div>
                 </div>
                 <!-- Email error message -->
-                <div class="row" *ngIf="eMail.touched && eMail.invalid">
-                    <div class="center-inter-container col-xs-12 col-md-12 alert alert-danger">
+                <div class="row error-container" *ngIf="eMail.touched && eMail.invalid">
+                    <div class="col-xs-12 col-md-6 alert alert-danger">
                         The Email is a requirement.
                     </div>
                 </div>

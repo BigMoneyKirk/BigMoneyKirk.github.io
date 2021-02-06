@@ -1,5 +1,16 @@
+.alert-danger{
+    margin: 0;
+}
+
+.error-container{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
 .last-name, .phone-number, .email, .comments{
-    margin-top: 20px;
+    margin-top: 1rem;
 }
 
 .center-input-container{
@@ -8,5 +19,5 @@
 }
 
 .submit-button-holder{
-    padding: 20px 0;
+    padding: 1.25rem 0;
 }
