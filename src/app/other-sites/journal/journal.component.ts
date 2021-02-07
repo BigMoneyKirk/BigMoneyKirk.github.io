@@ -88,6 +88,16 @@ export class JournalComponent implements OnInit {
     this.firebaseService.deleteJournalEntry(this.currentUsername, value.id).subscribe(() => {
       this.notificationService.success("The journal entry has been deleted.");
       this.getEntries();
+    },
+    (error) => {
+      switch(error.status){
+        case 401:
+          this.notificationService.error(`You are not authorized to delete this journal entry, playa.`);
+          break;
+        default:
+          this.notificationService.error(`There was some trouble saving your journal entry.`);
+          break;
+      }
     })
   }
 
