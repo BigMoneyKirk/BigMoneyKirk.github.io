@@ -112,3 +112,23 @@ html, body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    ::-webkit-scrollbar
+    {
+      width: 0 !important;
+      display: none;
+    }
+  }
+
+  #progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 15px;
+    border-radius: 10px;
+    background: linear-gradient(to top, #fcb045, #fd1d1d, #833ab4);
+  }

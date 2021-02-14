@@ -23,6 +23,17 @@ export class AppComponent {
         this.globalService.isLoggedIn = false;
         console.log("You currently are not signed into the application.");
       }
-    })
+    });
+    this.scrollAnimation();
+  }
+
+  private scrollAnimation(){
+    $(window).scroll(function(){
+      var scroll = $(window).scrollTop(),
+      dh = $(document).height(),
+      wh = $(window).height();
+      var scrollPercent = (scroll / (dh-wh) * 100);
+      $('#progressbar').css('height', scrollPercent + "%");
+    });
   }
 }
