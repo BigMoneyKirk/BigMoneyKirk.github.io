@@ -10,7 +10,7 @@ $bio-card-height: $card-width*2.5;
 
 .meet-the-team-container, .our-mission-header-container {
   text-align: center;
-  padding: 3rem 0;
+  padding: 10rem 0;
 
   h1, h4{
     font-family: 'Bree Serif', serif;
@@ -25,16 +25,17 @@ $bio-card-height: $card-width*2.5;
 }
 
 .our-mission-text-container{
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 10rem 10rem 10rem;
   p{
-    color: gold;
+    color: rgb(243, 255, 73);
   }
 }
 
-@media(max-width: 1150px){
-  .our-mission-text-container{
-    
-    // text-align: right;
+@media(max-width: 600px)
+{
+  .our-mission-text-container
+  {
+    padding: 0 3rem 10rem 3rem;
   }
 }
 
@@ -396,10 +397,6 @@ $bio-card-height: $card-width*2.5;
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 1;
-  }
-
-  .bio-back .inner{
-    
   }
 
   .video-game{
