@@ -9,7 +9,10 @@ import $ from 'jquery';
 })
 export class AboutComponent implements OnInit {
 
+  public akeem = this.globalImage.akeem;
   public kingUrl = this.globalImage.king;
+  public queenUrl = this.globalImage.kengelle;
+  public shanice = this.globalImage.shanice;
   public triggerBool: boolean = true;
 
   constructor(private globalImage: GlobalImageService) { }
@@ -27,7 +30,7 @@ export class AboutComponent implements OnInit {
   }
 
   public story() {
-    return `This website started as a personal project; something to prove to myself that I am a competent web developer. I proved myself correct. I have been working on this site for over a year now, and I am extremely pleased with the results. In a few more months, I believe this site will be fully functional, meeting all its MVPs. [Updated Sunday, December 20, 2020 12:25 PM EST]`;
+    return `Stephen Kirkland \n Founder and CEO`;
   }
 
   public temp_hover_animation(){

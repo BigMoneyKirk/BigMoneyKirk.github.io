@@ -45,6 +45,7 @@ import { AlertModalComponent } from './modals/alert-modal.component';
 import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 import { ContactComponent } from './main-content/contact/contact.component';
 import { BibleService } from './services/bible.service';
+import { RecyclingComponent } from './other-sites/recycling/recycling.component';
 // import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
@@ -79,7 +80,8 @@ import { BibleService } from './services/bible.service';
     NotificationModalComponent,
     AlertModalComponent,
     PlaceholderDirective,
-    ContactComponent
+    ContactComponent,
+    RecyclingComponent
   ],
   entryComponents: [
     NewEntryComponent,

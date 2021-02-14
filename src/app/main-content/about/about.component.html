@@ -1,8 +1,7 @@
 <div class="page-margin black">
 
-    <!-- Additional -->
-    <!-- source: https://csshint.com/css-flip-cards/ -->
-
+    <!-- Source for card flips: https://csshint.com/css-flip-cards/ -->
+    <!-- Stephen's About Info -->
     <div class="wrapper">
         <div class="cols">
             <div class="col think-card" ontouchstart="this.classList.toggle('hover');">
@@ -59,12 +58,13 @@
                 <div class="bio-container">
                     <div class="bio-front">
                         <div class="inner">
-                            
+
                         </div>
                     </div>
                     <div class="bio-back">
                         <div class="inner">
-                            <p>{{story()}}</p>
+                            <h2>Stephen Kirkland</h2>
+                            <p>Founder and CEO</p>
                         </div>
                     </div>
                 </div>
@@ -96,6 +96,50 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="team-about-container">
+        <!-- Kengelle's About Info -->
+        <div class="box">
+            <div class="imgBx">
+                <img [src]="queenUrl" alt="Kengelle Science">
+            </div>
+            <div class="content">
+                <h2 class="content-headers">
+                    Kengelle Chukwurah
+                    <br>
+                    <span>Chair Woman</span>
+                </h2>
+            </div>
+        </div>
+
+        <!-- Shanice's About Info -->
+        <div class="box">
+            <div class="imgBx">
+                <img [src]="shanice" alt="Shanice">
+            </div>
+            <div class="content">
+                <h2 class="content-headers">
+                    Shanice Dennis
+                    <br>
+                    <span>Chair Woman</span>
+                </h2>
+            </div>
+        </div>
+
+        <!-- Akeem's About Info -->
+        <div class="box">
+            <div class="imgBx">
+                <img [src]="akeem" alt="Akeem Science">
+            </div>
+            <div class="content">
+                <h2 class="content-headers">
+                    Akeem Roberts
+                    <br>
+                    <span>Chairman</span>
+                </h2>
             </div>
         </div>
     </div>

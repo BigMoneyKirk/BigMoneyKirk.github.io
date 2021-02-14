@@ -25,6 +25,7 @@ import { BlogComponent } from './main-content/blog/blog.component';
 import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-forward.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ContactComponent } from './main-content/contact/contact.component';
+import { RecyclingComponent } from './other-sites/recycling/recycling.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'kirkland-loan', component: KirklandLoanComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginPageComponent },
   { path: 'passions', component: PassionsComponent, canActivate: [AuthGuard] },
+  { path: 'recycling', component: RecyclingComponent } ,
   { path: 'sandras-record-keeping', component: SandrasRecordKeepingComponent, canActivate: [AuthGuard] },
   { path: 'screven-forward', component: ScrevenForwardComponent, canActivate: [AuthGuard] },
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
