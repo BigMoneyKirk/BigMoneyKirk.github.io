@@ -12,7 +12,7 @@ export class GlobalImageService {
   public logoHomeButton = 'assets/images/logos/KEU_Logo_FullColor_Secondary.png';
   public kaka = 'assets/images/bunnie-beaute/kaka.jpg';
   public kengelle = 'assets/images/about/kengelle_science.jpg';
-  public king = 'assets/images/people/KingKirk.png';
+  public king = 'assets/images/about/og.jpg';
   public moneySmiley = 'assets/images/kirkland-loan/money-smiley.gif';
   public screvenPlaza = 'assets/images/screven-forward/screven-co-plaza.PNG'
   public shanghaiUrl = "assets/images/backgrounds/ShanghaiWorldFinanncialCenter.jpg";
