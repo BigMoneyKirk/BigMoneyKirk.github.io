@@ -25,18 +25,19 @@ import { BlogComponent } from './main-content/blog/blog.component';
 import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-forward.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ContactComponent } from './main-content/contact/contact.component';
+import { RecyclingComponent } from './other-sites/recycling/recycling.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'best-buddies', component: BestBuddiesComponent, canActivate: [AuthGuard] },
-  { path: 'bible', component: BibleComponent, canActivate: [AuthGuard] },
+  { path: 'bible', component: BibleComponent },
   { path: 'blog', component: BlogComponent, canActivate: [AuthGuard] },
   { path: 'bookmarks', component: BookmarksComponent, canActivate: [AuthGuard] },
   { path: 'bunnie-beaute', component: BunnieBeauteComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactComponent },
   { path: 'heather-mary-kay', component: HeatherMaryKayComponent, canActivate: [AuthGuard] },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent },
   { path: 'interior-design', component: InteriorDesingComponent, canActivate: [AuthGuard] },
   { path: 'journal', component: JournalComponent, canActivate: [AuthGuard] },
   { path: 'keatylins-beauty', component: KeatylinsBeautyComponent, canActivate: [AuthGuard] },
@@ -44,13 +45,14 @@ const routes: Routes = [
   { path: 'kirkland-loan', component: KirklandLoanComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginPageComponent },
   { path: 'passions', component: PassionsComponent, canActivate: [AuthGuard] },
+  { path: 'recycling', component: RecyclingComponent } ,
   { path: 'sandras-record-keeping', component: SandrasRecordKeepingComponent, canActivate: [AuthGuard] },
   { path: 'screven-forward', component: ScrevenForwardComponent, canActivate: [AuthGuard] },
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
   { path: 'social-media', component: SocialMediaComponent, canActivate: [AuthGuard] },
   { path: 'smart-home', component: SmartHouseComponent, canActivate: [AuthGuard] },
   { path: 'the-fruit-plug', component: SadesFruitComponent, canActivate: [AuthGuard] },
-  { path: 'tishas-cupcakes', component: TishasCakesComponent, canActivate: [AuthGuard] },
+  { path: 'tishas-cupcakes', component: TishasCakesComponent },
   { path: 'under-construction', component: UnderConstructionComponent, canActivate: [AuthGuard] }
 ];
 

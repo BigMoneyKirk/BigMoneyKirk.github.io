@@ -1,26 +1,111 @@
+<div id="progressbar"></div>
 <div class="page-margin black">
+    <div class="black-top">
+        <div class="meet-the-team-box">
+            <div class="meet-the-team-container">
+                <h1>MEET</h1>
+                <h4> THE </h4>
+                <h1>TEAM</h1>
+            </div>
+        </div>
 
-    <!-- Additional -->
-    <!-- source: https://csshint.com/css-flip-cards/ -->
-
-    <div class="wrapper">
-        <div class="cols">
-            <div class="col think-card" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front book">
-                        <div class="inner">
-                            <div class="highlight"></div>
-                            <p class="card-title">Must Reads</p>
-                            <span class="card-info">Expand your mind</span>
+        <!-- Source for card flips: https://csshint.com/css-flip-cards/ -->
+        <!-- Stephen's About Info -->
+        <div class="wrapper" hidden>
+            <div class="cols">
+                <div class="col think-card" ontouchstart="this.classList.toggle('hover');">
+                    <div class="container">
+                        <div class="front book">
+                            <div class="inner">
+                                <div class="highlight"></div>
+                                <p class="card-title">Must Reads</p>
+                                <span class="card-info">Expand your mind</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <ul class="card-items">
+                                    <li>The Bible (although I have yet to read it all the way through)</li>
+                                    <li>The 7 Habits of Highly Effective People</li>
+                                    <li>Think and Grow Rich</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="back">
-                        <div class="inner">
-                            <ul class="card-items">
-                                <li>The Bible (although I have yet to read it all the way through)</li>
-                                <li>The 7 Habits of Highly Effective People</li>
-                                <li>Think and Grow Rich</li>
-                            </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="cols row">
+                <div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3" ontouchstart="this.classList.toggle('hover');"
+                    hidden>
+                    <div class="container">
+                        <div class="front video-game">
+                            <div class="inner">
+                                <p class="fav-video-game-title card-title">
+                                    Favorite Video Games
+                                </p>
+                                <span class="fav-video-game-info card-info">I've spend HOURS playing these games</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <ul class="fav-video-game-items card-items">
+                                    <li>BioShock Collection</li>
+                                    <li>The Outer Worlds</li>
+                                    <li>Brawlhalla</li>
+                                    <li>The Far Cry Series</li>
+                                    <li>Prey (2017)</li>
+                                    <li>Call of Duty: Black Ops (this is why I bought a PS3 back in 2011)</li>
+                                    <li>Minecraft</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6" ontouchstart="this.classList.toggle('hover');">
+                    <div class="bio-container">
+                        <div class="bio-front">
+                            <div class="inner">
+
+                            </div>
+                        </div>
+                        <div class="bio-back">
+                            <div class="inner">
+                                <h2>Stephen Kirkland</h2>
+                                <p>Founder and CEO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3 test"
+                    ontouchstart="this.classList.toggle('hover');" hidden>
+                    <div class="container">
+                        <div class="front movie">
+                            <div class="inner">
+                                <p class="fav-movie-title card-title">
+                                    Favorite Movies
+                                </p>
+                                <span class="fav-movie-info card-info">I've watched each of these movies over 5
+                                    times</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <div class="inner">
+                                <ul class="fav-movie-items card-items">
+                                    <li>Whitie Chicks</li>
+                                    <li>Boomerang</li>
+                                    <li>Norbit</li>
+                                    <li>Inception</li>
+                                    <li>The Matrix</li>
+                                    <li>Batman: The Dark Knight</li>
+                                    <li>The Truman Show</li>
+                                    <li>Moana</li>
+                                    <li>Frozen 2</li>
+                                    <li>Lion King</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -28,75 +113,60 @@
         </div>
     </div>
 
-    <div class="wrapper">
-        <div class="cols row">
-            <div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front video-game">
-                        <div class="inner">
-                            <p class="fav-video-game-title card-title">
-                                Favorite Video Games
-                            </p>
-                            <span class="fav-video-game-info card-info">I've spend HOURS playing these games</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <ul class="fav-video-game-items card-items">
-                                <li>BioShock Collection</li>
-                                <li>The Outer Worlds</li>
-                                <li>Brawlhalla</li>
-                                <li>The Far Cry Series</li>
-                                <li>Prey (2017)</li>
-                                <li>Call of Duty: Black Ops (this is why I bought a PS3 back in 2011)</li>
-                                <li>Minecraft</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <div class="team-about-container">
+        <!-- Kengelle's About Info -->
+        <div class="box">
+            <div class="imgBx">
+                <img [src]="queenUrl" alt="Kengelle Science">
             </div>
-            <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-6" ontouchstart="this.classList.toggle('hover');">
-                <div class="bio-container">
-                    <div class="bio-front">
-                        <div class="inner">
-                            
-                        </div>
-                    </div>
-                    <div class="bio-back">
-                        <div class="inner">
-                            <p>{{story()}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-xs-12 col-sm-12 col-md-3 col-lg-3 test" ontouchstart="this.classList.toggle('hover');">
-                <div class="container">
-                    <div class="front movie">
-                        <div class="inner">
-                            <p class="fav-movie-title card-title">
-                                Favorite Movies
-                            </p>
-                            <span class="fav-movie-info card-info">I've watched each of these movies over 5 times</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <ul class="fav-movie-items card-items">
-                                <li>Whitie Chicks</li>
-                                <li>Boomerang</li>
-                                <li>Norbit</li>
-                                <li>Inception</li>
-                                <li>The Matrix</li>
-                                <li>Batman: The Dark Knight</li>
-                                <li>The Truman Show</li>
-                                <li>Moana</li>
-                                <li>Frozen 2</li>
-                                <li>Lion King</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="content">
+                <h2 class="content-headers">
+                    Kengelle Chukwurah
+                    <br>
+                    <span>Chair Woman</span>
+                </h2>
             </div>
         </div>
+
+        <!-- Shanice's About Info -->
+        <div class="box">
+            <div class="imgBx">
+                <img [src]="shanice" alt="Shanice">
+            </div>
+            <div class="content">
+                <h2 class="content-headers">
+                    Shanice Dennis
+                    <br>
+                    <span>Chair Woman</span>
+                </h2>
+            </div>
+        </div>
+
+        <!-- Akeem's About Info -->
+        <div class="box">
+            <div class="imgBx">
+                <img [src]="akeem" alt="Akeem Science">
+            </div>
+            <div class="content">
+                <h2 class="content-headers">
+                    Akeem Roberts
+                    <br>
+                    <span>Chairman</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Mission -->
+    <div class="our-mission-container black-bottom">
+        <div class="our-mission-header-container">
+            <h4>OUR</h4>
+            <h1>MISSION</h1>
+        </div>
+    </div>
+    <div class="our-mission-text-container">
+        <p>Every person, every child is born with a gift - is born with a passion - is born with a purpose. That person
+            is born with their inherit gift for the good and glory of God. We at Kirkland Enterprises Unlimited would
+            like to help you cultivate that gift.</p>
     </div>
 </div>

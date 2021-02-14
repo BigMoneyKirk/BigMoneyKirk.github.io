@@ -17,7 +17,7 @@
 
   <!-- Main NavBar Links -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-    <div class="main-nav-btns" *ngIf="authorized()">
+    <div class="main-nav-btns"> <!-- *ngIf="authorized()" -->
       <ul class="navbar-nav mr-auto">
         
         <!-- Home Link -->
@@ -36,7 +36,7 @@
         </li>
 
         <!-- Social Media Link -->
-        <li class="nav-item">
+        <li class="nav-item" hidden>
           <a class="nav-link" [routerLink]="['/social-media']" title="Social Media">
             Social Media
             <span><i class="fas fa-users"></i></span>
@@ -44,14 +44,15 @@
         </li>
 
         <!-- Journal Link -->
-        <li class="nav-item">
+
+        <li class="nav-item" hidden>
           <a class="nav-link" [routerLink]="['/journal']" title="Journal">
             Journal 
             <span><i class="fas fa-book-open"></i></span></a>
         </li>
         
         <!-- Passions Link -->
-        <li class="nav-item">
+        <li class="nav-item" hidden>
           <a class="nav-link" [routerLink]="['/passions']" title="Passions">
             Passions 
             <span><i class="fas fa-heart"></i></span>
@@ -59,7 +60,7 @@
         </li>
 
         <!-- About Link -->
-        <li class="nav-item">
+        <li class="nav-item" hidden>
           <a class="nav-link" [routerLink]="['/about']" title="About">
             About
             <span><i class="fas fa-question-circle"></i></span>
@@ -81,16 +82,17 @@
           </a>
 
           <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
-            <!-- <a [routerLink]="['/smart-home']" class="dropdown-item">Grant and Kirk's Smart Home</a> -->
-            <a [routerLink]="['/interior-design']" class="dropdown-item">EJ's Interior Designing</a>
             <a [routerLink]="['/tishas-cupcakes']" class="dropdown-item">Tisha's Cupcakes</a>
-            <a [routerLink]="['/the-fruit-plug']" class="dropdown-item">The Fruit Plug</a>
-            <a [routerLink]="['/best-buddies']" class="dropdown-item">Best Buddies</a>
-            <a [routerLink]="['/bunnie-beaute']" class="dropdown-item">Bunnie Beaute</a>
-            <a [routerLink]="['/sandras-record-keeping']" class="dropdown-item">Sandra's Record Keeping</a>
-            <a [routerLink]="['/screven-forward']" class="dropdown-item">Screven Forward</a>
-            <a [routerLink]="['/heather-mary-kay']" class="dropdown-item">Heather's Mary Kay</a>
-            <a [routerLink]="['/kirkland-loan']" class="dropdown-item">Kirkland Loan</a>
+            <a [routerLink]="['/recycling']" class="dropdown-item">Recycling</a>
+            <a [routerLink]="['/smart-home']" class="dropdown-item" hidden>Grant and Kirk's Smart Home</a>
+            <a [routerLink]="['/interior-design']" class="dropdown-item" hidden>EJ's Interior Designing</a>
+            <a [routerLink]="['/the-fruit-plug']" class="dropdown-item" hidden>The Fruit Plug</a>
+            <a [routerLink]="['/best-buddies']" class="dropdown-item" hidden>Best Buddies</a>
+            <a [routerLink]="['/bunnie-beaute']" class="dropdown-item" hidden>Bunnie Beaute</a>
+            <a [routerLink]="['/sandras-record-keeping']" class="dropdown-item" hidden>Sandra's Record Keeping</a>
+            <a [routerLink]="['/screven-forward']" class="dropdown-item" hidden>Screven Forward</a>
+            <a [routerLink]="['/heather-mary-kay']" class="dropdown-item" hidden>Heather's Mary Kay</a>
+            <a [routerLink]="['/kirkland-loan']" class="dropdown-item" hidden>Kirkland Loan</a>
             <!-- <a [routerLink]="['/kevins-vision']" class="dropdown-item">Kevin's Vision</a> -->
           </div>
         </li>
