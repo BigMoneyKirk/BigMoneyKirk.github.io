@@ -31,13 +31,13 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'best-buddies', component: BestBuddiesComponent, canActivate: [AuthGuard] },
-  { path: 'bible', component: BibleComponent, canActivate: [AuthGuard] },
+  { path: 'bible', component: BibleComponent },
   { path: 'blog', component: BlogComponent, canActivate: [AuthGuard] },
   { path: 'bookmarks', component: BookmarksComponent, canActivate: [AuthGuard] },
   { path: 'bunnie-beaute', component: BunnieBeauteComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactComponent },
   { path: 'heather-mary-kay', component: HeatherMaryKayComponent, canActivate: [AuthGuard] },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent },
   { path: 'interior-design', component: InteriorDesingComponent, canActivate: [AuthGuard] },
   { path: 'journal', component: JournalComponent, canActivate: [AuthGuard] },
   { path: 'keatylins-beauty', component: KeatylinsBeautyComponent, canActivate: [AuthGuard] },
@@ -52,7 +52,7 @@ const routes: Routes = [
   { path: 'social-media', component: SocialMediaComponent, canActivate: [AuthGuard] },
   { path: 'smart-home', component: SmartHouseComponent, canActivate: [AuthGuard] },
   { path: 'the-fruit-plug', component: SadesFruitComponent, canActivate: [AuthGuard] },
-  { path: 'tishas-cupcakes', component: TishasCakesComponent, canActivate: [AuthGuard] },
+  { path: 'tishas-cupcakes', component: TishasCakesComponent },
   { path: 'under-construction', component: UnderConstructionComponent, canActivate: [AuthGuard] }
 ];
 
