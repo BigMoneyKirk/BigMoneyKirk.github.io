@@ -1,6 +1,42 @@
 $card-width: 200px;
 $bio-card-height: $card-width*2.5;
 
+.meet-the-team-box, .our-mission-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.meet-the-team-container, .our-mission-header-container {
+  text-align: center;
+  padding: 3rem 0;
+
+  h1, h4{
+    font-family: 'Bree Serif', serif;
+    color: white;
+    font-weight: 500;
+  }
+
+  h1{
+    font-size: 100px;
+  }
+
+}
+
+.our-mission-text-container{
+  p{
+    color: gold;
+  }
+}
+
+@media(max-width: 1150px){
+  .our-mission-text-container{
+    padding: 0 2rem 2rem 2rem;
+    // text-align: right;
+  }
+}
+
 *{
     margin: 0;
     padding: 0;
