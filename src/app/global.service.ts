@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GlobalService {
 
+  public isLoggedIn : boolean = false;
+
   constructor(private router: Router, private http: HttpClient) { }
 
   public navigate(path: string): void {

@@ -7,11 +7,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { HttpClient } from '@angular/common/http';
 import { NotificationModalService } from 'src/app/modals/notification-modal.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'messing-around-journal',
   templateUrl: './journal.component.html',
-  styleUrls: ['./journal.component.scss']
+  styleUrls: ['./journal.component.scss'],
+  providers: [FirebaseService]
 })
 export class JournalComponent implements OnInit {
 
@@ -19,6 +21,8 @@ export class JournalComponent implements OnInit {
 
   // TO-DO: This needs to be set dynamically
   private currentUsername = 'steve';
+  private uid: string = '';
+  public emailAddress: string;
 
   public journal_title: string = '';
   public journal_entry: string = '';
@@ -41,13 +45,17 @@ export class JournalComponent implements OnInit {
 
   constructor(private http: HttpClient, private dateFormatter: DateFormatterService, private fb: FormBuilder,
     // https://maximelafarie.com/ngx-smart-modal/#/
-    public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService, private notificationService: NotificationModalService
+    public ngxSmartModalService: NgxSmartModalService, private firebaseService: FirebaseService, private notificationService: NotificationModalService, public firebaseAuth: AngularFireAuth
   ) {
   }
 
   ngOnInit() {
     this.createForm();
-    this.getEntries();
+    this.firebaseAuth.user.subscribe(user => {
+      this.emailAddress = user.email;
+      this.uid = user.uid;
+      this.getEntries();
+    })
   }
 
   // ---------------- Form Stuff -----------------
@@ -60,12 +68,18 @@ export class JournalComponent implements OnInit {
   }
 
   public onSubmit(value) {
-    console.log(this.firebaseService.getUser(localStorage.getItem("userIDtoken")));
-    this.firebaseService.createJournalEntry(this.currentUsername, value).subscribe(() => {
+    this.firebaseService.createJournalEntry(this.uid, value).subscribe(() => {      
       this.getEntries();
       this.notificationService.success("The message has been saved successfully!");
     }, (error) => {
-      this.notificationService.error("There was some trouble saving your journal entry.");
+      switch(error.status){
+        case 401:
+          this.notificationService.error(`You are not authorized to write to this journal, playa.`);
+          break;
+        default:
+          this.notificationService.error(`There was some trouble saving your journal entry.`);
+          break;
+      }
     });
   }
 
@@ -74,6 +88,16 @@ export class JournalComponent implements OnInit {
     this.firebaseService.deleteJournalEntry(this.currentUsername, value.id).subscribe(() => {
       this.notificationService.success("The journal entry has been deleted.");
       this.getEntries();
+    },
+    (error) => {
+      switch(error.status){
+        case 401:
+          this.notificationService.error(`You are not authorized to delete this journal entry, playa.`);
+          break;
+        default:
+          this.notificationService.error(`There was some trouble saving your journal entry.`);
+          break;
+      }
     })
   }
 
@@ -97,16 +121,17 @@ export class JournalComponent implements OnInit {
   // ---------------- Firebase Functions -----------------
 
   public getEntries() {
-    this.firebaseService.getJournalEntries(this.currentUsername).subscribe(entries => {
-      this.journal_entries = entries;
-    });
+    this.firebaseService.getJournalEntries(this.uid)
+      .subscribe(entries => {
+        this.journal_entries = entries;
+      });
   }
 
-  public onDismiss(){
+  public onDismiss() {
     console.log("onDismiss()");
   }
 
-  public onClose(){
+  public onClose() {
     console.log("onClose()");
   }
 }

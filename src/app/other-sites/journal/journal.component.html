@@ -1,5 +1,8 @@
 <div class="page-margin">
     <!-- Journal Banner Logo -->
+    <div class="row">
+        <h1>Welcome, {{emailAddress}}!</h1>
+    </div>
     <div class="row logo-row">
         <div class="col-lg-3"></div>
         <div class="col-lg-6 logo-container">
@@ -74,7 +77,7 @@
             <!-- Title  -->
             <mat-form-field class="input-style title-font" floatLabel="never">
                 <input matInput placeholder="Enter title here" class="form-control" id="input-title"
-                    [(ngModel)]='journal_title' formControlName="title">
+                    formControlName="title">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.title">
                 <mat-error
@@ -85,7 +88,7 @@
 
             <!-- Write here -->
             <mat-form-field class="input-style">
-                <textarea matInput [(ngModel)]="journal_entry" placeholder="Write here what you want to say:"
+                <textarea matInput placeholder="Write here what you want to say:"
                     class="form-control" name="journalentryfield" id="journalentryfield" cols="30" rows="5"
                     formControlName="entry"></textarea>
             </mat-form-field>

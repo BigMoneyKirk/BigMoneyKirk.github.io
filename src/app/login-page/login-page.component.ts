@@ -17,7 +17,7 @@ import { PlaceholderDirective } from '../shared/placeholder/placeholder.directiv
 })
 export class LoginPageComponent implements OnInit {
 
-  @ViewChild(PlaceholderDirective, {static: false}) alertHost: PlaceholderDirective;
+  @ViewChild(PlaceholderDirective, { static: false }) alertHost: PlaceholderDirective;
 
   public isLoginMode: boolean = true;
   public isLoading: boolean = false;
@@ -49,10 +49,11 @@ export class LoginPageComponent implements OnInit {
 
     this.isLoading = true;
     if (this.isLoginMode) {
-      authObs = this.authService.login(email, password);
+      authObs =  this.authService.login(email, password);
     }
     else {
       authObs = this.authService.signup(email, password);
+      this.isLoading = false;
     }
 
     authObs.subscribe(data => {
@@ -61,7 +62,11 @@ export class LoginPageComponent implements OnInit {
       // pass a success token to the localStorage
       localStorage.setItem("successfulLogin", "true");
       localStorage.setItem("userIDtoken", data.localId);
+      localStorage.setItem("usertoken", data.idToken);
       this.router.navigate(['/home']);
+
+      // function to get all of that user's information; let's start with just their name. Welcome [insert user name here]
+
     },
       errorMessage => {
         this.showErrorAlert(errorMessage);

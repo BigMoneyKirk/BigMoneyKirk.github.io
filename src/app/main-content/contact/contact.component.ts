@@ -14,7 +14,6 @@ export class ContactComponent implements OnInit {
 
   // class variables
   contactForm: ContactForm = new ContactForm();
-  
 
   constructor(private firebaseService: FirebaseService, private notificationService: NotificationModalService, private globalService: GlobalService) { }
 

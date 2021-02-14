@@ -1,26 +1,34 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { exhaustMap, map, take } from 'rxjs/operators';
 import { JournalEntry } from '../models/journalentry';
 import { ContactForm } from '../models/contact-form';
+import { AuthService } from './auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
 
-  public currentUser;
+  public currentUser = this.firebaseAuth.auth.currentUser;
   public journalEntries: JournalEntry[] = [];
   private firebaseURL: string = 'https://messingaround-524ea.firebaseio.com/';
 
-  constructor(private http: HttpClient, public db: AngularFirestore) { }
+  constructor(private http: HttpClient, public db: AngularFirestore, private authService: AuthService, public firebaseAuth: AngularFireAuth) { }
+
+  getCurrentUser() {
+    return this.firebaseAuth.user.subscribe(user => {return user});
+  }
 
   getAvatars() {
     return this.db.collection('/avatar').valueChanges()
   }
 
   getUser(userKey) {
+    return this.db.collection("users").doc(userKey).snapshotChanges();
+    // return this.db.collection('Users', ref => ref.where('UserID', "==", userKey));
     // let r = this.http.get(`${this.firebaseURL}Users.json`);
     // r.subscribe(x => {
     //   console.log(x);
@@ -61,7 +69,7 @@ export class FirebaseService {
     });
   }
 
-  public createContactEntry(contact : ContactForm){
+  public createContactEntry(contact: ContactForm) {
     return this.http.post<ContactForm>(`${this.firebaseURL}Contact%20Info/${contact.FirstName}%20${contact.LastName}.json`, contact);
   }
 

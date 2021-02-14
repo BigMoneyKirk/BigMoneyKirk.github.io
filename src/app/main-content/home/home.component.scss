@@ -7,9 +7,20 @@
     border: 5px solid gold;
 }
 
+.test{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ke_logo_container{
+    max-width: 50%;
+}
+
 .ke_logo{
-    width: 100%;
-    background-color: black;
+    padding: 3rem 0;
+    height: 85%;
+    width: 50%;
 }
 
 .row{

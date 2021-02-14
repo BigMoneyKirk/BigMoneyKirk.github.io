@@ -1,39 +1,86 @@
 <div class="page-margin">
-    <div class="col-xl-12 center-text">
+    <div class="col-xs-12 center-text">
         <h3 class="contact-us-header">Contact us</h3>
 
         <hr>
 
-        <form>
+        <form #contact="ngForm">
+
             <div class="form-group">
+                <!-- First Name -->
                 <div class="first-name">First Name: </div>
-                <div class="center-input-container">
-                    <input type="text" class="form-control" name="first-name-input" [(ngModel)]="contactForm.FirstName">
+                <div class="row">
+                    <div class="center-input-container col-xs-12 col-md-12">
+                        <input type="text" class="form-control col-xs-12 col-md-6" name="first-name-input"
+                            [(ngModel)]="contactForm.FirstName" #firstName="ngModel" required>
+                    </div>
+                </div>
+                <!-- First Name error message -->
+                <div class="row error-container" *ngIf="firstName.touched && firstName.invalid">
+                    <div class="col-xs-12 col-md-6 alert alert-danger">
+                        The First Name is a requirement.
+                    </div>
                 </div>
 
+                <!-- Last Name -->
                 <div class="last-name">Last Name: </div>
-                <div class="center-input-container">
-                    <input type="text" class="form-control" name="last-name-input" [(ngModel)]="contactForm.LastName">
+                <div class="row">
+                    <div class="center-input-container col-xs-12 col-md-12">
+                        <input type="text" class="form-control col-xs-12 col-md-6" name="last-name-input"
+                            [(ngModel)]="contactForm.LastName" #lastName="ngModel" required>
+                    </div>
+                </div>
+                <!-- Last Name error message -->
+                <div class="row error-container" *ngIf="lastName.touched && lastName.invalid">
+                    <div class="col-xs-12 col-md-6 alert alert-danger">
+                        The Last Name is a requirement.
+                    </div>
                 </div>
 
+                <!-- Phone Number -->
                 <div class="phone-number">Phone Number: </div>
-                <div class="center-input-container">
-                    <input type="phone" class="form-control" name="phone-number-input" [(ngModel)]="contactForm.PhoneNumber">
+                <div class="row">
+                    <div class="center-input-container col-xs-12 col-md-12">
+                        <input type="phone" class="form-control col-xs-12 col-md-6" name="phone-number-input"
+                            [(ngModel)]="contactForm.PhoneNumber" #phoneNumber="ngModel" required>
+                    </div>
+                </div>
+                <!-- Phone Number error message -->
+                <div class="row error-container" *ngIf="phoneNumber.touched && phoneNumber.invalid">
+                    <div class="col-xs-12 col-md-6 alert alert-danger">
+                        The Phone Number is a requirement.
+                    </div>
                 </div>
 
+                <!-- Email -->
                 <div class="email">Email: </div>
-                <div class="center-input-container">
-                    <input type="email" class="form-control" name="email-input" [(ngModel)]="contactForm.Email">
+                <div class="row">
+                    <div class="center-input-container col-xs-12 col-md-12">
+                        <input type="email" class="form-control col-xs-12 col-md-6" name="email-input"
+                            [(ngModel)]="contactForm.Email" #eMail="ngModel" required>
+                    </div>
+                </div>
+                <!-- Email error message -->
+                <div class="row error-container" *ngIf="eMail.touched && eMail.invalid">
+                    <div class="col-xs-12 col-md-6 alert alert-danger">
+                        The Email is a requirement.
+                    </div>
                 </div>
 
+                <!-- Comments -->
                 <div class="comments">Comments: </div>
-                <div class="center-input-container">
-                    <textarea [(ngModel)]="contactForm.Comments" class="form-control" name="comments-input">
-            </textarea>
+                <div class="row">
+                    <div class="center-input-container col-xs-12 col-md-12">
+                        <textarea [(ngModel)]="contactForm.Comments" class="form-control col-xs-12 col-md-6"
+                            name="comments-input">
+                        </textarea>
+                    </div>
                 </div>
 
+                <!-- Submit button -->
                 <div class="submit-button-holder">
-                    <button class="btn btn-success submit-button" type="submit" (click)="onSubmit()">Submit</button>
+                    <button class="btn btn-success submit-button" type="submit" (click)="onSubmit()"
+                        [disabled]="!contact.valid">Submit</button>
                 </div>
             </div>
         </form>
