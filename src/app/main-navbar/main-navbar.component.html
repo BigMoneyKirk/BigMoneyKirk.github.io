@@ -76,25 +76,11 @@
         </li>
 
         <!-- Webistes Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" title="Webistes Dropdown" [routerLink]="['/websites']" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/websites']" title="Websites">
             Websites
+            <span><i class="fas fa-globe"></i></span>
           </a>
-
-          <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
-            <a [routerLink]="['/tishas-cupcakes']" class="dropdown-item">Tisha's Cupcakes</a>
-            <a [routerLink]="['/recycling']" class="dropdown-item">Recycling</a>
-            <a [routerLink]="['/smart-home']" class="dropdown-item" hidden>Grant and Kirk's Smart Home</a>
-            <a [routerLink]="['/interior-design']" class="dropdown-item" hidden>EJ's Interior Designing</a>
-            <a [routerLink]="['/the-fruit-plug']" class="dropdown-item" hidden>The Fruit Plug</a>
-            <a [routerLink]="['/best-buddies']" class="dropdown-item" hidden>Best Buddies</a>
-            <a [routerLink]="['/bunnie-beaute']" class="dropdown-item" hidden>Bunnie Beaute</a>
-            <a [routerLink]="['/sandras-record-keeping']" class="dropdown-item" hidden>Sandra's Record Keeping</a>
-            <a [routerLink]="['/screven-forward']" class="dropdown-item" hidden>Screven Forward</a>
-            <a [routerLink]="['/heather-mary-kay']" class="dropdown-item" hidden>Heather's Mary Kay</a>
-            <a [routerLink]="['/kirkland-loan']" class="dropdown-item" hidden>Kirkland Loan</a>
-            <!-- <a [routerLink]="['/kevins-vision']" class="dropdown-item">Kevin's Vision</a> -->
-          </div>
         </li>
       </ul>
     </div>
@@ -126,10 +112,10 @@
         <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
           aria-labelledby="navbarDropdownMenuLink-55">
           <a class="dropdown-item" [routerLink]="['/blog']">Blog</a>
-          <a class="dropdown-item" [routerLink]="['/home']">Profile</a>
-          <a class="dropdown-item" [routerLink]="['/journal']">Journal</a>
-          <a class="dropdown-item" [routerLink]="['/passions']">Passions</a>
-          <a class="dropdown-item" [routerLink]="['/settings']">Settings</a>
+          <a class="dropdown-item" [routerLink]="['/home']" hidden>Profile</a>
+          <a class="dropdown-item" [routerLink]="['/journal']" hidden>Journal</a>
+          <a class="dropdown-item" [routerLink]="['/passions']" hidden>Passions</a>
+          <a class="dropdown-item" [routerLink]="['/settings']" hidden>Settings</a>
           <a class="dropdown-item" (click)="logout()">Sign Out</a>
         </div>
       </li>
