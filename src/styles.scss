@@ -132,3 +132,13 @@ html{
     border-radius: 10px;
     background: linear-gradient(to top, #fcb045, #fd1d1d, #1e95c4, #833ab4);
   }
+
+  @font-face{
+    font-family: controlFont;
+    src: url(assets/fonts/itc-avant-garde-gothic-lt-bold.ttf);
+  }
+
+  @font-face{
+    font-family: journalFont;
+    src: url(assets/fonts/Journal/journal.ttf);
+  }

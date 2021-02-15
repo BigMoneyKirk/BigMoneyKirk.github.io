@@ -4,13 +4,27 @@
 }
 
 .body{
+    background: black;
+}
+
+.website-list-container{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: black;
     // background: #0d0f1b;
     overflow: hidden;
+}
+
+.header-container{
+    text-align: center;
+    padding: 8em 0 0 0;
+}
+
+h1{
+    font-family: controlFont;
+    color: white;
+    font-size: 100px;
 }
 
 ul{
