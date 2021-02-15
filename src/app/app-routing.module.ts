@@ -26,6 +26,7 @@ import { ScrevenForwardComponent } from './other-sites/screven-forward/screven-f
 import { AuthGuard } from './guards/auth.guard';
 import { ContactComponent } from './main-content/contact/contact.component';
 import { RecyclingComponent } from './other-sites/recycling/recycling.component';
+import { WebsitesComponent } from './other-sites/websites/websites.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -53,7 +54,8 @@ const routes: Routes = [
   { path: 'smart-home', component: SmartHouseComponent, canActivate: [AuthGuard] },
   { path: 'the-fruit-plug', component: SadesFruitComponent, canActivate: [AuthGuard] },
   { path: 'tishas-cupcakes', component: TishasCakesComponent },
-  { path: 'under-construction', component: UnderConstructionComponent, canActivate: [AuthGuard] }
+  { path: 'under-construction', component: UnderConstructionComponent },
+  { path: 'websites', component: WebsitesComponent }
 ];
 
 @NgModule({
