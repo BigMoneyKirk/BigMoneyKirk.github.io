@@ -7,13 +7,21 @@
     background: black;
 }
 
-.website-list-container{
+.categories-container{
     display: flex;
     justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.website-list-container{
+    display: flex;
+    // justify-content: center;
     align-items: center;
     min-height: 100vh;
     // background: #0d0f1b;
     overflow: hidden;
+    width: 100%;
 }
 
 .header-container{
@@ -27,23 +35,23 @@ h1{
     font-size: 100px;
 }
 
-ul{
+.website-list-container ul{
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-ul li
+.website-list-container ul li
 {
     list-style: none;
 }
 
-ul li:before
+.website-list-container ul li:before
 {
     content: attr(data-text);
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 185%;
     transform: translate(-50%, -50%);
     color: #fff;
     font-size: 6em;
@@ -55,13 +63,13 @@ ul li:before
     white-space: nowrap;
 }
 
-ul li:hover:before
+.website-list-container ul li:hover:before
 {
     opacity: 0.15;
     letter-spacing: 0px;   
 }
 
-ul li a
+.website-list-container ul li a
 {
     position: relative;
     display: inline-block;
@@ -79,12 +87,12 @@ ul li a
     z-index: 1;
 }
 
-ul:hover li a
+.website-list-container ul:hover li a
 {
     opacity: 0;
 }
 
-ul li a:hover
+.website-list-container ul li a:hover
 {
     transform: scale(1.4);
     z-index: 2;
@@ -94,7 +102,7 @@ ul li a:hover
     opacity: 1;
 }
 
-ul li a:before
+.website-list-container ul li a:before
 {
     content: '';
     position: absolute;
@@ -107,7 +115,7 @@ ul li a:before
     transition: 0s;
 }
 
-ul li a:hover:before
+.website-list-container ul li a:hover:before
 {
     left: calc(100% + 100px);
     transition: 0.5s;
