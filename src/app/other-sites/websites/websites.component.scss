@@ -1,12 +1,63 @@
 .body{
-    background: black;
+    background: #091921;
 }
 
 .categories-container{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
+    flex-direction: column;
+    min-height: 100vh;
+
+    p{
+        color: #215e65;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    label {
+        position: relative;
+
+        input {
+            appearance: none; // important, because this is why the button select doesn't appear on the frontend
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        input:checked ~ .far, input:checked ~ .fas{
+            color: #00fff1;
+            box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1),
+                        inset 2px 2px 6px rgba(0, 0, 0, 1);
+            text-shadow: 0 0 40px #00fff1,
+                         0 0 2px #b7faf7;
+        }
+
+        .far, .fas {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background: #091921;
+            line-height: 40px;
+            text-align: center;
+            margin: 0 4px;
+            color: #6f6f6f;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+                        2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .far:hover, .fas:hover {
+            box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+            2px 2px 6px rgba(0, 0, 0, 0.8),
+            inset -2px -2px 10px rgba(255, 255, 255, 0.05),
+            inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
 }
 
 .website-list-container{
@@ -115,8 +166,4 @@ h1{
     left: calc(100% + 100px);
     transition: 0.5s;
     transition-delay: 0.2s;
-}
-
-p, i{
-    color: white;
 }
