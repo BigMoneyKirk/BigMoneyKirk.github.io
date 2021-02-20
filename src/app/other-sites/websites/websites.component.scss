@@ -2,6 +2,10 @@
     background: #091921;
 }
 
+.entire-container{
+    margin: 0;
+}
+
 // Category Container
 
 .categories-container{
@@ -78,9 +82,9 @@
     // justify-content: center;
     align-items: center;
     min-height: 100vh;
-    // background: #0d0f1b;
     overflow: hidden;
-    width: 100%;
+    // width: 100%;
+    padding: 0;
 }
 
 .header-container{
@@ -98,6 +102,8 @@ h1{
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    left: 25%;
 }
 
 .website-list-container ul li
@@ -111,7 +117,7 @@ h1{
     position: absolute;
     width: 100%;
     top: 50%;
-    transform: translate(0%, -50%);
+    transform: translate(-75%, -50%);
     color: #fff;
     font-size: 5em;
     font-weight: 700;
