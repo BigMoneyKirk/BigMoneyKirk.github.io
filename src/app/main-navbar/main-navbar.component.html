@@ -59,14 +59,6 @@
           </a>
         </li>
 
-        <!-- About Link -->
-        <li class="nav-item" hidden>
-          <a class="nav-link" [routerLink]="['/about']" title="About">
-            About
-            <span><i class="fas fa-question-circle"></i></span>
-          </a>
-        </li>
-
         <!-- Contact Us Link -->
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/contact']" title="Contact Us">
@@ -82,11 +74,19 @@
             <span><i class="fas fa-globe"></i></span>
           </a>
         </li>
+
+        <!-- About Link -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/about']" title="About">
+            About
+            <span><i class="fas fa-question-circle"></i></span>
+          </a>
+        </li>
       </ul>
     </div>
 
     <!-- About Link (Hidden when logged in. Shown when logged out) -->
-    <div class="main-nav-btns just-about" *ngIf="!authorized()">
+    <div class="main-nav-btns just-about" *ngIf="!authorized()" hidden>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/about']"><span>About <i class="fas fa-question-circle"></i></span></a>
