@@ -103,7 +103,7 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    left: 25%;
+    // left: 25%;
 }
 
 .website-list-container ul li
@@ -117,7 +117,7 @@ h1{
     position: absolute;
     width: 100%;
     top: 50%;
-    transform: translate(-75%, -50%);
+    transform: translate(-35%, -50%);
     color: #fff;
     font-size: 5em;
     font-weight: 700;
@@ -185,4 +185,8 @@ h1{
     left: calc(100% + 100px);
     transition: 0.5s;
     transition-delay: 0.2s;
+}
+
+.website-container{
+    width: 100%;
 }

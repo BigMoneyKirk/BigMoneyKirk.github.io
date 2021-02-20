@@ -8,50 +8,97 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-xl-6 categories-container">
             <p>Cakes</p>
             <label>
-                <input type="radio" name="category" value="Cakes" title="Cakes" id="cakes">
+                <input type="radio" name="category" value="cakes" title="Cakes" id="cakes" (click)="setCategory('cakes')">
                 <i class="fas fa-birthday-cake"></i>
             </label>
             <p>Fashion</p>
             <label>
-                <input type="radio" name="category" value="Fashion" title="Fashion" id="fashion">
+                <input type="radio" name="category" value="Fashion" title="Fashion" id="fashion" (click)="setCategory('fashion')">
                 <i class="fas fa-tshirt"></i>
             </label>
             <p>Beauty and Cosmetics</p>
             <label>
-                <input type="radio" name="category" value="Beauty" title="Beauty and Cosmetics" id="beauty">
+                <input type="radio" name="category" value="Beauty" title="Beauty and Cosmetics" id="beauty" (click)="setCategory('beauty')">
                 <i class="fas fa-female"></i>
             </label>
             <p>Art</p>
             <label>
-                <input type="radio" name="category" value="Art" title="Art" id="art">
+                <input type="radio" name="category" value="Art" title="Art" id="art" (click)="setCategory('art')">
                 <i class="fas fa-paint-brush"></i>
             </label>
             <p>Technology</p>
             <label>
-                <input type="radio" name="category" value="Technology" title="Techology" id="techology">
+                <input type="radio" name="category" value="Technology" title="Techology" id="techology" (click)="setCategory('technology')">
                 <i class="fas fa-laptop-code"></i>
             </label>
         </div>
 
         <!-- Websites -->
         <div class="website-list-container col-xs-12 col-sm-12 col-md-6 col-xl-6">
-            <ul>
-                <li data-text="Poetry and Spoken Word">
-                    <a href="https://www.instagram.com/keupoetrysw/" target="_blank">
-                        Poetry and Spoken Word
-                    </a>
-                </li>
-                <li data-text="Lala's Cupcakes">
-                    <a href="https://www.instagram.com/lalascupcakesnj/" target="_blank">
-                        Lala's Cupcakes
-                    </a>
-                </li>
-                <li data-text="Save the Environment">
-                    <a href="https://oceanservice.noaa.gov/ocean/earthday.html" target="_blank">
-                        Save the Environment
-                    </a>
-                </li>
-            </ul>
+            <!-- Cakes -->
+            <div class="website-container cakes-container" *ngIf="categoryModel == 'cakes'">
+                <ul>
+                    <li data-text="Lala's Cupcakes">
+                        <a href="https://www.instagram.com/lalascupcakesnj/" target="_blank">
+                            Lala's Cupcakes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Fashion -->
+            <div class="website-container fashion-container" *ngIf="categoryModel == 'fashion'">
+                <ul>
+                    <li data-text="Poetry and Spoken Word">
+                        <a href="https://www.instagram.com/keupoetrysw/" target="_blank">
+                            Poetry and Spoken Word
+                        </a>
+                    </li>
+                    <li data-text="Lala's Cupcakes">
+                        <a href="https://www.instagram.com/lalascupcakesnj/" target="_blank">
+                            Lala's Cupcakes
+                        </a>
+                    </li>
+                    <li data-text="Save the Environment">
+                        <a href="https://oceanservice.noaa.gov/ocean/earthday.html" target="_blank">
+                            Save the Environment
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Beauty and Cosmetics -->
+            <div class="website-container beauty-container" *ngIf="categoryModel == 'beauty'">
+                <ul>
+                    <li data-text="Poetry and Spoken Word">
+                        <a href="https://www.instagram.com/keupoetrysw/" target="_blank">
+                            Poetry and Spoken Word2
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Art -->
+            <div class="website-container art-container" *ngIf="categoryModel == 'art'">
+                <ul>
+                    <li data-text="Poetry and Spoken Word">
+                        <a href="https://www.instagram.com/keupoetrysw/" target="_blank">
+                            Poetry and Spoken Word
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Technology -->
+            <div class="website-container technology-container" *ngIf="categoryModel == 'technology'">
+                <ul>
+                    <li data-text="Save the Environment">
+                        <a href="https://oceanservice.noaa.gov/ocean/earthday.html" target="_blank">
+                            Save the Environment
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

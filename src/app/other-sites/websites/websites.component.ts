@@ -8,10 +8,16 @@ import * as $ from 'jquery';
 })
 export class WebsitesComponent implements OnInit {
 
+  public categoryModel: string = "";
+
   constructor() { }
 
   ngOnInit() {
     this.slideCategoryDiv();
+  }
+
+  public setCategory(category){
+    this.categoryModel = category;
   }
 
   private slideCategoryDiv() {
