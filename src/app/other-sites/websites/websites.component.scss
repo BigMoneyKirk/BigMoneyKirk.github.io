@@ -2,6 +2,8 @@
     background: #091921;
 }
 
+// Category Container
+
 .categories-container{
     position: relative;
     display: flex;
@@ -10,12 +12,15 @@
     overflow: hidden;
     flex-direction: column;
     min-height: 100vh;
+    transform: translate(45%);
 
     p{
         color: #215e65;
         font-size: 1.5rem;
         font-weight: 500;
         margin-bottom: 5px;
+        font-family: controlFont;
+        text-transform: uppercase;
     }
 
     label {
@@ -33,6 +38,7 @@
                         inset 2px 2px 6px rgba(0, 0, 0, 1);
             text-shadow: 0 0 40px #00fff1,
                          0 0 2px #b7faf7;
+            transition: 0.5s;
         }
 
         .far, .fas {
@@ -59,6 +65,13 @@
         }
     }
 }
+
+.categories-container-slide {
+    transform: translate(0%);
+    transition: 1s;
+}
+
+// Website List Container
 
 .website-list-container{
     display: flex;
