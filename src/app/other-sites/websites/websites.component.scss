@@ -82,8 +82,8 @@
     // justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
-    // width: 100%;
+    overflow: visible;
+    max-width: 50vw;
     padding: 0;
 }
 
@@ -109,6 +109,7 @@ h1{
 .website-list-container ul li
 {
     list-style: none;
+    width: 100%;
 }
 
 .website-list-container ul li:before
@@ -119,13 +120,14 @@ h1{
     top: 50%;
     transform: translate(-35%, -50%);
     color: #fff;
-    font-size: 5em;
+    font-size: 3em;
     font-weight: 700;
     pointer-events: none;
     opacity: 0;
     letter-spacing: 20px;
     transition: 0.5s;
     white-space: nowrap;
+    font-family: controlFont;
 }
 
 .website-list-container ul li:hover:before
