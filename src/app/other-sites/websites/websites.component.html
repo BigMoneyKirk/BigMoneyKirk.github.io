@@ -1,0 +1,115 @@
+<div id="progressbar"></div>
+<div class="body">
+    <div class="header-container">
+        <h1>THE WEBSITES</h1>
+    </div>
+    <div class="row entire-container">
+
+        <!-- Categories -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-xl-6 categories-container">
+            <p>Cakes</p>
+            <label>
+                <input type="radio" name="category" value="cakes" title="Cakes" id="cakes" (click)="setCategory('cakes')">
+                <i class="fas fa-birthday-cake"></i>
+            </label>
+            <p>Fashion</p>
+            <label>
+                <input type="radio" name="category" value="Fashion" title="Fashion" id="fashion" (click)="setCategory('fashion')">
+                <i class="fas fa-tshirt"></i>
+            </label>
+            <p>Beauty and Cosmetics</p>
+            <label>
+                <input type="radio" name="category" value="Beauty" title="Beauty and Cosmetics" id="beauty" (click)="setCategory('beauty')">
+                <i class="fas fa-female"></i>
+            </label>
+            <p>Art</p>
+            <label>
+                <input type="radio" name="category" value="Art" title="Art" id="art" (click)="setCategory('art')">
+                <i class="fas fa-paint-brush"></i>
+            </label>
+            <p>Technology</p>
+            <label class="last-label">
+                <input type="radio" name="category" value="Technology" title="Techology" id="techology" (click)="setCategory('technology')">
+                <i class="fas fa-laptop-code"></i>
+            </label>
+        </div>
+
+        <!-- Websites -->
+        <div class="website-list-container col-xs-12 col-sm-12 col-md-6 col-xl-6">
+            <!-- Cakes -->
+            <div class="website-container cakes-container" *ngIf="categoryModel == 'cakes'">
+                <ul>
+                    <li data-text="Lala's Cupcakes">
+                        <a href="https://www.instagram.com/lalascupcakesnj/" target="_blank">
+                            Lala's Cupcakes
+                        </a>
+                    </li>
+                    <li data-text="VTasteCakes">
+                        <a href="https://www.vtastecakes.com/online-order" target="_blank">
+                            VTasteCakes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Fashion -->
+            <div class="website-container fashion-container" *ngIf="categoryModel == 'fashion'">
+                <ul>
+                    <li data-text="Unashamed Appearl">
+                        <a href="https://www.myunashamedapparel.com/" target="_blank">
+                            Unashamed Appearl
+                        </a>
+                    </li>
+                    <li data-text="Marley's BeadsNess">
+                        <a href="https://www.instagram.com/marley_beadsness/" target="_blank">
+                            Marley's BeadsNess
+                        </a>
+                    </li>
+                    <li data-text="t.kirkland.kollection">
+                        <a href="https://www.instagram.com/t.kirkland.kollection/" target="_blank">       
+                        t.kirkland.kollection
+                        </a>
+                    </li>
+                    <li data-text="Divine Designs By Nikki">
+                        <a href="https://www.divinedesignsbynikki.com/" target="_blank">       
+                            Divine Designs By Nikki
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Beauty and Cosmetics -->
+            <div class="website-container beauty-container" *ngIf="categoryModel == 'beauty'">
+                <ul>
+                    <li data-text="Intoxicant Beauty">
+                        <a href="https://www.instagram.com/intoxicantbeauty/" target="_blank">
+                            Intoxicant Beauty
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Art -->
+            <div class="website-container art-container" *ngIf="categoryModel == 'art'">
+                <ul>
+                    <li data-text="JEMS CREATIONS ART">
+                        <a href="https://www.jemscreations.art/" target="_blank">
+                            JEMS CREATIONS ART
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Technology -->
+            <div class="website-container technology-container" *ngIf="categoryModel == 'technology'">
+                <ul>
+                    <li data-text="Prototype">
+                        <a href="https://kirklandenterprise5.wixsite.com/keu1/featured" target="_blank">
+                            Prototype
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
