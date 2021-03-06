@@ -1,14 +1,14 @@
-.body{
+.body {
     background: #091921;
 }
 
-.entire-container{
+.entire-container {
     margin: 0;
 }
 
 // Category Container
 
-.categories-container{
+.categories-container {
     position: relative;
     display: flex;
     justify-content: center;
@@ -17,15 +17,6 @@
     flex-direction: column;
     min-height: 100vh;
     transform: translate(45%);
-
-    p{
-        color: #215e65;
-        font-size: 1.5rem;
-        font-weight: 500;
-        margin-bottom: 5px;
-        font-family: controlFont;
-        text-transform: uppercase;
-    }
 
     label {
         position: relative;
@@ -37,16 +28,16 @@
             cursor: pointer;
         }
 
-        input:checked ~ .far, input:checked ~ .fas{
+        input:checked ~ .far,
+        input:checked ~ .fas {
             color: #00fff1;
-            box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1),
-                        inset 2px 2px 6px rgba(0, 0, 0, 1);
-            text-shadow: 0 0 40px #00fff1,
-                         0 0 2px #b7faf7;
+            box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 1);
+            text-shadow: 0 0 40px #00fff1, 0 0 2px #b7faf7;
             transition: 0.5s;
         }
 
-        .far, .fas {
+        .far,
+        .fas {
             position: relative;
             width: 40px;
             height: 40px;
@@ -58,21 +49,47 @@
             font-size: 1.5rem;
             border-radius: 50%;
             cursor: pointer;
-            box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
-                        2px 2px 6px rgba(0, 0, 0, 0.8);
+            box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8);
         }
 
-        .far:hover, .fas:hover {
-            box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
-            2px 2px 6px rgba(0, 0, 0, 0.8),
-            inset -2px -2px 10px rgba(255, 255, 255, 0.05),
-            inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+        .far:hover,
+        .fas:hover {
+            box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8),
+                inset -2px -2px 10px rgba(255, 255, 255, 0.05), inset 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
     }
 
     .last-label {
         margin-bottom: 0;
     }
+}
+
+.categories-container p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-family: controlFont;
+    text-transform: uppercase;
+}
+
+.categories-container p:nth-child(1) {
+    color: #fff171e7;
+}
+
+.categories-container p:nth-child(3) {
+    color: #00a2ff;
+}
+
+.categories-container p:nth-child(5) {
+    color: #e20000;
+}
+
+.categories-container p:nth-child(7) {
+    color: #ff6720;
+}
+
+.categories-container p:nth-child(9) {
+    color: #7c50ff;
 }
 
 .categories-container-slide {
@@ -82,7 +99,7 @@
 
 // Website List Container
 
-.website-list-container{
+.website-list-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,18 +108,18 @@
     padding: 0;
 }
 
-.header-container{
+.header-container {
     text-align: center;
     padding: 8em 0 0 0;
 }
 
-h1{
+h1 {
     font-family: controlFont;
     color: white;
     font-size: 100px;
 }
 
-.website-list-container ul{
+.website-list-container ul {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -110,14 +127,12 @@ h1{
     width: 100%;
 }
 
-.website-list-container ul li
-{
+.website-list-container ul li {
     list-style: none;
     width: 80%;
 }
 
-.website-list-container ul li:before
-{
+.website-list-container ul li:before {
     content: attr(data-text);
     position: absolute;
     top: 50%;
@@ -133,14 +148,12 @@ h1{
     font-family: controlFont;
 }
 
-.website-list-container ul li:hover:before
-{
+.website-list-container ul li:hover:before {
     opacity: 0.15;
-    letter-spacing: 0px;   
+    letter-spacing: 0px;
 }
 
-.website-list-container ul li a
-{
+.website-list-container ul li a {
     position: relative;
     display: inline-block;
     margin-bottom: 10px;
@@ -157,13 +170,11 @@ h1{
     z-index: 1;
 }
 
-.website-list-container ul:hover li a
-{
+.website-list-container ul:hover li a {
     opacity: 0;
 }
 
-.website-list-container ul li a:hover
-{
+.website-list-container ul li a:hover {
     transform: scale(1.4);
     z-index: 2;
     background: #ff3f81;
@@ -172,9 +183,8 @@ h1{
     opacity: 1;
 }
 
-.website-list-container ul li a:before
-{
-    content: '';
+.website-list-container ul li a:before {
+    content: "";
     position: absolute;
     top: 0;
     left: -100px;
@@ -185,14 +195,13 @@ h1{
     transition: 0s;
 }
 
-.website-list-container ul li a:hover:before
-{
+.website-list-container ul li a:hover:before {
     left: calc(100% + 100px);
     transition: 0.5s;
     transition-delay: 0.2s;
 }
 
-.website-container{
+.website-container {
     width: 100%;
     display: flex;
     justify-content: center;
