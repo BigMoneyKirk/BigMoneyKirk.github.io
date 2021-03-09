@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'best-buddies', component: BestBuddiesComponent, canActivate: [AuthGuard] },
   { path: 'bible', component: BibleComponent },
-  { path: 'blog', component: BlogComponent, canActivate: [AuthGuard] },
+  { path: 'blog', component: BlogComponent },
   { path: 'bookmarks', component: BookmarksComponent, canActivate: [AuthGuard] },
   { path: 'bunnie-beaute', component: BunnieBeauteComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactComponent },
