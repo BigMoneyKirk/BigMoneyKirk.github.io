@@ -1,0 +1,30 @@
+.body {
+    margin: 0;
+    padding: 0;
+    background: rgb(83, 0, 139);
+}
+
+.good-schemin {
+    height: 100vh;
+}
+
+.title {
+    text-align: center;
+}
+
+.title h1 {
+    color: limegreen;
+    font-weight: 900;
+    text-shadow: 3px -5px darkblue,
+                 0 0 50px limegreen;
+    animation: animate 1s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}

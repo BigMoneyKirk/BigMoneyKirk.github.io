@@ -47,6 +47,7 @@ import { ContactComponent } from './main-content/contact/contact.component';
 import { BibleService } from './services/bible.service';
 import { RecyclingComponent } from './other-sites/recycling/recycling.component';
 import { WebsitesComponent } from './other-sites/websites/websites.component';
+import { GoodScheminComponent } from './other-sites/good-schemin/good-schemin.component';
 // import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
@@ -83,7 +84,8 @@ import { WebsitesComponent } from './other-sites/websites/websites.component';
     PlaceholderDirective,
     ContactComponent,
     RecyclingComponent,
-    WebsitesComponent
+    WebsitesComponent,
+    GoodScheminComponent
   ],
   entryComponents: [
     NewEntryComponent,

@@ -27,6 +27,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { ContactComponent } from './main-content/contact/contact.component';
 import { RecyclingComponent } from './other-sites/recycling/recycling.component';
 import { WebsitesComponent } from './other-sites/websites/websites.component';
+import { GoodScheminComponent } from './other-sites/good-schemin/good-schemin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: 'bookmarks', component: BookmarksComponent, canActivate: [AuthGuard] },
   { path: 'bunnie-beaute', component: BunnieBeauteComponent, canActivate: [AuthGuard] },
   { path: 'contact', component: ContactComponent },
+  { path: 'good-schemin', component: GoodScheminComponent },
   { path: 'heather-mary-kay', component: HeatherMaryKayComponent, canActivate: [AuthGuard] },
   { path: 'home', component: HomeComponent },
   { path: 'interior-design', component: InteriorDesingComponent, canActivate: [AuthGuard] },
