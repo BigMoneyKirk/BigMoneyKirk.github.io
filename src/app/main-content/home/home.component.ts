@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
 
   public state = 'normal';
   public king = this.globalImage.king;
-  public logoUrl = this.globalImage.logoUrl;
+  public logoUrl = this.globalImage.logoWhite;
   public welcomeLogoUrl = "https://fontmeme.com/permalink/191007/2ac185608541058593593bb536036fe6.png";
   public welcomeLogo2Url = "https://fontmeme.com/permalink/191015/8df3be736d6f57ed67102608a9251e75.png";
 
