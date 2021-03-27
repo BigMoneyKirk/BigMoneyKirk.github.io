@@ -59,48 +59,48 @@ export class HomeComponent implements OnInit {
   constructor(private globalImage: GlobalImageService, private firebaseService: FirebaseService) { }
 
   ngOnInit() {
-    this.thankyouAnimation();
+    // this.thankyouAnimation();
   }
 
   // ------------------- Scripture -------------------
 
-  public luke4_18() {
-    return `Luke 4:18-19 The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free, to proclaim the year of the Lord's favor.`;
-  }
+  // public luke4_18() {
+  //   return `Luke 4:18-19 The Spirit of the Lord is on me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim freedom for the prisoners and recovery of sight for the blind, to set the oppressed free, to proclaim the year of the Lord's favor.`;
+  // }
 
-  public _1peter4_8_10() {
-    return `1 Peter 4:8-10 (ESV) Above all, keep loving one another earnestly, since love covers a multitude of sins. Show hospitality to one another without grumbling. As each has received a gift, use it to serve one another, as good stewards of God's varied grace:`;
-  }
+  // public _1peter4_8_10() {
+  //   return `1 Peter 4:8-10 (ESV) Above all, keep loving one another earnestly, since love covers a multitude of sins. Show hospitality to one another without grumbling. As each has received a gift, use it to serve one another, as good stewards of God's varied grace:`;
+  // }
 
-  // ------------------ Animation ---------------------
+  // // ------------------ Animation ---------------------
 
-  public thankyouAnimation() {
-    const thankYouElement = document.querySelector('#thank-you');
-    this.animateCSS('#thank-you', 'zoomInDown', () => {
-      thankYouElement.classList.add('animated', 'delay-3s', 'zoomOutDown');
-      $(thankYouElement).delay(4000).hide(0);
-    });
+  // public thankyouAnimation() {
+  //   const thankYouElement = document.querySelector('#thank-you');
+  //   this.animateCSS('#thank-you', 'zoomInDown', () => {
+  //     thankYouElement.classList.add('animated', 'delay-3s', 'zoomOutDown');
+  //     $(thankYouElement).delay(4000).hide(0);
+  //   });
 
-    const gladElement = document.querySelector('#glad');
-    $(gladElement).hide(0);
-    $(gladElement).delay(6000).show(0);
-    this.animateCSS('#glad', 'zoomInDown', () => {
-      gladElement.classList.add('animated', 'delay-3s', 'zoomOutDown');
-      $(gladElement).delay(4000).hide(0);
-    });
-  }
+  //   const gladElement = document.querySelector('#glad');
+  //   $(gladElement).hide(0);
+  //   $(gladElement).delay(6000).show(0);
+  //   this.animateCSS('#glad', 'zoomInDown', () => {
+  //     gladElement.classList.add('animated', 'delay-3s', 'zoomOutDown');
+  //     $(gladElement).delay(4000).hide(0);
+  //   });
+  // }
 
-  public animateCSS(element, animationName, callback) {
-    const node = document.querySelector(element)
-    node.classList.add('animated', animationName)
+  // public animateCSS(element, animationName, callback) {
+  //   const node = document.querySelector(element)
+  //   node.classList.add('animated', animationName)
 
-    function handleAnimationEnd() {
-      node.classList.remove('animated', animationName)
-      node.removeEventListener('animationend', handleAnimationEnd)
+  //   function handleAnimationEnd() {
+  //     node.classList.remove('animated', animationName)
+  //     node.removeEventListener('animationend', handleAnimationEnd)
 
-      if (typeof callback === 'function') callback()
-    }
+  //     if (typeof callback === 'function') callback()
+  //   }
 
-    node.addEventListener('animationend', handleAnimationEnd)
-  }
+  //   node.addEventListener('animationend', handleAnimationEnd)
+  // }
 }
