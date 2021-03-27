@@ -29,7 +29,7 @@ import { RecyclingComponent } from './other-sites/recycling/recycling.component'
 import { WebsitesComponent } from './other-sites/websites/websites.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'best-buddies', component: BestBuddiesComponent, canActivate: [AuthGuard] },
   { path: 'bible', component: BibleComponent },
