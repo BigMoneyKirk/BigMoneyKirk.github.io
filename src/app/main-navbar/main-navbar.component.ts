@@ -29,6 +29,14 @@ export class MainNavbarComponent implements OnInit {
         this.list[i].className = 'list active';
       }
     }
+
+    let navigation = document.querySelector('.navigation');
+    navigation.addEventListener('mouseover', () => {
+      navigation.classList.add('active');
+    });
+    navigation.addEventListener('mouseout', () => {
+      navigation.classList.remove('active');
+    });
   }
 
   public navigate(path: string): void {
