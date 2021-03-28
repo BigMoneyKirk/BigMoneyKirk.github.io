@@ -16,7 +16,7 @@ export class MainNavbarComponent implements OnInit {
 
   public list;
 
-  constructor(private router: Router, private global: GlobalService, private authService: AuthService, private gloabalImage: GlobalImageService, public firebaseAuth: AngularFireAuth) { }
+  constructor(private global: GlobalService) { }
 
   ngOnInit() {
     this.list = document.querySelectorAll('.list');
