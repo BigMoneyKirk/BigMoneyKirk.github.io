@@ -23,8 +23,8 @@
         margin-bottom: 2rem;
 
         input {
-            appearance: none; // important, because this is why the button select doesn't appear on the frontend
             -webkit-appearance: none;
+            appearance: none;
             cursor: pointer;
         }
 
@@ -90,6 +90,10 @@
 
 .categories-container p:nth-child(9) {
     color: #7c50ff;
+}
+
+.categories-container p:nth-child(11) {
+    color: #fff;
 }
 
 .categories-container-slide {

@@ -16,7 +16,7 @@ export class MainNavbarComponent implements OnInit {
 
   public list;
 
-  constructor(private router: Router, private global: GlobalService, private authService: AuthService, private gloabalImage: GlobalImageService, public firebaseAuth: AngularFireAuth) { }
+  constructor(private global: GlobalService) { }
 
   ngOnInit() {
     this.list = document.querySelectorAll('.list');
@@ -29,6 +29,14 @@ export class MainNavbarComponent implements OnInit {
         this.list[i].className = 'list active';
       }
     }
+
+    let navigation = document.querySelector('.navigation');
+    navigation.addEventListener('mouseover', () => {
+      navigation.classList.add('active');
+    });
+    navigation.addEventListener('mouseout', () => {
+      navigation.classList.remove('active');
+    });
   }
 
   public navigate(path: string): void {
