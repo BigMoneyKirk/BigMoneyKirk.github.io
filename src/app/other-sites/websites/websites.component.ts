@@ -24,5 +24,9 @@ export class WebsitesComponent implements OnInit {
     $('.fas').click(function () {
       $('.categories-container').toggleClass('categories-container-slide', true);
     });
+
+    $('.far').click(function () {
+      $('.categories-container').toggleClass('categories-container-slide', true);
+    });
   }
 }
