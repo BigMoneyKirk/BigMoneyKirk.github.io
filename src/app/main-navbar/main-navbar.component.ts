@@ -8,31 +8,30 @@ import { GlobalImageService } from '../services/global-image.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { NavItem } from '../enums/nav-item';
 import { firestore } from 'firebase';
-import { NavHome } from '../models/navHome';
-import { PageIcon } from '../interfaces/page-icon';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-main-navbar',
   templateUrl: './main-navbar.component.html',
-  styleUrls: ['./main-navbar.component.scss']
+  styleUrls: ['./main-navbar.component.scss'],
+  providers: [NavigationService]
 })
-export class MainNavbarComponent extends PageIcon implements OnInit {
+export class MainNavbarComponent implements OnInit {
 
   NavItem = NavItem;
   public list;
   page: string;
   icon: string;
   turnedOn: boolean = true;
+  currentURL: string;
 
-  constructor(private global: GlobalService) { 
-    super();
+  constructor(private global: GlobalService, private router: Router, private navService: NavigationService) { 
   }
 
   ngOnInit() {
     this.navigationAnimation();
-    this.d();
-
-    this.page = 'home';
+    this.getCurrentPage();
+    this.getSelectedPageIcon();
   }
 
   private navigationAnimation() {
@@ -55,16 +54,23 @@ export class MainNavbarComponent extends PageIcon implements OnInit {
     });
   }
 
-  d() {
-    let something = document.querySelector('.navigation');
-    something.appendChild(document.createElement('div')).innerHTML = '<i class="fas fa-home"></i>';
+  getSelectedPageIcon() {
+    let navigation = document.querySelector('.navigation');
 
-    something.addEventListener("mouseover", () => {
-      something.removeChild(something.lastChild);
+    navigation.appendChild(document.createElement('div')).innerHTML = this.navService.getNavIcon('/home');
+
+    navigation.addEventListener("mouseover", () => {
+      navigation.removeChild(navigation.lastChild);
     })
 
-    something.addEventListener("mouseout", () => {
-      something.appendChild(document.createElement('div')).innerHTML = '<i class="fas fa-home"></i>';
+    navigation.addEventListener("mouseout", () => {
+      navigation.appendChild(document.createElement('div')).innerHTML = this.navService.getNavIcon(this.currentURL);
     })
+  }
+
+  getCurrentPage() {
+    this.router.events.subscribe(() => {
+      this.currentURL = this.router.url;
+    });
   }
 }
